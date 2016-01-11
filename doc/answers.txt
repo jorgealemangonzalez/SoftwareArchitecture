@@ -10,3 +10,4 @@ Q5) Hay 2 commits , el primero en el que inicializamos el repositorio e hicimos 
 	README.md . Los primeros 7 digitos del commit son : abce149
 Q6)	Podemos ver el identificador del commit , los cambios realizados en este commit . Concretamente nos indica que hemos hemos borrado y escrito una linea.
 	Con este comando podemos ver los cambios actuales y el commit al que pertenecen.
+Q7)	Nos indica que hay cambios realizados en el README.md no cambiados en el RESET.
