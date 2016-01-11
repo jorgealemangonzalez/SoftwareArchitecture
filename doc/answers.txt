@@ -4,3 +4,7 @@ Q2) Ahora nos indica que el fichero README.md se encuentra en "Staging Area". En
 	ya que no ha sido añadido al "Staging Area".
 Q3)	Nos indica que hemos añadido una línea nueva y nos imprime el texto que hemos añadido. Ahora README.md debe volver a ser añadido puesto que vuelve
 	a aparecer en rojo , indicando que hay diferencias entre las versiones del fichero que se encuentran en "working directory" y "Staging Area"
+Q4)	El mensaje seria : "README con informacion nueva y Añadidas respuestas" . Ahora el status es "all to date" es decir , no hay diferencias entre el
+	"working directory" y el repositorio.
+Q5) Hay 2 commits , el primero en el que inicializamos el repositorio e hicimos segun ponia en bitbucket y el segundo en el que hemos añadido el archivo
+	README.md . Los primeros 7 digitos del commit son : abce149
