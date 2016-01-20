@@ -1,26 +1,23 @@
 /* 
-  - ara el vector serà de punters a Animal
-  - iterarem amb un for
-  - mètode size() del vector
-  - usem "*" per referir-nos a l'objecte apuntat per un punter. p.e: *animal[i]
+  - ara (suposem) ens adonem que l'estructura que necessitem és una llista 
+    i no pas un vector, ja que voldrem fer molts borrats i insercions.
+
+  - farem el canvi pas a pas:
+    1er: fem un typdedef de std::vector<Animals*> a un nom més senzill
+    i fem la iteració usant iteradors
+  
+  - per cert: ens desfem la la funció escriuInfo, ja que no ens facilita el codi
  */
 
 #include <vector>
 #include "animals.hxx"
 
-
-// Funció lliure
-// Pas de paràmetre per referència
-void escriuInfo( const Animal& unAnimal )
-{
-	unAnimal.escriuEspecie();
-}
-
+typedef std::vector<Animal*> Animals;
 
 int main(void)
 {
-	std::vector<Animal*> animals;
-	
+	Animals animals;
+
 	// introduïm un de cada tipus
 	Animal unAnimal;
 	animals.push_back(&unAnimal);
@@ -34,10 +31,9 @@ int main(void)
 	Gat unGat;
 	animals.push_back(&unGat);
 
-	// iterem per tots els elements del contenedor
-	for (int i=0; i<animals.size(); i++)
-		escriuInfo( *animals[i] );    // equivalent a:  
-	                                  // animals[i]->escriuEspecie();
+	// iterem fent servir iteradors
+	for (Animals::iterator it=animals.begin(); it!=animals.end(); it++)
+		(*it)->escriuEspecie();
 
 	return 0;
 }
