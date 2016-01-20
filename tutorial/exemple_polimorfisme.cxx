@@ -1,6 +1,5 @@
 /* 
-  - classe acabada en ;
-  - mètode public:
+   - Fem una subclasse d'Animal: Elefant. En C++ es fa "SubClasse : public SuperClasse"
  */
 #include <iostream>
 
@@ -13,11 +12,22 @@ public:
 	}
 };
 
+class Elefant : public Animal
+{
+public:
+	void escriuEspecie()
+	{
+		std::cout << "elefant" << std::endl;
+	}
+};
+
 int main(void)
 {
 	Animal unAnimal;
 	unAnimal.escriuEspecie();
 
+	Elefant unElefant;
+	unElefant.escriuEspecie();
+	
 	return 0;
 }
-
