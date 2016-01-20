@@ -1,7 +1,8 @@
 /* 
-  - Anem a introduir els animals en una col.lecció
-  - <vector> suporta la sintaxis d'array (subscript) 
-  - És una classe 'template' :  usarem std::vector<Animal>
+  - ara el vector serà de punters a Animal
+  - iterarem amb un for
+  - mètode size() del vector
+  - usem "*" per referir-nos a l'objecte apuntat per un punter. p.e: *animal[i]
  */
 
 #include <vector>
@@ -18,17 +19,25 @@ void escriuInfo( const Animal& unAnimal )
 
 int main(void)
 {
-	std::vector<Animal> animals;
+	std::vector<Animal*> animals;
 	
+	// introduïm un de cada tipus
 	Animal unAnimal;
-	animals.push_back(unAnimal); // Això funciona
+	animals.push_back(&unAnimal);
 
 	Elefant unElefant;
-	animals.push_back(unElefant); // Això també però fem un upcast d'Elefant a Animal
-	
-	escriuInfo( animals[0] );  // escriu "...indefinida..."
-	escriuInfo( animals[1] );  // escriu "...indefinida..." El segon animal 
-	                           // ha perdut el tipus concret
-	                           // Solució: hem de fer el vector de punters a Animal
+	animals.push_back(&unElefant); 
+
+	Granota unaGranota;
+	animals.push_back(&unaGranota);
+
+	Gat unGat;
+	animals.push_back(&unGat);
+
+	// iterem per tots els elements del contenedor
+	for (int i=0; i<animals.size(); i++)
+		escriuInfo( *animals[i] );    // equivalent a:  
+	                                  // animals[i]->escriuEspecie();
+
 	return 0;
 }
