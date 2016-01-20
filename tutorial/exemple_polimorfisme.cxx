@@ -1,8 +1,8 @@
 /* 
-  - Convertim el mètode a virtual. Així el sistema d'execució sap resoldre
-    l'enllaç cap el mètode concret.
-  
-  - Afegim noves classes: Granota i Gat
+  - Pas de paràmetre per referència: "Tipus&" 
+    És un altre cas de polimorfisme.
+
+  - Refem el main: ara instanciarem objectes i cridarem la nova funció
  */
 #include <iostream>
 
@@ -42,26 +42,25 @@ public:
 	}
 };
 
+// Funció lliure
+// Pas de paràmetre per referència
+void escriuInfo( const Animal& unAnimal )
+{
+	unAnimal.escriuEspecie();
+}
+
+
 int main(void)
 {
 	Animal unAnimal;
-	unAnimal.escriuEspecie();
-
 	Elefant unElefant;
-	unElefant.escriuEspecie();
-	
-	std::cout << "\nUsant punters: \n";
-	Animal* animal = &unAnimal;
-	animal->escriuEspecie();
-	animal = &unElefant;
-	animal->escriuEspecie();
-
 	Granota unaGranota;
 	Gat unGat;
-	animal = &unaGranota;
-	animal->escriuEspecie();
-	animal = &unGat;
-	animal->escriuEspecie();
+	
+	escriuInfo(unAnimal);
+	escriuInfo(unElefant);
+	escriuInfo(unaGranota);
+	escriuInfo(unGat);
 
 	return 0;
 }
