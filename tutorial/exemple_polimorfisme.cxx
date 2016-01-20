@@ -1,46 +1,19 @@
 /* 
+  - Extreiem les classes l'Animal a un arxiu "animals.hxx"
+    Nota: normalment usarem un fitxer per classe.
+  
+  - Ara no és necessari incloure l'<iostream> perquè ja està al header
+
   - Pas de paràmetre per referència: "Tipus&" 
     És un altre cas de polimorfisme.
+  
+  - Com que no pensem modificar l'animal, passem per referència constant 
+    Això fa que necessitem que el mètode escriuEspecie() també 
+    sigui declarat constant
 
   - Refem el main: ara instanciarem objectes i cridarem la nova funció
  */
-#include <iostream>
-
-class Animal
-{
-public:
-	virtual void escriuEspecie()
-	{
-		std::cout << "...indefinida..." << std::endl;
-	}
-};
-
-class Elefant : public Animal
-{
-public:
-	virtual void escriuEspecie()
-	{
-		std::cout << "elefant" << std::endl;
-	}
-};
-
-class Granota : public Animal
-{
-public:
-	virtual void escriuEspecie()
-	{
-		std::cout << "granota" << std::endl;
-	}
-};
-
-class Gat : public Animal
-{
-public:
-	virtual void escriuEspecie()
-	{
-		std::cout << "gat" << std::endl;
-	}
-};
+#include "animals.hxx"
 
 // Funció lliure
 // Pas de paràmetre per referència
