@@ -1,11 +1,28 @@
 /* 
-  - streams de la llibreria estàndard per escriure a consola
-  - namespace std::nom
+  - definició d'una classe
+  - instaciacio i missatge a un objecte
  */
 #include <iostream>
 
+class Animal
+{
+	void escriuEspecie()
+	{
+		std::cout << "...indefinida..." << std::endl;
+	}
+}
+
 int main(void)
 {
-	std::cout << "Hola mon" << std::endl;
+	Animal unAnimal;
+	unAnimal.escriuEspecie();
+
 	return 0;
 }
+
+/*
+   Problemes: 
+   no ens compila per dos detalls importants:
+   - la declaració d'una classe en C++ ha d'acabar en ';'
+   - per defecte, els mètodes i atributs són privats. Cal fer-lo públic.
+ */
