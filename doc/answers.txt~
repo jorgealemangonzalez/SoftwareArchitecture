@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+Q1) Podemos observar que existen archivos sin añadir al repositorio remoto, en concreto el archivo README.MD y la carpeta doc.
+	Nos indica que hay cambios en el "working directory" que no se encuentran en el "Staging Area"
+Q2) Ahora nos indica que el fichero README.md se encuentra en "Staging Area". En color verde sale el fichero README.md y el directorio doc/ en rojo
+	ya que no ha sido añadido al "Staging Area".
+Q3)	Nos indica que hemos añadido una línea nueva y nos imprime el texto que hemos añadido. Ahora README.md debe volver a ser añadido puesto que vuelve
+	a aparecer en rojo , indicando que hay diferencias entre las versiones del fichero que se encuentran en "working directory" y "Staging Area"
+Q4)	El mensaje seria : "README con informacion nueva y Añadidas respuestas" . Ahora el status es "all to date" es decir , no hay diferencias entre el
+	"working directory" y el repositorio.
+Q5) Hay 2 commits , el primero en el que inicializamos el repositorio e hicimos segun ponia en bitbucket y el segundo en el que hemos añadido el archivo
+	README.md . Los primeros 7 digitos del commit son : abce149
+=======
+Q6)	Podemos ver el identificador del commit , los cambios realizados en este commit . Concretamente nos indica que hemos hemos borrado y escrito una linea.
+	Con este comando podemos ver los cambios actuales y el commit al que pertenecen.
+Q7)	Nos indica que hay cambios realizados en el README.md del "Staging Area" ya que este comando cambia el "Staging Area" según el commit y los ficheros 
+	especificados. Para obtener los cambios en nuestro "working directory" ahora deberemos hacer "git checkout HEAD README.md" ya que la version del 
+	documento que se encuentra en "Staging Area" es la que quueríamos obtener.
+Q8) 	Después de crear un nuevo "branch", cuando usamos "git branch" podemos ver que se ha creado la nueva rama pero seguimos en la "master".
+Q9) 	Una vez cambiado el contenido y haber hecho el commit, escribimos "git diff documents master README.ms" y nos muestra la diferencia entre 		ambas ramas sobre el contenido del documento "README.ms".En el archivo de la rama master encontramos "Habra que volver al antiguo" y en la 		rama documents encontramos "We are in the documents branch".
+
+>>>>>>> documents
