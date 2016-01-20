@@ -1,19 +1,12 @@
 /* 
-  - Extreiem les classes l'Animal a un arxiu "animals.hxx"
-    Nota: normalment usarem un fitxer per classe.
-  
-  - Ara no és necessari incloure l'<iostream> perquè ja està al header
-
-  - Pas de paràmetre per referència: "Tipus&" 
-    És un altre cas de polimorfisme.
-  
-  - Com que no pensem modificar l'animal, passem per referència constant 
-    Això fa que necessitem que el mètode escriuEspecie() també 
-    sigui declarat constant
-
-  - Refem el main: ara instanciarem objectes i cridarem la nova funció
+  - Anem a introduir els animals en una col.lecció
+  - <vector> suporta la sintaxis d'array (subscript) 
+  - És una classe 'template' :  usarem std::vector<Animal>
  */
+
+#include <vector>
 #include "animals.hxx"
+
 
 // Funció lliure
 // Pas de paràmetre per referència
@@ -25,15 +18,17 @@ void escriuInfo( const Animal& unAnimal )
 
 int main(void)
 {
-	Animal unAnimal;
-	Elefant unElefant;
-	Granota unaGranota;
-	Gat unGat;
+	std::vector<Animal> animals;
 	
-	escriuInfo(unAnimal);
-	escriuInfo(unElefant);
-	escriuInfo(unaGranota);
-	escriuInfo(unGat);
+	Animal unAnimal;
+	animals.push_back(unAnimal); // Això funciona
 
+	Elefant unElefant;
+	animals.push_back(unElefant); // Això també però fem un upcast d'Elefant a Animal
+	
+	escriuInfo( animals[0] );  // escriu "...indefinida..."
+	escriuInfo( animals[1] );  // escriu "...indefinida..." El segon animal 
+	                           // ha perdut el tipus concret
+	                           // Solució: hem de fer el vector de punters a Animal
 	return 0;
 }
