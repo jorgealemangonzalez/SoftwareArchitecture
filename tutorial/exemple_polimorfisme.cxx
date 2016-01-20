@@ -1,18 +1,15 @@
 /* 
-  - ara (suposem) ens adonem que l'estructura que necessitem és una llista 
-    i no pas un vector, ja que voldrem fer molts borrats i insercions.
-
-  - farem el canvi pas a pas:
-    1er: fem un typdedef de std::vector<Animals*> a un nom més senzill
-    i fem la iteració usant iteradors
-  
-  - per cert: ens desfem la la funció escriuInfo, ja que no ens facilita el codi
+   - Estem fent el canvi de vector a llista :
+     Ara que iterem amb iteradors i tenim el typdef, fer el canvi només
+     implica: (a) canviar el typedef i (b) canviar l'include a <list>
+     (Aquesta és la grandesa dels iteradors: desacoblar el codi d'iteració 
+     de l'estructura de dades)
  */
 
-#include <vector>
+#include <list>
 #include "animals.hxx"
 
-typedef std::vector<Animal*> Animals;
+typedef std::list<Animal*> Animals;
 
 int main(void)
 {
