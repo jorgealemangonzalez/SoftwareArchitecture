@@ -1,13 +1,10 @@
 #ifndef animals_hxx
 #define animals_hxx
 
-/*
-   - ara afegim un nou atribut a la base de tipus std::string
-   - afegim accessors d'escriptura i de lectura
- */
 
 #include <iostream>
 #include <string>
+#include <list>
 
 class Animal
 {
@@ -24,8 +21,16 @@ public:
 	{
 		return _nom;
 	}
-
+        void addFriend(Animal* animals)
+	{
+            Friends.push_back(animals);
+        }
+	std::list<Animal*> getFriends()
+	{
+		return Friends;
+	}
 private:
+	std::list<Animal*> Friends;
 	std::string _nom;
 };
 

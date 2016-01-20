@@ -1,22 +1,3 @@
-/* 
-   - usem els accessors d'escriptura i de lectura de l'atribut _nom
-
-   En resum hem après:
-   - com escriure per consola fent servir <iostream>
-   - simbols de la libreria localitzats al namespace std::
-   - les classes acaben en ;
-   - el mètodes i atributs per defecte són private
-   - com fer subclasses: "Sub : public Super"
-   - perquè serveixen els mètodes virtuals
-   - polimorfisme
-   - usar #ifndef als headers per evitar redefinicions
-   - pas de paràmetres per referència
-   - col.leccions estàndars vector i list
-   - typdefs
-   - iteradors
-   - std::string
-   - ús d'accessors
- */
 
 #include <list>
 #include "animals.hxx"
@@ -44,12 +25,30 @@ int main(void)
 	unGat.nom("Gat Amb Botes");
 	animals.push_back(&unGat);
 
+	//introduïm les amistats
+	unAnimal.addFriend(&unGat);
+	unElefant.addFriend(&unaGranota);
+	unaGranota.addFriend(&unGat);
+	unaGranota.addFriend(&unElefant);
+	unGat.addFriend(&unAnimal);
+	unGat.addFriend(&unaGranota);
+
 
 	// iterem fent servir iteradors
 	for (Animals::iterator it=animals.begin(); it!=animals.end(); it++)
 	{
 		std::cout << "l'animal anomenat " << (*it)->nom() << " es de l'especie ";
 		(*it)->escriuEspecie();
+		Animals friends = (*it)->getFriends();
+		if(friends.size() != 0){
+			std::cout << "Els amics  de " << (*it)->nom() << "son:  " << std::endl;	
+			for(Animals::iterator i=friends.begin(); i != friends.end() ; ++i)
+			{
+			  std::cout << (*i)->nom() << std::endl;
+			}
+		}else{
+		  std::cout << "no té amigos" << std::endl;
+		}
 	}
 
 	return 0;
