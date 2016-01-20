@@ -5,3 +5,4 @@ Q7)	Nos indica que hay cambios realizados en el README.md del "Staging Area" ya 
 	documento que se encuentra en "Staging Area" es la que quueríamos obtener.
 Q8) 	Después de crear un nuevo "branch", cuando usamos "git branch" podemos ver que se ha creado la nueva rama pero seguimos en la "master".
 Q9) 	Una vez cambiado el contenido y haber hecho el commit, escribimos "git diff documents master README.ms" y nos muestra la diferencia entre 		ambas ramas sobre el contenido del documento "README.ms".En el archivo de la rama master encontramos "Habra que volver al antiguo" y en la 		rama documents encontramos "We are in the documents branch".
+
