@@ -13,3 +13,5 @@ Q6)	Podemos ver el identificador del commit , los cambios realizados en este com
 Q7)	Nos indica que hay cambios realizados en el README.md del "Staging Area" ya que este comando cambia el "Staging Area" según el commit y los ficheros 
 	especificados. Para obtener los cambios en nuestro "working directory" ahora deberemos hacer "git checkout HEAD README.md" ya que la version del 
 	documento que se encuentra en "Staging Area" es la que quueríamos obtener.
+Q8) 	Después de crear un nuevo "branch", cuando usamos "git branch" podemos ver que se ha creado la nueva rama pero seguimos en la "master".
+
