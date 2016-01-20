@@ -2,18 +2,12 @@
 #define animals_hxx
 
 /*
-    - A tots els headers (.hxx) els hi afegirem sistemàticamen 
-      una condició del precompilador #ifndef - #define - #endif
-      Això evitarà que es redefineixin les mateixes classes desde diferents unitats
-      de compilaciós (diferents .cxx)
-    
-    - És necessari incloure <iostream> perquè en fem ús aquí.
-    
-    - Hem declarat el mètode 'const'. Amb això estem dient que el mètode
-      no modifica l'estat de l'objecte.
+   - ara afegim un nou atribut a la base de tipus std::string
+   - afegim accessors d'escriptura i de lectura
  */
 
 #include <iostream>
+#include <string>
 
 class Animal
 {
@@ -22,6 +16,17 @@ public:
 	{
 		std::cout << "...indefinida..." << std::endl;
 	}
+	void nom(std::string elNom)
+	{
+		_nom = elNom;
+	}
+	std::string& nom()
+	{
+		return _nom;
+	}
+
+private:
+	std::string _nom;
 };
 
 class Elefant : public Animal
