@@ -8,3 +8,4 @@ Q4)	El mensaje seria : "README con informacion nueva y Añadidas respuestas" . Ah
 	"working directory" y el repositorio.
 Q5) Hay 2 commits , el primero en el que inicializamos el repositorio e hicimos segun ponia en bitbucket y el segundo en el que hemos añadido el archivo
 	README.md . Los primeros 7 digitos del commit son : abce149
+
