@@ -80,7 +80,84 @@
                 </ul>
             </li>
         </ul>
-        
+        <p>------------------------------------------</p>
+        <h3>Use case:</h3><p> Comment an Album</p>
+        <h3>Context: </h3><p>A user wants to post a comment in an album</p>
+        <h3>Primary Actors: </h3><p>User ( generalizes Artist,Consumer,Record Label,Administrator )</p>
+        <h3>Support Actors: </h3><p>None</p>
+        <h3>Preconditions</h3>
+        <ul>
+            <li>The user can communicate with the system</li>
+            <li>The user has to be logged in</li>
+            <li>The user had bought the album</li>
+            <li>The user didn't comment the album before</li>
+        </ul>
+        <h3>Successful postconditions</h3>
+        <ul>
+            <li>The user posted a comment</li>
+        </ul>
+        <h3>Unsuccessful postconditions</h3>
+        <ul>
+            <li>The user didn't post a comment</li>
+        </ul>
+        <h3>Basic flow</h3>
+        <ol>
+            <li>The user select an album to comment</li>
+            <li>The system load the album webpage</li>
+            <li>The user goes to the comments of the Album</li>
+            <li>The user select to add a new comment</li>
+            <li>The system verifies that the user is logged</li>
+            <li>The system verifies if the user can add a comment</li>
+            <li>The user post a comment into the album webpage</li>
+        </ol>
+        <h3>Extensions</h3>
+        <ul>
+            <li>
+            1.a) The user is not logged in
+                <ul>
+                    <li>1.a.1) Execute the extension use case "Login"</li>
+                </ul>
+            </li>
+            <li>
+            6.a) The user didn't buy the album
+                <ul>
+                    <li>6.a.1) Notificate and execute the extension use case "buy Album"</li>
+                </ul>
+            </li>
+            <li>
+            6.b) The user had posted a comment before
+                <ul>
+                    <li>6.b.1) Notificate</li>
+                </ul>
+            </li>
+            <li>
+            1-7.a) The user disconnects
+                <ul>
+                    <li>1-7.b)The connection is closed</li>
+                </ul>
+            </li>
+        </ul>
+        <p>------------------------------------------</p>
+         <h3>List of case(temporal)</h3>
+            <ul>
+                <li>Purchase album,comment an album,edit an album(mix,descrp.),purchase song,creat (mix)album,log-in,register user, donations</li>
+                <li>(maybe)Pay,mail-delivery,edit songs</li>
+            </ul>
+        <h3>List of Actors(temporal)</h3>
+        <ol>
+            <li>Comment an album: artist,consummer,record label</li>
+            <li>Edit an album: admin, artist</li>
+            <li>Edit an album(user): Users</li>
+            <li>Edit a song: admin,artist</li>
+            <li>Purchase a song: admin,artist,(?)Record Label,(?)Consumer</li>
+            <li>Create (mix)Album: Artist,Consumer,Admin</li>
+            <li>Log-in: Consumer,Artist,Admin,Record Label</li>
+            <li>Register: Consumer,Artist,Record Label</li>
+            <li>Donations: Consumer,Artist,(?)Paypal</li>
+            <li>Mail-delivery: Artist, mail-delivery, Admin,Consumer</li>
+        </ol>
+        <p>------------------------------------------</p>
+        <h3> Diagram:</h3>
     </body>
 
 </html>
