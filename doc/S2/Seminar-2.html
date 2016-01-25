@@ -1,0 +1,86 @@
+<html lang="en">
+
+
+    <head>
+        <h2> Indice</h2>
+        <button>    
+            <a href="../S1/Seminar-1.html"> Seminar1 </a>
+        </button>
+        <button>    
+            <a href="Seminar-2.html"> Seminar2 </a>
+        </button>
+    </head>
+
+    <body>
+        
+        <h3>Use case:</h3><p> Purchase Album</p>
+        <h3>Context: </h3><p>User ( generalizes Artist,Consumer,Record Label,Administrator )</p>
+        <h3>Support Actors: </h3><p>Postal Service</p>
+        <h3>Preconditions</h3>
+        <ul>
+            <li>The user is logged in</li>
+            <li>The specific mixture of songs should be allowed by the artists</li>
+            <li>The album is available to be downloaded</li>
+            <li>The user can communicate with the system</li>
+        </ul>
+        <h3>Successful postconditions</h3>
+        <ul>
+            <li>The system send the album to the user</li>
+        </ul>
+        <h3>Unsuccessful postconditions</h3>
+        <ul>
+            <li>The system ask the user to log in</li>
+            <li>The user can not purchase the Album</li>
+            <li>The user can change conflicting songs of the Album</li>
+        </ul>
+        <h3>Basic flow</h3>
+        <ol>
+            <li>The user select an album/group of songs to purchase</li>
+            <li>The user select how to receive the album</li>
+            <li>The system verifies if it is possible to purchase the album</li>
+            <li>The user enter the payment method and information of the payment</li>
+            <li>The system sends the copy of the album to the user</li>
+        </ol>
+        <h3>Extensions</h3>
+        <ul>
+            <li>
+            1.a) The user is not logged in
+                <ul>
+                    <li>1.a.1) Execute the extension use case "Login"</li>
+                </ul>
+            </li>
+            <li>
+            2.a) The sending method is not available
+                <ul>
+                    <li>2.a.1) Notificate and go to step 1</li>
+                </ul>
+            </li>
+            <li>
+            3.a) Some songs of the album are incompatible
+                <ul>
+                    <li>3.a.1) Go to step 1</li>
+                </ul>
+            </li>
+            <li>
+            3.b) The album isn't available
+                <ul>
+                    <li>3.b.1) Go to step 1</li>
+                </ul>
+            </li>
+            <li>
+            4.a) The payment method is unavailable
+                <ul>
+                    <li>4.a.1) Notificate</li>
+                </ul>
+            </li>
+            <li>
+            1-6.a) The user disconnects
+                <ul>
+                    <li>The connection is closed</li>
+                </ul>
+            </li>
+        </ul>
+        
+    </body>
+
+</html>
