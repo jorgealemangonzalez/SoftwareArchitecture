@@ -5,18 +5,19 @@ class AlbumTests : public TestFixture<AlbumTests>
 public:
 	TEST_FIXTURE( AlbumTests )
 	{
-		//TEST_CASE( testTitle_byDefault );
+		TEST_CASE( testTitle_byDefault );
 		//TEST_CASE( testTitle_afterModifying );
 		//TEST_CASE( testListed_byDefault );
 		//TEST_CASE( testListed_afterListing );
 		//TEST_CASE( testListed_afterUnlisting );
 	}
-        /*
+        
 	void testTitle_byDefault()
 	{
 		Album album;
 		ASSERT_EQUALS( "-- Untitled --", album.title() );
 	}
+        /*
 	void testTitle_afterModifying()
 	{
 		Album album;
