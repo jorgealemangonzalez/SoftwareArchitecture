@@ -1,6 +1,8 @@
 class Album{
 public:
     std::string title(){
-        return "Titulo";
+        return Title;
     }
+private:
+    std::string Title = "-- Untitled --";
 };
