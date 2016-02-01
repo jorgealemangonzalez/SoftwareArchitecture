@@ -1,8 +1,7 @@
 class Track
 {
 public:
-    std::string title(){
-        //return "-- Untitled --";
-        return "-- Untitled --";
+    std::string title(string* titulo){ //Return default title
+        return "-- Untitled --";   
     }
 };

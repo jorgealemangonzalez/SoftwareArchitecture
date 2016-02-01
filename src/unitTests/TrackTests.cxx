@@ -6,7 +6,7 @@ public:
 	TEST_FIXTURE( TrackTests )
 	{
 		TEST_CASE( testTitle_byDefault );
-		//TEST_CASE( testTitle_afterModifying );
+		TEST_CASE( testTitle_afterModifying );
 		//TEST_CASE( testDuration_byDefault );
 		//TEST_CASE( testDuration_afterModifying );
 		//TEST_CASE( testMaster_byDefault );
