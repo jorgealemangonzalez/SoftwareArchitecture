@@ -5,14 +5,14 @@ class TrackTests : public TestFixture<TrackTests>
 public:
 	TEST_FIXTURE( TrackTests )
 	{
-		//TEST_CASE( testTitle_byDefault );
-		//TEST_CASE( testTitle_afterModifying );
+		TEST_CASE( testTitle_byDefault );
+		TEST_CASE( testTitle_afterModifying );
 		//TEST_CASE( testDuration_byDefault );
 		//TEST_CASE( testDuration_afterModifying );
 		//TEST_CASE( testMaster_byDefault );
 		//TEST_CASE( testMaster_afterModifying );
 	}
-	/*
+	
 	void testTitle_byDefault()
 	{
 		Track track;
@@ -24,7 +24,7 @@ public:
 		track.title( "A Title" );
 		ASSERT_EQUALS( "A Title", track.title() );
 	}
-	void testDuration_byDefault()
+	/*void testDuration_byDefault()
 	{
 		Track track;
 		ASSERT_EQUALS( 0u, track.duration() );

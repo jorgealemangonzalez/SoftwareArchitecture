@@ -7,7 +7,7 @@ public:
         }	
         return Title;
     }
-    void title(std::string _title){
+    void title(const std::string& _title){ //we set the value of a title in out private variable Title
     	Title=_title;
     }
 private:
