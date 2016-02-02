@@ -11,7 +11,7 @@ public:
     	Title=_title;
     }
     int duration(){
-        return (int)2;
+        return (int)0;
     }
 private:
 	std::string Title;
