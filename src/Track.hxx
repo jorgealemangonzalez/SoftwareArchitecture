@@ -10,8 +10,8 @@ public:
     void title(const std::string& _title){ //we set the value of a title in out private variable Title
     	Title=_title;
     }
-    int duration(){
-        return (int)0;
+    unsigned int duration(){ //we declare the integrer as "unsigned", that's the meaning of the sufix "u".
+        return 0;
     }
 private:
 	std::string Title;
