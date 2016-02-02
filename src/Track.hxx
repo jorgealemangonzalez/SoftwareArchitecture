@@ -10,6 +10,9 @@ public:
     void title(const std::string& _title){ //we set the value of a title in out private variable Title
     	Title=_title;
     }
+    int duration(){
+        return (int)2;
+    }
 private:
 	std::string Title;
 };
