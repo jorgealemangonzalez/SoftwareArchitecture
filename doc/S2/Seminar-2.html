@@ -14,7 +14,7 @@
     <body>
         
         <h3>Use case:</h3><p> Purchase Album</p>
-        <h3>Context: </h3><p>User ( generalizes Artist,Consumer,Record Label,Administrator )</p>
+        <h3>Context: </h3><p>User ( generalizes Artist,Consumer,Record Label,Operator )</p>
         <h3>Support Actors: </h3><p>Postal Service</p>
         <h3>Preconditions</h3>
         <ul>
@@ -138,23 +138,23 @@
             </li>
         </ul>
         <p>------------------------------------------</p>
-         <h3>List of case(temporal)</h3>
-            <ul>
-                <li>Purchase album,comment an album,edit an album(mix,descrp.),purchase song,creat (mix)album,log-in,register user, donations</li>
-                <li>(maybe)Pay,mail-delivery,edit songs</li>
-            </ul>
-        <h3>List of Actors(temporal)</h3>
+        <h3>Use cases: Actors...</h3>
         <ol>
-            <li>Comment an album: artist,Consumer,record label</li>
-            <li>Edit artist album: admin, artist</li>
-            <li>Edit Consumer album: Consumer</li>
-            <li>Edit a song: admin,artist</li>
-	    <li>Purchase album: Consumer</li>
-            <li>Purchase a song: admin,artist,Record Label,Consumer</li>
-            <li>Log-in: Consumer,Artist,Admin,Record Label</li>
-            <li>Register: Consumer,Artist,Record Label</li>
+            <li>Comment album:User</li>
+            <li>Edit artist album: Operator, artist</li>
+            <li>Edit consumer album: Consumer</li>
+            <li>Refactor song: Operator,artist</li>
+	    <li>Purchase album: Consumer,Postal service,Record label,Artist</li>
+            <li>Purchase a song: artist,Record Label,Consumer</li>
+            <li>Log in:User</li>
+            <li>Register: User,</li>
             <li>Donations: Consumer,Artist,(?)Paypal</li>
-            <li>Mail-delivery: Artist, mail-delivery, Admin</li>
+	    <li>Search artist by name: Consumer , Artist </li>
+	    <li>Search artist by style: Consumer , Artist </li>
+	    <li>Upload Song: Artist,Operator,Postal Service</li>
+	    <li>Manage promotial material: Artist,Operator </li>
+	    <li>Play song:Consumer</li>
+	    <li>Subscribe to an artist/style: Consumer</li>
         </ol>
         <p>------------------------------------------</p>
         <h3> Diagram:</h3>
