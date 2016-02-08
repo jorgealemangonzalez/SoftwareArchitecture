@@ -1,9 +1,9 @@
 class Album{
 public:
-    std::string title(const std::string &Title = "-- Untitled --"){//Get the title of the album
+    std::string title(const std::string &setTitle = "-- Untitled --"){//Get the title of the album
         if(_title == "" || _title == "-- Untitled --")//If the title is not set we set it to the value of the parameter
        	{
-       		_title = Title;
+       		_title = setTitle;
        	}
        	return _title;
     }
