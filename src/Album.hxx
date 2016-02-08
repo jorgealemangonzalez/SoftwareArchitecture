@@ -7,6 +7,8 @@ public:
        	}
        	return this->Title;
     }
+    void list(){
+    }
     bool isListed(){//Return if the album is listed
     	return false;
     }
