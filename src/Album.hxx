@@ -7,6 +7,9 @@ public:
        	}
        	return this->Title;
     }
+    bool isListed(){
+    	return true;
+    }
 private:
 	std::string Title;
 };

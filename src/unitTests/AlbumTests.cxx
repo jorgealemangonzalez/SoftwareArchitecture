@@ -7,7 +7,7 @@ public:
 	{
 		TEST_CASE( testTitle_byDefault );
 		TEST_CASE( testTitle_afterModifying );
-		//TEST_CASE( testListed_byDefault );
+		TEST_CASE( testListed_byDefault );
 		//TEST_CASE( testListed_afterListing );
 		//TEST_CASE( testListed_afterUnlisting );
 	}
@@ -24,12 +24,13 @@ public:
 		album.title( "A title" );
 		ASSERT_EQUALS( "A title", album.title() );
 	}
-    /*
+    
 	void testListed_byDefault()
 	{
 		Album album;
 		ASSERT_EQUALS( false, album.isListed() );
 	}
+	/*
 	void testListed_afterListing()
 	{
 		Album album;
