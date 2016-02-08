@@ -9,7 +9,7 @@ public:
 		TEST_CASE( testTitle_afterModifying );
 		TEST_CASE( testListed_byDefault );
 		TEST_CASE( testListed_afterListing );
-		//TEST_CASE( testListed_afterUnlisting );
+		TEST_CASE( testListed_afterUnlisting );
 	}
     
 	void testTitle_byDefault()
@@ -36,14 +36,13 @@ public:
 		album.list();
 		ASSERT_EQUALS( true, album.isListed() );
 	}
-	/*
 	void testListed_afterUnlisting()
 	{
 		Album album;
 		album.list();
 		album.unlist();
 		ASSERT_EQUALS( false, album.isListed() );
-	}*/
+	}
 };
 
 REGISTER_FIXTURE( AlbumTests )
