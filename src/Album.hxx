@@ -8,10 +8,12 @@ public:
        	return this->Title;
     }
     void list(){
+   		Listed = true;
     }
     bool isListed(){//Return if the album is listed
-    	return false;
+    	return Listed;
     }
 private:
 	std::string Title;//Title of the album
+	bool Listed = false;
 };
