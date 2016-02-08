@@ -10,7 +10,7 @@ public:
     void list(){ // changes the status of the album to "Listed"
    		Listed = true;
     }
-    void unlist(){
+    void unlist(){// changes the status of the album to "unListed"
     	Listed = false;
     }
     bool isListed(){//Return if the album is listed
