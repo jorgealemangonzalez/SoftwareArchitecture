@@ -5,7 +5,7 @@ class ArtistTests : public TestFixture<ArtistTests>
 public:
 	TEST_FIXTURE( ArtistTests )
 	{
-		//TEST_CASE(testName_byDefault);
+		TEST_CASE(testName_byDefault);
 		//TEST_CASE(testName_afterModifying);
 		//TEST_CASE(testArtistOrGroup_byDefault);
 		//TEST_CASE(testArtistOrGroup_afterCreateGroup);
@@ -13,11 +13,12 @@ public:
 		//TEST_CASE(testDescription_byDefault);
 		//TEST_CASE(testDescription_afterModifying);
 	}
-	/*
+	
 	void testName_byDefault(){
 		Artist artist;
 		ASSERT_EQUALS("-- No name --",artist.name());
 	}
+	/*
 	void testName_afterModifying{
 		Artist artist;
 		artist.name("Javi");
