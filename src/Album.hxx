@@ -7,7 +7,7 @@ public:
        	}
        	return this->Title;
     }
-    bool isListed(){
+    bool isListed(){//Return if the album is listed
     	return false;
     }
 private:
