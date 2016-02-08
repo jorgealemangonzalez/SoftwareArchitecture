@@ -11,6 +11,7 @@ public:
    		Listed = true;
     }
     void unlist(){
+    	Listed = false;
     }
     bool isListed(){//Return if the album is listed
     	return Listed;
