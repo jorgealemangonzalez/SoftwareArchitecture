@@ -1,6 +1,6 @@
 class Artist{
 public:
 	std::string name(){
-		return "";
+		return "-- No name --";
 	}
 };
