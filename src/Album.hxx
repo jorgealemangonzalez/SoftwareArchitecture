@@ -7,7 +7,7 @@ public:
        	}
        	return this->Title;
     }
-    void list(){
+    void list(){ // changes the status of the album to "Listed"
    		Listed = true;
     }
     bool isListed(){//Return if the album is listed
@@ -15,5 +15,5 @@ public:
     }
 private:
 	std::string Title;//Title of the album
-	bool Listed = false;
+	bool Listed = false;//Album is listed : true , or not : false
 };
