@@ -10,7 +10,7 @@ public:
 		return _name;
 	}
 	bool isGroup(){
-		return true;
+		return false;
 	}
 private:
 	std::string _name;// The name of the artist
