@@ -7,7 +7,7 @@ public:
 	{
 		TEST_CASE(testName_byDefault);
 		TEST_CASE(testName_afterModifying);
-		//TEST_CASE(testArtistOrGroup_byDefault);
+		TEST_CASE(testArtistOrGroup_byDefault);
 		//TEST_CASE(testArtistOrGroup_afterCreateGroup);
 		//TEST_CASE(testArtistOrGroup_afterDisolveGroup);
 		//TEST_CASE(testDescription_byDefault);
@@ -24,11 +24,11 @@ public:
 		artist.name("Javi");
 		ASSERT_EQUALS("Javi",artist.name());
 	}
-	/*
 	void testArtistOrGroup_byDefault(){
 		Artist artist;
 		ASSERT_EQUALS(false,artist.isGroup());
 	}
+	/*
 	void testArtistOrGroup_afterCreateGroup(){
 		Artist artist;
 		artist.createGroup();

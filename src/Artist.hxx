@@ -9,6 +9,9 @@ public:
 		}
 		return _name;
 	}
+	bool isGroup(){
+		return true;
+	}
 private:
 	std::string _name;// The name of the artist
 };
