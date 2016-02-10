@@ -9,7 +9,7 @@ public:
 		}
 		return _name;
 	}
-	bool isGroup(){
+	bool isGroup(){//retuns if the entity is an artist or a group
 		return false;
 	}
 private:
