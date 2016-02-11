@@ -18,8 +18,11 @@ public:
         }
         return _duration;
     }
-    std::string master(){ //nos sirve para el caso sin modificar
-            return "";
+    std::string master(const std::string &setMaster = ""){ 
+        if(setMaster != ""){
+            _master = setMaster;
+        }
+        return setMaster;
     }
     /*void master(const std::string& setMaster){
         _Master = setMaster;
