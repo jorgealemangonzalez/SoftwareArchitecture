@@ -19,7 +19,7 @@ public:
         return _duration;
     }
     std::string master(){
-            return "d";
+            return "";
     }
     /*void master(const std::string& setMaster){
         _Master = setMaster;
