@@ -10,6 +10,9 @@ public:
 		}
 		return _name;
 	}
+	std::string description(){
+		return "";
+	}
 	void createGroup(){//Transform the artist account into a group account
 		_grouped = true;
 	}
