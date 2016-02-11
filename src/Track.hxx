@@ -4,6 +4,7 @@ public:
     Track(){
         _title = "-- Untitled --";
         _duration = (unsigned)0; //inicializamos los valors predefinidos
+        _master = "";
     }  
     std::string title(const std::string& setTitle = ""){ //return untitle title
         if(setTitle != ""){
@@ -17,13 +18,10 @@ public:
         }
         return _duration;
     }
-    /*std::string master(){
-        if(_Master  == ""){
-            return "";
-        }
-        return _Master;
+    std::string master(){
+            return "d";
     }
-    void master(const std::string& setMaster){
+    /*void master(const std::string& setMaster){
         _Master = setMaster;
     }*/
 
@@ -31,5 +29,5 @@ public:
 private:
 	std::string _title;
     unsigned int _duration;
-    //std::string _Master;
+    std::string _master;
 };  
