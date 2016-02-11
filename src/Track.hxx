@@ -18,7 +18,7 @@ public:
         }
         return _duration;
     }
-    std::string master(const std::string &setMaster = ""){ 
+    std::string master(const std::string &setMaster = ""){ //devolveremos valor por defecto a no ser que ya haya sido modificado
         if(setMaster != ""){
             _master = setMaster;
         }
