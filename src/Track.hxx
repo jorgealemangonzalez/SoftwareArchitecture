@@ -18,14 +18,12 @@ public:
         }
         return _duration;
     }
-    std::string master(){ //nos sirve para el caso sin modificar
-            return "";
-    }
-    /*void master(const std::string& setMaster){
-        _Master = setMaster;
-    }*/
-
- 
+    std::string master(const std::string &setMaster = ""){ 
+        if(setMaster != ""){
+            _master = setMaster;
+        }
+        return _master;
+    } 
 private:
 	std::string _title;
     unsigned int _duration;
