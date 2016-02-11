@@ -3,25 +3,19 @@ class Track
 public:   
     Track(){
         _title = "-- Untitled --";
-        _duration = -1;
+        _duration = (unsigned)0; //inicializamos los valors predefinidos
     }  
-    std::string title(){ //return untitle title
-        if(_title == "-- Untitled --"){
-        	return "-- Untitled --";
+    std::string title(const std::string& setTitle = ""){ //return untitle title
+        if(setTitle != ""){
+        	_title = setTitle;
         }	
         return _title;
     }
-    void title(const std::string& title){ //we set the value of a title in out private variable Title
-    	_title =title;
-    }
-    unsigned int duration(){
-        if( _duration == (unsigned)-1  ){
-            return 0;
+    unsigned int duration(const unsigned int& setDuration = 0 ){ //devolvemos 0 si no se ha asignado ningun valor
+        if( setDuration != (unsigned)0  ){
+            _duration = setDuration;
         }
         return _duration;
-    }
-    void duration( const unsigned int& durat){
-        _duration = durat;
     }
     /*std::string master(){
         if(_Master  == ""){
