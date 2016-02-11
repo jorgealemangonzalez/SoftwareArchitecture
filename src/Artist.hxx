@@ -11,7 +11,7 @@ public:
 		return _name;
 	}
 	std::string description(){
-		return "";
+		return "-- No name -- [solo]\n";
 	}
 	void createGroup(){//Transform the artist account into a group account
 		_grouped = true;
