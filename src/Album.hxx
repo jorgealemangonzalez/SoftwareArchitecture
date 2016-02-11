@@ -1,7 +1,12 @@
 class Album{
+    
 public:
+    Album (){
+        _listed = false;
+        _title = "-- Untitled --";
+    }
     std::string title(const std::string &setTitle = "-- Untitled --"){//Get the title of the album
-        if(_title == "" || _title == "-- Untitled --")//If the title is not set we set it to the value of the parameter
+        if(setTitle != "-- Untitled --")//If the title is not set we set it to the value of the parameter
        	{
        		_title = setTitle;
        	}
@@ -18,5 +23,5 @@ public:
     }
 private:
 	std::string _title;//Title of the album
-	bool _listed = false;//Album is listed : true , or not : false
+	bool _listed;//Album is listed : true , or not : false
 };
