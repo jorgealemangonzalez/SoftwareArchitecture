@@ -22,13 +22,8 @@ public:
         if(setMaster != ""){
             _master = setMaster;
         }
-        return setMaster;
-    }
-    /*void master(const std::string& setMaster){
-        _Master = setMaster;
-    }*/
-
- 
+        return _master;
+    } 
 private:
 	std::string _title;
     unsigned int _duration;
