@@ -9,6 +9,9 @@ public:
 		}
 		return _name;
 	}
+	void createGroup(){
+		return;
+	}
 	bool isGroup(){//retuns if the entity is an artist or a group
 		return false;
 	}
