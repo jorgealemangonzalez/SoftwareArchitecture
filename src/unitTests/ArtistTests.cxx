@@ -11,7 +11,7 @@ public:
 		TEST_CASE(testArtistOrGroup_afterCreateGroup);
 		TEST_CASE(testArtistOrGroup_afterDisolveGroup);
 		TEST_CASE(testDescription_byDefault);
-		//TEST_CASE(testDescription_afterModifying);
+		TEST_CASE(testDescription_afterModifying);
 	}
 	
 	void testName_byDefault(){
@@ -44,14 +44,12 @@ public:
 		Artist artist;
 		ASSERT_EQUALS("-- No name -- [solo]\n",artist.description());
 	}
-	/*
 	void testDescription_afterModifying(){
 		Artist artist;
 		artist.name("Javi");
 		artist.createGroup();
 		ASSERT_EQUALS("Javi [group]\n",artist.description());
 	}
-	*/
 };
 
 REGISTER_FIXTURE( ArtistTests )
