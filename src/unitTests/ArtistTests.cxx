@@ -9,7 +9,7 @@ public:
 		TEST_CASE(testName_afterModifying);
 		TEST_CASE(testArtistOrGroup_byDefault);
 		TEST_CASE(testArtistOrGroup_afterCreateGroup);
-		//TEST_CASE(testArtistOrGroup_afterDisolveGroup);
+		TEST_CASE(testArtistOrGroup_afterDisolveGroup);
 		//TEST_CASE(testDescription_byDefault);
 		//TEST_CASE(testDescription_afterModifying);
 	}
@@ -33,13 +33,13 @@ public:
 		artist.createGroup();
 		ASSERT_EQUALS(true,artist.isGroup());
 	}
-	/*
 	void testArtistOrGroup_afterDisolveGroup(){
 		Artist artist;
 		artist.createGroup();
 		artist.disolveGroup();
 		ASSERT_EQUALS(false,artist.isGroup());
 	}
+	/*
 	void testDescription_byDefault(){
 		Artist artist;
 		ASSERT_EQUALS("-- No name -- [solo]\n",artist.description());
