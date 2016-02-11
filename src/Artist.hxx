@@ -13,6 +13,9 @@ public:
 	void createGroup(){//Transform the artist account into a group account
 		_grouped = true;
 	}
+	void disolveGroup(){
+		_grouped = false;
+	}
 	bool isGroup(){//retuns if the entity is an artist or a group
 		return _grouped;
 	}
