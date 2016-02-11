@@ -1,25 +1,41 @@
 class Track
 {
-public:     
+public:   
+    Track(){
+        _title = "-- Untitled --";
+        _duration = -1;
+    }  
     std::string title(){ //return untitle title
-        if(Title == ""){
+        if(_title == "-- Untitled --"){
         	return "-- Untitled --";
         }	
-        return Title;
+        return _title;
     }
-    void title(const std::string& _title){ //we set the value of a title in out private variable Title
-    	Title =_title;
+    void title(const std::string& title){ //we set the value of a title in out private variable Title
+    	_title =title;
     }
-    unsigned int duration(){ //we declare the integrer as "unsigned", that's the meaning of the sufix "u".
-        if(_duration != -1){ //(have to solve the problem with valgrind with variables):.
-            return _duration;
+    unsigned int duration(){
+        if( _duration == (unsigned)-1  ){
+            return 0;
         }
-        //return 0;		discoment for pass the test
+        return _duration;
     }
-    void duration(unsigned int durat){
+    void duration( const unsigned int& durat){
         _duration = durat;
     }
+    /*std::string master(){
+        if(_Master  == ""){
+            return "";
+        }
+        return _Master;
+    }
+    void master(const std::string& setMaster){
+        _Master = setMaster;
+    }*/
+
+ 
 private:
-	std::string Title;
-    unsigned int _duration=-1;
+	std::string _title;
+    unsigned int _duration;
+    //std::string _Master;
 };  
