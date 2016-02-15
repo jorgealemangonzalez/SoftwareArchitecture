@@ -23,7 +23,7 @@ public:
 		return _grouped;
 	}
     std::string catalogTracks(){
-    	return "NO";
+    	return "";
     }
 private:
 	std::string _name;// The name of the artist
