@@ -1,3 +1,7 @@
+#include<sstream>
+#include<vector>
+#include "Track.hxx"
+#include "Exceptions.hxx"
 class Artist{
 public:
 	Artist(){
@@ -23,12 +27,29 @@ public:
 		return _grouped;
 	}
     std::string catalogTracks(){//Returns the diferent tracks of the catalog
-    	return "";
+    	try{
+    		if(_catalog.size() == 0)
+    			throw Exception();
+    		std::stringstream sDur;
+    		sDur << _catalog[0].duration();
+    		return "\t"+_catalog[0].title()+" ["+sDur.str()+"s]\n\t\t"+_catalog[0].master()+"\n";
+    		
+    	}
+    	catch(Exception &e){
+    		e.emptyCatalog();
+    		return "";
+    	}
+    	
     }
-    std::string newTrack(const std::string &trackName ,const unsigned int &duration,const std::string &fileName){
-    	return "";
+    void newTrack(const std::string &trackName ,const unsigned int &duration,const std::string &fileName){
+    	Track t;
+    	t.title(trackName);
+    	t.duration(duration);
+    	t.master(fileName);
+    	this->_catalog.push_back(t);
     }
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
+	std::vector<Track> _catalog;
 };
