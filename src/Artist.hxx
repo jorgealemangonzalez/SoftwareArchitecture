@@ -29,27 +29,26 @@ public:
     std::string catalogTracks(){//Returns the diferent tracks of the catalog
     	try{
     		if(_catalog.size() == 0)
-    			throw Exception();
+    			throw Exception();	//throw exception if the catalog is empty
     		std::stringstream sDur;
     		sDur << _catalog[0].duration();
     		return "\t"+_catalog[0].title()+" ["+sDur.str()+"s]\n\t\t"+_catalog[0].master()+"\n";
     		
     	}
     	catch(Exception &e){
-    		e.emptyCatalog();
-    		return "";
+    		return e.emptyCatalog();
     	}
     	
     }
-    void newTrack(const std::string &trackName ,const unsigned int &duration,const std::string &fileName){
+    void newTrack(const std::string &trackName ,const unsigned int &duration,const std::string &fileName){//Add new track to the catalog of the artist
     	Track t;
     	t.title(trackName);
     	t.duration(duration);
     	t.master(fileName);
-    	this->_catalog.push_back(t);
+    	_catalog.push_back(t);
     }
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
-	std::vector<Track> _catalog;
+	std::vector<Track> _catalog;//Catalog of all the tracks of the artist
 };
