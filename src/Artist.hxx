@@ -61,7 +61,10 @@ public:
     	t->master(fileName);
     	_catalog.push_back(t);
     }
-    
+    Track & findTrack(const std::string &nameTrack){
+    	Track *t = new Track;
+    	return (*t);
+    }
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
