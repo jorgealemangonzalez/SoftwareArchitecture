@@ -1,11 +1,12 @@
 #include "MiniCppUnit.hxx"
+#include "Artist.hxx"
 
 class AddTrackAndAlbumTests : public TestFixture<AddTrackAndAlbumTests>
 {
 public:
 	TEST_FIXTURE( AddTrackAndAlbumTests )
 	{
-		//TEST_CASE( testCatalogTracks_withNoTracks );
+		TEST_CASE( testCatalogTracks_withNoTracks );
 		//TEST_CASE( testCatalogTracks_withOneTrack );
 		//TEST_CASE( testCatalogTracks_withTwoTracks );
 		//TEST_CASE( testFindTrack_withTwoTracks );
@@ -20,7 +21,7 @@ public:
 		//TEST_CASE( testTrackList_withOneTrack );
 		//TEST_CASE( testTrackList_withTwoTracks );
 	}
-	/*
+	
 	void testCatalogTracks_withNoTracks()
 	{
 		Artist artist;
@@ -29,6 +30,7 @@ public:
 			artist.catalogTracks()
 		);
 	}
+	/*
 	void testCatalogTracks_withOneTrack()
 	{
 		Artist artist;

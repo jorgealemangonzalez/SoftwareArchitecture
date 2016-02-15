@@ -22,6 +22,9 @@ public:
 	bool isGroup(){//retuns if the entity is an artist or a group
 		return _grouped;
 	}
+    std::string catalogTracks(){
+    	return "NO";
+    }
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
