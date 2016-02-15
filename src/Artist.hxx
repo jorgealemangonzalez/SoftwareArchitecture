@@ -12,7 +12,7 @@ public:
 		_grouped = false;//Set the default kind of account
 	}
 	~Artist(){//Destructor
-		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){
+		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){//Iterate the catalog vector and free the memory
 			delete (*it);
 		}
 	}
@@ -40,7 +40,7 @@ public:
     			throw Exception();	//throw exception if the catalog is empty
     			
     		std::string result = "";
-    		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){
+    		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){ //Iterate through catalog and concatenate the info of different tracks
     			std::stringstream sDur;
     			sDur << (*it)->duration();
     			result += "\t"+(*it)->title()+" ["+sDur.str()+"s]\n\t\t"+(*it)->master()+"\n";
