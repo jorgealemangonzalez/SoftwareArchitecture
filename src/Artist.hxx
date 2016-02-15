@@ -25,6 +25,9 @@ public:
     std::string catalogTracks(){//Returns the diferent tracks of the catalog
     	return "";
     }
+    std::string newTrack(const std::string &trackName ,const unsigned int &duration,const std::string &fileName){
+    	return "";
+    }
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group

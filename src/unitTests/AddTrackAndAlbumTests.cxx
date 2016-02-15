@@ -7,7 +7,7 @@ public:
 	TEST_FIXTURE( AddTrackAndAlbumTests )
 	{
 		TEST_CASE( testCatalogTracks_withNoTracks );
-		//TEST_CASE( testCatalogTracks_withOneTrack );
+		TEST_CASE( testCatalogTracks_withOneTrack );
 		//TEST_CASE( testCatalogTracks_withTwoTracks );
 		//TEST_CASE( testFindTrack_withTwoTracks );
 		//TEST_CASE( testFindTrack_whenTrackDoesNotExist );
@@ -30,7 +30,7 @@ public:
 			artist.catalogTracks()
 		);
 	}
-	/*
+	
 	void testCatalogTracks_withOneTrack()
 	{
 		Artist artist;
@@ -41,6 +41,7 @@ public:
 			artist.catalogTracks()
 		);
 	}
+	/*
 	void testCatalogTracks_withTwoTracks()
 	{
 		Artist artist;
