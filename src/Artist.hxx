@@ -22,7 +22,7 @@ public:
 	bool isGroup(){//retuns if the entity is an artist or a group
 		return _grouped;
 	}
-    std::string catalogTracks(){
+    std::string catalogTracks(){//Returns the diferent tracks of the catalog
     	return "";
     }
 private:
