@@ -50,7 +50,7 @@ public:
     		
     	}
     	catch(Exception &e){
-    		return e.emptyCatalog();
+    		return e.what();
     	}
     	
     }
@@ -62,12 +62,18 @@ public:
     	_catalog.push_back(t);
     }
     Track & findTrack(const std::string &nameTrack){  //Search a track by title , it returns a reference to this track
-    	Tracks::iterator it;
-    	for(it =_catalog.begin(); it != _catalog.end() ; it++){ //iterate through the catalog and compare the title
-    		if((*it)->title() == nameTrack)break;
+    	try{
+	    	Tracks::iterator it;
+	    	for(it =_catalog.begin(); it != _catalog.end() ; it++){ //iterate through the catalog and compare the title
+	    		if((*it)->title() == nameTrack)break;
+	    	}
+	    	if(it == _catalog.end())throw Exception();
+	    	return **it;
     	}
-    	if(it == _catalog.end())throw Exception();
-    	return **it;
+    	catch(Exception &e)
+    	{
+    		throw e;
+    	}
     }
 private:
 	std::string _name;// The name of the artist
