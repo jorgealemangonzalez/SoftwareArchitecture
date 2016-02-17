@@ -11,7 +11,7 @@ public:
 		TEST_CASE( testCatalogTracks_withTwoTracks );
 		TEST_CASE( testFindTrack_withTwoTracks );
 		TEST_CASE( testFindTrack_whenTrackDoesNotExist );
-		//TEST_CASE( testDescriptionCatalog_withTracks );
+		TEST_CASE( testDescriptionCatalog_withTracks );
 		//TEST_CASE( testDescriptionCatalog_withUnlistedAlbum );
 		//TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
 		//TEST_CASE( testDescriptionCatalog_withListedAlbum );
@@ -76,7 +76,6 @@ public:
 			ASSERT_EQUALS( "The track does not exist", e.what() );
 		}
 	}
-	/*
 	void testDescriptionCatalog_withTracks()
 	{
 		Artist artist;
@@ -92,6 +91,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
+	/*
 	void testDescriptionCatalog_withUnlistedAlbum()
 	{
 		Artist artist;

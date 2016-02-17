@@ -75,6 +75,9 @@ public:
     		throw e;
     	}
     }
+    const std::string descriptionCatalog(){
+    	return "";
+    }
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
