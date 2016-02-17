@@ -67,10 +67,10 @@ public:
 	    	for(it =_catalog.begin(); it != _catalog.end() ; it++){ //iterate through the catalog and compare the title
 	    		if((*it)->title() == nameTrack)break;
 	    	}
-	    	if(it == _catalog.end())throw EmptyCatalogException();
+	    	if(it == _catalog.end())throw NoTrackInCatalogException();
 	    	return **it;
     	}
-    	catch(EmptyCatalogException &e)
+    	catch(NoTrackInCatalogException &e)
     	{
     		throw e;
     	}
