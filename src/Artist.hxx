@@ -61,9 +61,9 @@ public:
     	t->master(fileName);
     	_catalog.push_back(t);
     }
-    Track & findTrack(const std::string &nameTrack){
+    Track & findTrack(const std::string &nameTrack){  //Search a track by title , it returns a reference to this track
     	Tracks::iterator it;
-    	for(it =_catalog.begin(); it != _catalog.end() ; it++){
+    	for(it =_catalog.begin(); it != _catalog.end() ; it++){ //iterate through the catalog and compare the titles
     		if((*it)->title() == nameTrack)break;
     	}
     	return **it;
