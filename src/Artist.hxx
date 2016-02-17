@@ -62,8 +62,11 @@ public:
     	_catalog.push_back(t);
     }
     Track & findTrack(const std::string &nameTrack){
-    	Track *t = new Track;
-    	return (*t);
+    	Tracks::iterator it;
+    	for(it =_catalog.begin(); it != _catalog.end() ; it++){
+    		if((*it)->title() == nameTrack)break;
+    	}
+    	return **it;
     }
 private:
 	std::string _name;// The name of the artist
