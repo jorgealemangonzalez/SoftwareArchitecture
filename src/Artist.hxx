@@ -76,7 +76,7 @@ public:
     	}
     }
     const std::string descriptionCatalog(){
-    	return description() + catalogTracks();
+    	return description() + catalogTracks(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }
 private:
 	std::string _name;// The name of the artist
