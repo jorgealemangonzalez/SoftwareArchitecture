@@ -76,7 +76,7 @@ public:
     	}
     }
     const std::string descriptionCatalog(){
-    	return "";
+    	return description() + catalogTracks();
     }
 private:
 	std::string _name;// The name of the artist
