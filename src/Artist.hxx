@@ -67,7 +67,7 @@ public:
 	    	for(it =_catalog.begin(); it != _catalog.end() ; it++){ //iterate through the catalog and compare the title
 	    		if((*it)->title() == nameTrack)break;
 	    	}
-	    	if(it == _catalog.end())throw NoTrackInCatalogException();
+	    	if(it == _catalog.end())throw NoTrackInCatalogException(); //If the track wasn't in the catalog we throw an exception
 	    	return **it;
     	}
     	catch(NoTrackInCatalogException &e)
