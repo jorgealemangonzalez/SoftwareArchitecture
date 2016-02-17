@@ -1,6 +1,6 @@
-class Exception : public std::exception{
+class EmptyCatalogException : public std::exception{
 	public:
-		const char * emptyCatalog() const throw(){//Exception of empty catalog
+		const char * what() const throw(){//Exception of empty catalog
 			return "";
 		}
 };

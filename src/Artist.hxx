@@ -37,7 +37,7 @@ public:
     std::string catalogTracks(){//Returns the diferent tracks of the catalog
     	try{
     		if(_catalog.size() == 0)
-    			throw Exception();	//throw exception if the catalog is empty
+    			throw EmptyCatalogException();	//throw exception if the catalog is empty
     			
     		std::string result = "";
     		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){ //Iterate through catalog and concatenate the info of different tracks
@@ -49,7 +49,7 @@ public:
     		return result;
     		
     	}
-    	catch(Exception &e){
+    	catch(EmptyCatalogException &e){
     		return e.what();
     	}
     	
@@ -67,10 +67,10 @@ public:
 	    	for(it =_catalog.begin(); it != _catalog.end() ; it++){ //iterate through the catalog and compare the title
 	    		if((*it)->title() == nameTrack)break;
 	    	}
-	    	if(it == _catalog.end())throw Exception();
+	    	if(it == _catalog.end())throw EmptyCatalogException();
 	    	return **it;
     	}
-    	catch(Exception &e)
+    	catch(EmptyCatalogException &e)
     	{
     		throw e;
     	}
