@@ -13,13 +13,13 @@ public:
 		TEST_CASE( testFindTrack_whenTrackDoesNotExist );
 		TEST_CASE( testDescriptionCatalog_withTracks );
 		TEST_CASE( testDescriptionCatalog_withUnlistedAlbum );
-		//TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
-		//TEST_CASE( testDescriptionCatalog_withListedAlbum );
-		//TEST_CASE( testDescriptionCatalog_withTwoAlbums );
-		//TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
-		//TEST_CASE( testTrackList_withNoTracks );
-		//TEST_CASE( testTrackList_withOneTrack );
-		//TEST_CASE( testTrackList_withTwoTracks );
+		TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
+		TEST_CASE( testDescriptionCatalog_withListedAlbum );
+		TEST_CASE( testDescriptionCatalog_withTwoAlbums );
+		TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
+		TEST_CASE( testTrackList_withNoTracks );
+		TEST_CASE( testTrackList_withOneTrack );
+		TEST_CASE( testTrackList_withTwoTracks );
 	}
 	
 	void testCatalogTracks_withNoTracks()
@@ -103,7 +103,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	/*void testDescriptionCatalog_withTrackAndAlbum()
+	void testDescriptionCatalog_withTrackAndAlbum() //pass without change anything
 	{
 		Artist artist;
 		artist.name( "An artist" );
@@ -117,7 +117,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	void testDescriptionCatalog_withListedAlbum()
+	void testDescriptionCatalog_withListedAlbum() //album.list() change the boolean
 	{
 		Artist artist;
 		artist.name( "An artist" );
@@ -130,7 +130,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	void testDescriptionCatalog_withTwoAlbums()
+	void testDescriptionCatalog_withTwoAlbums() //don't need to change anything with before code
 	{
 		Artist artist;
 		artist.name( "An artist" );
@@ -168,7 +168,7 @@ public:
 			album.trackList()
 		);
 	}
-	void testTrackList_withOneTrack()
+	void testTrackList_withOneTrack() //working!!
 	{
 		Artist artist;
 		artist.newTrack( "A track", 120u, "masters/AFile.wav" );
@@ -180,7 +180,7 @@ public:
 			album.trackList()
 		);
 	}
-	void testTrackList_withTwoTracks()
+	void testTrackList_withTwoTracks()	//not change code, all green! We have to refactor all!
 	{
 		Artist artist;
 		artist.newTrack( "Track 1", 120u, "masters/File1.wav" );
@@ -195,7 +195,7 @@ public:
 			album.trackList()
 		);
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( AddTrackAndAlbumTests )

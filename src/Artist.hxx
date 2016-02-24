@@ -1,8 +1,8 @@
 #include<sstream>
 #include<vector>
-#include "Track.hxx"
+//#include "Track.hxx"
 #include "Album.hxx"
-#include "Exceptions.hxx"
+//#include "Exceptions.hxx"
 
 typedef std::vector<Track*> Tracks;
 typedef std::vector<Album*> Albums;
@@ -60,20 +60,20 @@ public:
     	}
     	
     }
-    std::string catalogAlbum(){//Returns the diferent tracks of the catalog
+    std::string catalogAlbum(){//Returns the diferent albums of the catalogAlbums
         try{
-            if(_albumCatalog.size() == 0 && _catalog.size() == 0)
-                throw EmptyCatalogAlbumException();  //throw exception if the catalog is empty
+            if(_albumCatalog.size() == 0 )
+                throw EmptyCatalogException();  //throw exception if the catalog is empty
                 
             std::string result = "";
-            for(Albums::iterator it=_albumCatalog.begin(); it != _albumCatalog.end() ; it++){ //Iterate through catalog and concatenate the info of different tracks
-                result += "Album: " + (*it)->title() + " [unlisted]\n";
+            for(Albums::iterator it=_albumCatalog.begin(); it != _albumCatalog.end() ; it++){ //Iterate through catalog and concatenate the info of different albums
+                result += "Album: " + (*it)->title() + ((*it)->isListed() ? "":" [unlisted]") + "\n";   //unlisted will be a variable, not now
             }
             
             return result;
             
         }
-        catch(EmptyCatalogAlbumException &e){
+        catch(EmptyCatalogException &e){
             return e.what();
         }
         
@@ -107,9 +107,45 @@ public:
     const std::string descriptionCatalog(){
     	return description() + catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }
+    Album & findAlbum(const std::string &nameAlbum){
+        try{
+            Albums::iterator it;
+            for(it = _albumCatalog.begin(); it != _albumCatalog.end() ; ++it)
+            {
+                if((*it)->title() == nameAlbum)break;
+            }
+            if(it == _albumCatalog.end())throw NoAlbumInCatalogException();
+            return **it;
+        }
+        catch(NoAlbumInCatalogException &e)
+        {
+            throw e;
+        }
+    }
+    void assignTrackToAlbum(const std::string &nameTrack, const std::string &nameAlbum)
+    {
+        try{
+           Albums::iterator it;
+           for(it = _albumCatalog.begin() ; it != _albumCatalog.end() ; ++it){
+                if( (*it)->title() == nameAlbum ) break;
+           }
+           if( it == _albumCatalog.end() ) throw NoAlbumInCatalogException();
+           Tracks::iterator it2;
+           for(it2 = _catalog.begin() ; it2 != _catalog.end() ; ++it2)
+           {
+            if( (*it2)->title() == nameTrack) break;
+           }
+           (*it)->addTrack(*it2);
+        }
+        catch(NoAlbumInCatalogException &e)
+        {
+            throw e;
+        }
+    }
+    
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
 	Tracks _catalog;//Catalog of all the tracks of the artist
-    Albums _albumCatalog;
+    Albums _albumCatalog; //Catalog of all the albums of the artist
 };
