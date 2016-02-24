@@ -1,9 +1,11 @@
 #include<sstream>
 #include<vector>
 #include "Track.hxx"
+#include "Album.hxx"
 #include "Exceptions.hxx"
 
 typedef std::vector<Track*> Tracks;
+typedef std::vector<Album*> Albums;
 
 class Artist{
 public:
@@ -15,7 +17,11 @@ public:
 		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){//Iterate the catalog vector and free the memory
 			delete (*it);
 		}
+        for(Albums::iterator it=_albumCatalog.begin() ; it != _albumCatalog.end() ; it++){
+            delete (*it); //free all the vector of albums
+        }
 	}
+
 	std::string name(const std::string &setName = "-- No name --"){//returns the name of the artist
 		if(setName != "-- No name --"){				   //Compare if the name is set
 			_name = setName;
@@ -54,12 +60,35 @@ public:
     	}
     	
     }
+    std::string catalogAlbum(){//Returns the diferent tracks of the catalog
+        try{
+            if(_albumCatalog.size() == 0 && _catalog.size() == 0)
+                throw EmptyCatalogAlbumException();  //throw exception if the catalog is empty
+                
+            std::string result = "";
+            for(Albums::iterator it=_albumCatalog.begin(); it != _albumCatalog.end() ; it++){ //Iterate through catalog and concatenate the info of different tracks
+                result += "Album: " + (*it)->title() + "[unlisted]\n";
+            }
+            
+            return result;
+            
+        }
+        catch(EmptyCatalogAlbumException &e){
+            return e.what();
+        }
+        
+    }
     void newTrack(const std::string &trackName ,const unsigned int &duration,const std::string &fileName){//Add new track to the catalog of the artist
     	Track *t = new Track();
     	t->title(trackName);
     	t->duration(duration);
     	t->master(fileName);
     	_catalog.push_back(t);
+    }
+    void newAlbum(const std::string &albumName){
+        Album *a = new Album();
+        a->title(albumName);
+        _albumCatalog.push_back(a);
     }
     Track & findTrack(const std::string &nameTrack){  //Search a track by title , it returns a reference to this track
     	try{
@@ -76,10 +105,11 @@ public:
     	}
     }
     const std::string descriptionCatalog(){
-    	return description() + catalogTracks(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
+    	return description() + catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
 	Tracks _catalog;//Catalog of all the tracks of the artist
+    Albums _albumCatalog;
 };

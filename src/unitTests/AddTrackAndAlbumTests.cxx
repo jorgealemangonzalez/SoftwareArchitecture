@@ -12,7 +12,7 @@ public:
 		TEST_CASE( testFindTrack_withTwoTracks );
 		TEST_CASE( testFindTrack_whenTrackDoesNotExist );
 		TEST_CASE( testDescriptionCatalog_withTracks );
-		//TEST_CASE( testDescriptionCatalog_withUnlistedAlbum );
+		TEST_CASE( testDescriptionCatalog_withUnlistedAlbum );
 		//TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
 		//TEST_CASE( testDescriptionCatalog_withListedAlbum );
 		//TEST_CASE( testDescriptionCatalog_withTwoAlbums );
@@ -91,7 +91,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	/*
+	
 	void testDescriptionCatalog_withUnlistedAlbum()
 	{
 		Artist artist;
@@ -103,7 +103,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	void testDescriptionCatalog_withTrackAndAlbum()
+	/*void testDescriptionCatalog_withTrackAndAlbum()
 	{
 		Artist artist;
 		artist.name( "An artist" );
