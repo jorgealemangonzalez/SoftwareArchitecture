@@ -67,7 +67,7 @@ public:
                 
             std::string result = "";
             for(Albums::iterator it=_albumCatalog.begin(); it != _albumCatalog.end() ; it++){ //Iterate through catalog and concatenate the info of different tracks
-                result += "Album: " + (*it)->title() + "[unlisted]\n";
+                result += "Album: " + (*it)->title() + " [unlisted]\n";
             }
             
             return result;
