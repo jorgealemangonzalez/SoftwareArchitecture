@@ -1,0 +1,174 @@
+<html lang="en">
+
+
+    <head>
+        <h2> Indice</h2>
+        <button>    
+            <a href="S1/Seminar-1.html"> Seminar1 </a>
+        </button>
+        <button>    
+            <a href="S2/Seminar-2.html"> Seminar2 </a>
+        </button>
+        <button>    
+            <a href="S3/Seminar-3.html"> Seminar3 </a>
+        </button>
+		<button>    
+            <a href="../S4/Seminar-4.html"> Seminar4 </a>
+        </button>
+		<button>
+			<a href="RequirementsDoc.html">Requirements Document</a>
+		</button>
+    </head>
+    <body>
+		<h3>
+            Stakeholders
+        </h3>
+        <ul>
+            <li>
+                <b>Music consumers</b>: the most part of the users that will use the web. We will need to design all the architecture of the system
+                keeping in mind their necessities.
+            </li>
+            <li>
+                <b>SingAlong employees</b>: they will be able to change the information and maintain the web , beeing able to fix any conflict.
+            </li>
+            <li>
+                <b>PayPal</b>: We will use their API, so if they change something maybe we should change the cashier method.
+            </li>
+            <li>
+                <b>Postal Service</b>: we adjust to the mail proccess so if changed we need to kepp in mind. 
+            </li>
+            <li>
+                <b>Record label</b>: they specify prices and methods of payment to them.
+            </li>
+            <li>
+                <b>Artists</b>: should be easy to them to promote their products.
+            </li>
+        </ul>
+		<h3>Domain Requirements</h3>
+		<ul>
+			<li>
+				<h3>Glossary</h3>
+				<ul>
+					<h4>Specific terms</h4>
+					<ul>
+						<li><b>List of artist</b>: We will have a top-10 artist list and another one with artists related with each user style.</li>
+						<li><b>List</b>: We use a list of songs to create an album.</li>
+						<li><b>Albums</b>: songs are organised in albums. Customers can buy albums , custom albums with songs of diferents artists 
+							and listen them through streaming</li>
+						<li><b>Format of songs</b>: songs need to be updated in Wav format and can be downloaded in mp3 ang ogg. It is needed to 
+							be possible to add differents formats.</li>
+						<li><b>Users</b>: not only refer to costumers , also for artist.</li>
+						<li><b>Music Style</b>: it's used to relate artists and users, the style will determinate the actions of users</li>
+						<li><b>Promotional material</b>: it's used to promote new songs or albums from an artist with photos, text or videos</li>
+						<li><b>Player</b>: Songs can be streamed in the web</li>
+					</ul>
+					<h4>General terms</h4>
+					<ul>
+						<li><b>Stakeholders</b>: a person or entity that has a say in the development of the system. Examples include: future users, domain experts,
+							clients, existing software maintenance team, maintenance specialists for similar software on the market ...</li>
+						<li><b>Use case</b>: a service offered by the system with an associated set of functional requeriments.</li>
+						<li><b>Actor</b>: an entity external to the system (either a person or another software system) that initiates a use case.</li>  <li><b>Functional requirements</b>: Tell specifically the functionality of the system</li>  
+						<li><b>Non-functional requirements</b>: Describe the restrictions on the system</li>  
+						<li><b>Domain requirements</b>: Limitations of the application or the environment in which we'll operate</li>  
+					</ul>
+				</ul>
+			</li>
+			<li>
+				<h2>Non-Functional Requirements</h2>
+			<ul>
+				<li>
+					<h3>Product</h3>
+					<ul>
+						<h4>Usabilty</h4>
+							<li>The Consumer should become confortable with the web page in less than 4 days, the Artist in 5 days and the Operator in 5 days</li>
+							<li>The users should search more times artists through the lists that have in their personal page than through the search bar</li>
+							<li>When an Artist is confortable with the web page, he should be able to upload a new song or album in less than 5 min</li>
+							<li>When a consumer purchase an album, it shouldn't take more than 3 minutes</li>
+						<h4>Efficiency</h4>
+							<li>A search in the search bar can't take more than one second</li>
+							<li>The response of the server can't be longer than one second</li>
+							<li>The number of Users that can register shouldn't be less than one milion</li>
+							<li>The number of Songs that can be uploaded shouldn't be less than 500 thousand</li>
+						<h4>Robustness</h4>
+							<li>The number of times that user go back in a window because of an error (one after the other), can't be more than 3</li>
+							<li>After 15 minutes of the server shutted down, it has to be up</li>
+						<h4>Portability</h4>
+							<li>The platform should be operative in Android, iOS, Windows, Linux, Macintosh</li>
+							<li>The data base should be stored in several servers</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Organizational</h3>
+					<ul>
+						<h4>Deliverables</h4>
+							<li>Every two weeks the developers have to deliver new proper software</li>
+							<li>Every month will be a meeting between the client and developers</li>
+							<li>Every day will be a meeting between Software developers and the coach</li>
+						<h4>Implementation</h4>
+							<li>The system should be developed with C++, HTML, MySQL, Javascript, CSS</li>
+						<h4>Standards</h4>
+							<li>Delivers of each 2 weeks should be made throw a commit in github. And send the id of the commit to all participants</li>
+					</ul>
+				</li>
+				<li>
+				<h3>External</h3>
+						<ul>
+							<h4>Interoperability</h4>
+								<li>Shoud be able to interact with PayPal interface without problems.</li>
+								<li>The system need to guarantee that any purchase will be recived in less than 1 week. The postal service and the method of doing the request to them should be quickly.</li>
+							<h4>Ethics</h4>
+								<li>Should be guarantee that artist will upload only their own songs.</li>
+								
+							<h4>Social</h4>
+								<li>The web page can't allocate offensive songs, comments or any kind of data for any user.</li>
+								<li>The platform should be accesible to all kind of people</li>
+							<h4>Legislative</h4>
+								<li>The system should guarantee the intellectual property.</li>
+						</ul>
+					</li>
+			</ul>
+				
+			<h3>State Diagram: Consumer Class</h3>
+			<img src="S4/diagrama_consumer.jpg" alt="Use case diagram" style="max-width:80%;max-height:80%"/>
+			<h3>Activity Diagram: Publish Album </h3>
+			<img src="S4/Activity_diagram_1.jpg" alt="Use case diagram" style="max-width:80%;max-height:80%"/>
+			<h3>Activity Diagram: Purchase Album </h3>
+			<img src="S4/Activity_diagram_2.jpg" alt="Use case diagram" style="max-width:80%;max-height:80%"/>
+			<h3>Sequence Diagram: Purchase Album</h3>
+			<img src="S4/Sequence_diagram_1.jpg" alt="Use case diagram" style="max-width:80%;max-height:80%"/>
+		</li>
+		<li>
+		
+			<h3> Diagram:</h3>
+				<img src="S3/Seminar3.jpg" alt="Use case diagram" style="max-width:80%;max-height:80%"/>
+			<h3>Domain Requirements in text format</h3>
+			<ul>
+				<li>We don't know how the users will pay in the system, so the payment service should be an 
+				entity and the specifics ways of payment will inherit.</li>
+				<li>Consumers are directly related with artists by the lists of the main page</li>
+			</ul>
+		</li>
+			
+		</ul>
+		<h3>Use cases: Actors...</h3>
+			<ol>
+			<li>Comment album: User</li>
+			<li>Edit artist album: Operator, artist</li>
+			<li>Edit consumer album: Consumer</li>
+			<li>Refactor song: Operator,artist</li>
+			<li>Purchase album: Consumer,Postal service,Record label,Artist</li>
+			<li>Purchase a song: artist,Record Label,Consumer</li>
+			<li>Log in: User</li>
+			<li>Register: User</li>
+			<li>Search artist by name: User </li>
+			<li>Search artist by style: User </li>
+			<li>Upload Song: Artist,Operator,Postal Service</li>
+			<li>Manage promotial material: Artist,Operator </li>
+			<li>Play song: User</li>
+			<li>Subscribe to an artist/style: Consumer</li>
+			</ol>
+			<p>------------------------------------------</p>
+			<h3> Diagram:</h3>
+				<img src="S2/Diagrama.jpg" alt="Use case diagram" style="max-width:80%;max-height:80%"/>
+	</body>
+</html>
