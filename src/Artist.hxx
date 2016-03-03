@@ -110,12 +110,12 @@ public:
     Album & findAlbum(const std::string &nameAlbum){
         try{
             Albums::iterator it;
-            for(it = _albumCatalog.begin(); it != _albumCatalog.end() ; ++it)
+            for(it = _albumCatalog.begin(); it != _albumCatalog.end() ; ++it) //we iterate all the vector in search of an album
             {
-                if((*it)->title() == nameAlbum)break;
+                if((*it)->title() == nameAlbum)break;       //if the album exist, we breack the search and we return the reference to an Album
             }
-            if(it == _albumCatalog.end())throw NoAlbumInCatalogException();
-            return **it;
+            if(it == _albumCatalog.end())throw NoAlbumInCatalogException(); //if at the end of the iterator it's at the end of the array,  
+            return **it;                                                    //we throw an error.
         }
         catch(NoAlbumInCatalogException &e)
         {
