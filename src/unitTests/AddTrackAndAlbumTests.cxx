@@ -13,13 +13,13 @@ public:
 		TEST_CASE( testFindTrack_whenTrackDoesNotExist );
 		TEST_CASE( testDescriptionCatalog_withTracks );
 		TEST_CASE( testDescriptionCatalog_withUnlistedAlbum );
-		TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
+		/*TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
 		TEST_CASE( testDescriptionCatalog_withListedAlbum );
 		TEST_CASE( testDescriptionCatalog_withTwoAlbums );
 		TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
 		TEST_CASE( testTrackList_withNoTracks );
 		TEST_CASE( testTrackList_withOneTrack );
-		TEST_CASE( testTrackList_withTwoTracks );
+		TEST_CASE( testTrackList_withTwoTracks );*/
 	}
 	
 	void testCatalogTracks_withNoTracks()
@@ -103,7 +103,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	void testDescriptionCatalog_withTrackAndAlbum() //pass without change anything
+	/*void testDescriptionCatalog_withTrackAndAlbum() //pass without change anything
 	{
 		Artist artist;
 		artist.name( "An artist" );
@@ -194,7 +194,7 @@ public:
 			"2 - Track 2 [90s]\n",
 			album.trackList()
 		);
-	}
+	}*/
 	
 };
 

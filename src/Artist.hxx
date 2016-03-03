@@ -104,7 +104,7 @@ public:
     		throw e;
     	}
     }
-    const std::string descriptionCatalog(){
+    const std::string descriptionCatalog(){ //if a catalog it's empty it throws the error correct
     	return description() + catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }
     Album & findAlbum(const std::string &nameAlbum){
