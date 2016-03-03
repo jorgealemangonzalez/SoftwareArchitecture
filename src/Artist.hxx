@@ -112,7 +112,7 @@ public:
             Albums::iterator it;
             for(it = _albumCatalog.begin(); it != _albumCatalog.end() ; ++it)
             {
-                if((*it)->title() == nameAlbum);//break;
+                if((*it)->title() == nameAlbum)break;
             }
             if(it == _albumCatalog.end())throw NoAlbumInCatalogException();
             return **it;
