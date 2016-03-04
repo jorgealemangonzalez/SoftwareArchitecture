@@ -9,6 +9,8 @@ public:
     Album (){
         _listed = false;
         _title = "-- Untitled --";
+        _numberSong = 0;
+        _result="";
     }
     std::string title(const std::string &setTitle = "-- Untitled --"){//Get the title of the album
         if(setTitle != "-- Untitled --")//If the title is not set we set it to the value of the parameter
@@ -26,7 +28,7 @@ public:
     bool isListed(){//Return if the album is listed
     	return _listed;
     }
-    void addTrack(Track* newTrack)
+    void addTrack(Track * newTrack)
     {
       try{
         Tracks::iterator it;
@@ -35,6 +37,7 @@ public:
           if( (*it)->title() == newTrack->title()) throw trackExistInThisAlbum();
         }
         _albumTracks.push_back(newTrack);
+        _numberSong++;
       }
       catch(trackExistInThisAlbum &e)
       {
@@ -43,18 +46,17 @@ public:
 
     }
     const std::string trackList(){
-      std::string result = "";
-      int cont = 1 ;
       for(Tracks::iterator it = _albumTracks.begin() ; it != _albumTracks.end() ; it++){
         std::stringstream sDur,sCont;
         sDur << (*it)->duration();
-        sCont << cont ;
-        result += sCont.str() +" - " + (*it)->title() + " [" + sDur.str() + "s" + "]\n"; 
-        cont++;
+        sCont << _numberSong;
+        _result += sCont.str() +" - " + (*it)->title() + " [" + sDur.str() + "s" + "]\n"; 
       }
-      return result;
+      return _result;
     }
 private:
+  int _numberSong;
+  std::string _result;
 	std::string _title;//Title of the album
 	bool _listed;//Album is listed : true , or not : false
   Tracks _albumTracks;
