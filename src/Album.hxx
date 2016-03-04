@@ -49,7 +49,7 @@ public:
     }
     const std::string trackList(){
       std::string result = "";
-      int cont =1;
+      int cont =0;
       for(Tracks::iterator it = _albumTracks.begin() ; it != _albumTracks.end() ; it++){
         std::stringstream sDur,sCont;
         sDur << (*it)->duration();

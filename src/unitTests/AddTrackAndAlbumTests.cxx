@@ -18,8 +18,8 @@ public:
 		TEST_CASE( testDescriptionCatalog_withTwoAlbums );
 		TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
 		TEST_CASE( testTrackList_withNoTracks );
-		/*TEST_CASE( testTrackList_withOneTrack );
-		TEST_CASE( testTrackList_withTwoTracks );*/
+		TEST_CASE( testTrackList_withOneTrack );
+		/*TEST_CASE( testTrackList_withTwoTracks );*/
 	}
 	
 	void testCatalogTracks_withNoTracks()
@@ -168,7 +168,7 @@ public:
 			album.trackList()
 		);
 	}
-	/*void testTrackList_withOneTrack() //working!!
+	void testTrackList_withOneTrack() //working!!
 	{
 		Artist artist;
 		artist.newTrack( "A track", 120u, "masters/AFile.wav" );
@@ -180,7 +180,7 @@ public:
 			album.trackList()
 		);
 	}
-	void testTrackList_withTwoTracks()	//not change code, all green! We have to refactor all!
+	/*void testTrackList_withTwoTracks()	//not change code, all green! We have to refactor all!
 	{
 		Artist artist;
 		artist.newTrack( "Track 1", 120u, "masters/File1.wav" );
