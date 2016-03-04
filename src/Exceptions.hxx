@@ -14,7 +14,7 @@ class NoTrackInCatalogException : public std::exception{
 class NoAlbumInCatalogException : public std::exception{
 	public:
 		const char * what() const throw(){//Exception of empty catalog
-			return "The album does not exist";
+			return "The album doesnot exist";
 		}
 };
 

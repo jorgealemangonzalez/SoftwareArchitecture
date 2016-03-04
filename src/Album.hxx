@@ -22,7 +22,7 @@ public:
        	}
        	return _title;
     }
-    void list(){ // changes the status of the album to "Listed"
+    void list(){ // change the status of album to listed
    		_listed = true;
     }
     void unlist(){// changes the status of the album to "unListed"
