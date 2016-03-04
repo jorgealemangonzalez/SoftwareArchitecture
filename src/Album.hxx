@@ -48,7 +48,7 @@ public:
 
     }
     /*const*/ std::string trackList(){
-      std::string result = "";
+      std::string result = "a";
       int cont =1;
       for(Tracks::iterator it = _albumTracks.begin() ; it != _albumTracks.end() ; it++){
         std::stringstream sDur,sCont;
