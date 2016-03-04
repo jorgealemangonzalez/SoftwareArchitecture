@@ -37,7 +37,6 @@ public:
           if( (*it)->title() == newTrack->title()) throw trackExistInThisAlbum();
         }
         _albumTracks.push_back(newTrack);
-        _numberSong++;
       }
       catch(trackExistInThisAlbum &e)
       {
@@ -47,6 +46,7 @@ public:
     }
     const std::string trackList(){
       for(Tracks::iterator it = _albumTracks.begin() ; it != _albumTracks.end() ; it++){
+        _numberSong++;
         std::stringstream sDur,sCont;
         sDur << (*it)->duration();
         sCont << _numberSong;
