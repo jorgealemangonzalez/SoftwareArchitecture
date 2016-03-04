@@ -15,8 +15,8 @@ public:
 		TEST_CASE( testDescriptionCatalog_withUnlistedAlbum );
 		TEST_CASE( testDescriptionCatalog_withTrackAndAlbum );
 		TEST_CASE( testDescriptionCatalog_withListedAlbum );
-		/*TEST_CASE( testDescriptionCatalog_withTwoAlbums );
-		TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
+		TEST_CASE( testDescriptionCatalog_withTwoAlbums );
+		/*TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
 		TEST_CASE( testTrackList_withNoTracks );
 		TEST_CASE( testTrackList_withOneTrack );
 		TEST_CASE( testTrackList_withTwoTracks );*/
@@ -130,7 +130,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	/*void testDescriptionCatalog_withTwoAlbums() //don't need to change anything with before code
+	void testDescriptionCatalog_withTwoAlbums() //don't need to change anything with before code
 	{
 		Artist artist;
 		artist.name( "An artist" );
@@ -145,7 +145,7 @@ public:
 			artist.descriptionCatalog()
 		);
 	}
-	void testFindAlbum_whenAlbumDoesNotExist()
+	/*void testFindAlbum_whenAlbumDoesNotExist()
 	{
 		Artist artist;
 		try
