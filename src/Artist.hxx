@@ -107,7 +107,7 @@ public:
     const std::string descriptionCatalog(){ //if a catalog it's empty it throws the error correct
     	return description() + catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }
-    Album & findAlbum(const std::string &nameAlbum){
+    Album & findAlbum(const std::string &nameAlbum){ //always return the reference to an Object with tipe "Album"
         try{
             Albums::iterator it;
             for(it = _albumCatalog.begin(); it != _albumCatalog.end() ; ++it) //we iterate all the vector in search of an album
