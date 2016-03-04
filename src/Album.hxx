@@ -10,11 +10,6 @@ public:
         _listed = false;
         _title = "-- Untitled --";
     }
-    ~Album (){
-      for(Tracks::iterator it=_albumTracks.begin(); it != _albumTracks.end() ; it++){//Iterate the album memory and free
-        delete (*it);
-      }
-    }
     std::string title(const std::string &setTitle = "-- Untitled --"){//Get the title of the album
         if(setTitle != "-- Untitled --")//If the title is not set we set it to the value of the parameter
        	{
@@ -49,7 +44,7 @@ public:
     }
     const std::string trackList(){
       std::string result = "";
-      int cont =0;
+      int cont = 1 ;
       for(Tracks::iterator it = _albumTracks.begin() ; it != _albumTracks.end() ; it++){
         std::stringstream sDur,sCont;
         sDur << (*it)->duration();
