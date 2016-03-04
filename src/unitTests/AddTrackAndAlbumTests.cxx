@@ -19,7 +19,7 @@ public:
 		TEST_CASE( testFindAlbum_whenAlbumDoesNotExist );
 		TEST_CASE( testTrackList_withNoTracks );
 		TEST_CASE( testTrackList_withOneTrack );
-		/*TEST_CASE( testTrackList_withTwoTracks );*/
+		TEST_CASE( testTrackList_withTwoTracks );
 	}
 	
 	void testCatalogTracks_withNoTracks()
@@ -180,7 +180,7 @@ public:
 			album.trackList()
 		);
 	}
-	/*void testTrackList_withTwoTracks()	//not change code, all green! We have to refactor all!
+	void testTrackList_withTwoTracks()	//not change code, all green! We have to refactor all!
 	{
 		Artist artist;
 		artist.newTrack( "Track 1", 120u, "masters/File1.wav" );
@@ -194,7 +194,7 @@ public:
 			"2 - Track 2 [90s]\n",
 			album.trackList()
 		);
-	}*/
+	}
 	
 };
 
