@@ -122,7 +122,7 @@ public:
             throw e;
         }
     }
-    void assignTrackToAlbum(const std::string &nameTrack, const std::string &nameAlbum)
+    void assignTrackToAlbum(const std::string &nameTrack, const std::string &nameAlbum) //puts a track into an album
     {
         try{
            Albums::iterator it;

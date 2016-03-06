@@ -9,8 +9,6 @@ public:
     Album (){
         _listed = false;
         _title = "-- Untitled --";
-        _numberSong = 0;
-        _result="";
     }
     std::string title(const std::string &setTitle = "-- Untitled --"){//Get the title of the album
         if(setTitle != "-- Untitled --")//If the title is not set we set it to the value of the parameter
@@ -44,19 +42,19 @@ public:
       }
 
     }
-    const std::string trackList(){
-      for(Tracks::iterator it = _albumTracks.begin() ; it != _albumTracks.end() ; it++){
-        _numberSong++;
+    const std::string trackList(){//Prints the tracks of the album with their title , number of song and duration
+      int i = 1;
+      std::string _result;
+      for(Tracks::iterator it = _albumTracks.begin(); it != _albumTracks.end() ; it++,++i){
+        
         std::stringstream sDur,sCont;
         sDur << (*it)->duration();
-        sCont << _numberSong;
+        sCont << i;
         _result += sCont.str() +" - " + (*it)->title() + " [" + sDur.str() + "s" + "]\n"; 
       }
       return _result;
     }
 private:
-  int _numberSong;
-  std::string _result;
 	std::string _title;//Title of the album
 	bool _listed;//Album is listed : true , or not : false
   Tracks _albumTracks;
