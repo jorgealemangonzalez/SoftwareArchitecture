@@ -4,6 +4,6 @@ public:
         
     }
     std::string catalog(){
-        return "NO";
+        return "";
     }
 };
