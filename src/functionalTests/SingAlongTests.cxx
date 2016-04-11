@@ -71,6 +71,7 @@ public:
 			business.catalog()
 		);
 	}
+	
 	void testCatalog_withGroupArtist()
 	{
 		SingAlong business;

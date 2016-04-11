@@ -3,7 +3,7 @@ public:
     SingAlong(){
         
     }
-    std::string catalog(){
+    std::string catalog(){          //Returns a list of artist
         return "";
     }
 };
