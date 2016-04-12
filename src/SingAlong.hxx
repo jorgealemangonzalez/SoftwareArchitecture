@@ -30,8 +30,11 @@ public:
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
     
-    Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog
-    	throw artistNotFoundInCatalogException();
+    Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
+		for(std::vector<Artist*>::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
+			if(name == (*it)->name())return (**it);
+		}
+		throw artistNotFoundInCatalogException();
     }
 private:
     std::vector<Artist*> _catalog;		//List of different artists of the web page
