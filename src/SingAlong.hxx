@@ -30,7 +30,7 @@ public:
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
     
-    void findArtist(const std::string &name ){		//Search for an artist inside the catalog
+    Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog
     	throw artistNotFoundInCatalogException();
     }
 private:
