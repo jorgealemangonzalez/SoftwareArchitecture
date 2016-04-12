@@ -12,7 +12,7 @@ public:
             delete(*it);
         } 
     }
-    std::string catalog(){          //Returns a list of artist with their description
+    std::string catalog(){          //Returns a list of artist
         std::vector<Artist*>::iterator it;
         std::string result("");
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
