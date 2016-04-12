@@ -24,9 +24,7 @@ public:
     void createArtist(const std::string &artist , bool isGroup){	//Create an artis and changes is status to grouped ( if isGroup is true ) 
         Artist *a = new Artist();
         a->name(artist);
-        if(isGroup){
-            a->createGroup();
-        }
+        
         _catalog.push_back(a);
     }
 private:
