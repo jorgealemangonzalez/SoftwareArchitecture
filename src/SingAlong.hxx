@@ -1,19 +1,21 @@
 #include "Artist.hxx"
 #include<vector>
 
+typedef std::vector<Artist*> Artists ;
+
 class SingAlong{
 public:
     SingAlong(){
         
     }
     ~SingAlong(){
-        std::vector<Artist*>::iterator it;
+        Artists::iterator it;
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
             delete(*it);
         } 
     }
     std::string catalog(){          //Returns a list of artist with their description
-        std::vector<Artist*>::iterator it;
+        Artists::iterator it;
         std::string result("");
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
             result+= (*it)->description();
@@ -31,11 +33,11 @@ public:
     }
     
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
-		for(std::vector<Artist*>::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
-			if(name == (*it)->name())return (**it);
+		for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
+			if(name == (*it)->name())return (**it);		//If the name is the same we found the artist
 		}
 		throw artistNotFoundInCatalogException();
     }
 private:
-    std::vector<Artist*> _catalog;		//List of different artists of the web page
+    Artists _catalog;		//List of different artists of the web page
 };
