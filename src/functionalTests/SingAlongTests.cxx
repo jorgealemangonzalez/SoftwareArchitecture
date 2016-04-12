@@ -10,7 +10,7 @@ public:
 		TEST_CASE( testCatalog_withNoArtists );
 		TEST_CASE( testCatalog_withSoloArtist );
 		TEST_CASE( testCatalog_withGroupArtist );
-		//TEST_CASE( testCatalog_withTwoArtists );
+		TEST_CASE( testCatalog_withTwoArtists );
 		//TEST_CASE( testFindArtist_whenNoArtist );
 		//TEST_CASE( testFindArtist_whenArtistExists );
 		//TEST_CASE( testCatalog_withTrack );
@@ -82,7 +82,6 @@ public:
 			business.catalog()
 		);
 	}
-	/*
 	void testCatalog_withTwoArtists()
 	{
 		SingAlong business;
@@ -95,6 +94,7 @@ public:
 			business.catalog()
 		);
 	}
+	/*
 	void testFindArtist_whenNoArtist()
 	{
 		SingAlong business;
