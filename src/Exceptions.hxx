@@ -24,3 +24,10 @@ class trackExistInThisAlbum : public std::exception{
 			return "The track already exist";
 		}
 };
+
+class artistNotFoundInCatalogException : public std::exception{
+	public:
+		const char * what() const throw(){
+			return "The artist does not exist";
+		}
+};

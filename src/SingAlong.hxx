@@ -31,7 +31,7 @@ public:
     }
     
     void findArtist(const std::string &name ){
-    	
+    	throw artistNotFoundInCatalogException();
     }
 private:
     std::vector<Artist*> _catalog;		//List of different artists of the web page
