@@ -27,7 +27,7 @@ public:
         if(isGroup){			
         	a->createGroup();
         }
-        _catalog.push_back(a);
+    	_catalog.push_back(a);			//Put the artist in the catalog
     }
 private:
     std::vector<Artist*> _catalog;		//List of different artists of the web page
