@@ -27,7 +27,7 @@ class trackExistInThisAlbum : public std::exception{
 
 class artistNotFoundInCatalogException : public std::exception{
 	public:
-		const char * what() const throw(){
+		const char * what() const throw(){	//Exception of error finding artist on the catalog of SingAlong
 			return "The artist does not exist";
 		}
 };
