@@ -11,7 +11,7 @@ public:
 		TEST_CASE( testCatalog_withSoloArtist );
 		TEST_CASE( testCatalog_withGroupArtist );
 		TEST_CASE( testCatalog_withTwoArtists );
-		//TEST_CASE( testFindArtist_whenNoArtist );
+		TEST_CASE( testFindArtist_whenNoArtist );
 		//TEST_CASE( testFindArtist_whenArtistExists );
 		//TEST_CASE( testCatalog_withTrack );
 		//TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
@@ -94,7 +94,6 @@ public:
 			business.catalog()
 		);
 	}
-	/*
 	void testFindArtist_whenNoArtist()
 	{
 		SingAlong business;
@@ -108,6 +107,7 @@ public:
 			ASSERT_EQUALS( "The artist does not exist", e.what() );
 		}
 	}
+	/*
 	void testFindArtist_whenArtistExists()
 	{
 		SingAlong business;

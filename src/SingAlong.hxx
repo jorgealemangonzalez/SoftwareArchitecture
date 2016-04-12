@@ -29,6 +29,10 @@ public:
         }
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
+    
+    void findArtist(const std::string &name ){
+    	
+    }
 private:
     std::vector<Artist*> _catalog;		//List of different artists of the web page
 };
