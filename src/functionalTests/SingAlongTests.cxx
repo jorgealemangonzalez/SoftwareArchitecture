@@ -13,7 +13,7 @@ public:
 		TEST_CASE( testCatalog_withTwoArtists );
 		TEST_CASE( testFindArtist_whenNoArtist );
 		TEST_CASE( testFindArtist_whenArtistExists );
-		//TEST_CASE( testCatalog_withTrack );
+		TEST_CASE( testCatalog_withTrack );
 		//TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
 		//TEST_CASE( testCatalog_withTracksOfDifferentArtists );
 		//TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
@@ -118,7 +118,7 @@ public:
 			artist.name()
 		);
 	}
-	/*
+	
 	void testCatalog_withTrack()
 	{
 		SingAlong business;
@@ -134,7 +134,7 @@ public:
 			business.catalog()
 		);
 	}
-	void testCatalog_withTwoTracksWithDifferentDuration()
+	/*void testCatalog_withTwoTracksWithDifferentDuration()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
