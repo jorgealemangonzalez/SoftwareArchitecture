@@ -58,10 +58,10 @@ public:
         album.list();   //when we have the album, we put it as listed
     }
 
-    void unlistAlbum( const std::string &nameArtist, const std::string &nameAlbum){//We list a given album from an artist
+    void unlistAlbum( const std::string &nameArtist, const std::string &nameAlbum){//We unlist a given album from an artist
         Artist & artist = this->findArtist(nameArtist); //first we find the artist 
         Album & album = artist.findAlbum(nameAlbum);    //when we have the artist, we find if he has an album with that name
-        album.unlist();   //when we have the album, we put it as listed
+        album.unlist();   //when we have the album, we put it as unlisted
     }
 
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
