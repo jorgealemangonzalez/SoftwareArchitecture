@@ -23,7 +23,7 @@ public:
 		TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
 		TEST_CASE( testCatalog_withTwoAlbums );
 		TEST_CASE( testCatalog_albumWithTracks );
-		//TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
+		TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
 	}
 
 	/**
@@ -288,7 +288,7 @@ public:
 			business.catalog()
 		);
 	}
-	/*void testIncludeTrackOnAlbum_whenAlbumDoesNotExist()
+	void testIncludeTrackOnAlbum_whenAlbumDoesNotExist()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
@@ -306,7 +306,7 @@ public:
 			ASSERT_EQUALS( "The album does not exist", e.what() );
 		}
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( SingAlongTests )
