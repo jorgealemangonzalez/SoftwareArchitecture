@@ -17,10 +17,10 @@ public:
             delete(*it);
         } 
     }
-    std::string catalog(){          //Returns a list of artist with their description
+    std::string catalog(){          //Returns a list of artist with their description and the description of their tracks and albums
         Artists::iterator it;
         std::string result("");
-        for(it = _catalog.begin();it != _catalog.end() ; ++it){
+        for(it = _catalog.begin();it != _catalog.end() ; ++it){ 
             result+= (*it)->descriptionCatalog();
         }
         return result;
