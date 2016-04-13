@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testFindArtist_whenNoArtist );
 		TEST_CASE( testFindArtist_whenArtistExists );
 		TEST_CASE( testCatalog_withTrack );
-		//TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
+		TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
 		//TEST_CASE( testCatalog_withTracksOfDifferentArtists );
 		//TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
 		//TEST_CASE( testAddTrack_whenMasterDoesNotExist );
@@ -134,7 +134,7 @@ public:
 			business.catalog()
 		);
 	}
-	/*void testCatalog_withTwoTracksWithDifferentDuration()
+	void testCatalog_withTwoTracksWithDifferentDuration()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
@@ -154,7 +154,7 @@ public:
 			business.catalog()
 		);
 	}
-	void testCatalog_withTracksOfDifferentArtists()
+	/*void testCatalog_withTracksOfDifferentArtists()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
