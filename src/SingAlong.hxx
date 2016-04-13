@@ -58,6 +58,12 @@ public:
         album.list();   //when we have the album, we put it as listed
     }
 
+    void unlistAlbum( const std::string &nameArtist, const std::string &nameAlbum){//We list a given album from an artist
+        Artist & artist = this->findArtist(nameArtist); //first we find the artist 
+        Album & album = artist.findAlbum(nameAlbum);    //when we have the artist, we find if he has an album with that name
+        album.list();   //when we have the album, we put it as listed
+    }
+
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
 		for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
 			if(name == (*it)->name())return (**it);		//If the name is the same we found the artist
