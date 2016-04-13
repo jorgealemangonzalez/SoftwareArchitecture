@@ -22,7 +22,7 @@ public:
 		TEST_CASE( testCatalog_withListedAlbum );
 		TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
 		TEST_CASE( testCatalog_withTwoAlbums );
-		//TEST_CASE( testCatalog_albumWithTracks );
+		TEST_CASE( testCatalog_albumWithTracks );
 		//TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
 	}
 
@@ -261,7 +261,7 @@ public:
 			business.catalog()
 		);
 	}
-	/*void testCatalog_albumWithTracks()
+	void testCatalog_albumWithTracks()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
@@ -288,7 +288,7 @@ public:
 			business.catalog()
 		);
 	}
-	void testIncludeTrackOnAlbum_whenAlbumDoesNotExist()
+	/*void testIncludeTrackOnAlbum_whenAlbumDoesNotExist()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
