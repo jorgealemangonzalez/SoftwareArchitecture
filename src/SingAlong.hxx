@@ -52,6 +52,12 @@ public:
         Artist & a = this->findArtist(nameArtist);   //find the artist
         a.newAlbum(nameAlbum);  //create the new album
     }
+    void listAlbum( const std::string &nameArtist, const std::string &nameAlbum){
+        Artist & artist = this->findArtist(nameArtist);
+        Album & album = artist.findAlbum(nameAlbum);
+        //lbum.list();
+    }
+
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
 		for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
 			if(name == (*it)->name())return (**it);		//If the name is the same we found the artist

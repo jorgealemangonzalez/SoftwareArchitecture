@@ -19,7 +19,7 @@ public:
 		TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
 		TEST_CASE( testAddTrack_whenMasterDoesNotExist );
 		TEST_CASE( testCatalog_withUnlistedAlbum );
-		//TEST_CASE( testCatalog_withListedAlbum );
+		TEST_CASE( testCatalog_withListedAlbum );
 		//TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
 		//TEST_CASE( testCatalog_withTwoAlbums );
 		//TEST_CASE( testCatalog_albumWithTracks );
@@ -220,7 +220,7 @@ public:
 			business.catalog()
 		);
 	}
-	/*void testCatalog_withListedAlbum()
+	void testCatalog_withListedAlbum()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
@@ -233,7 +233,7 @@ public:
 			business.catalog()
 		);
 	}
-	void testCatalog_withAlbumListedAndUnlisted()
+	/*void testCatalog_withAlbumListedAndUnlisted()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
