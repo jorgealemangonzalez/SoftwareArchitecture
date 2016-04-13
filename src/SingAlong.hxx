@@ -49,7 +49,7 @@ public:
         
     }
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){
-        Artist a = this->findArtist(nameArtist);
+        Artist & a = this->findArtist(nameArtist);
         a.newAlbum(nameAlbum);
     }
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
