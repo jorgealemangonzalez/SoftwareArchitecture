@@ -15,7 +15,7 @@ public:
 		TEST_CASE( testFindArtist_whenArtistExists );
 		TEST_CASE( testCatalog_withTrack );
 		TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
-		//TEST_CASE( testCatalog_withTracksOfDifferentArtists );
+		TEST_CASE( testCatalog_withTracksOfDifferentArtists );
 		//TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
 		//TEST_CASE( testAddTrack_whenMasterDoesNotExist );
 		//TEST_CASE( testCatalog_withUnlistedAlbum );
@@ -154,7 +154,7 @@ public:
 			business.catalog()
 		);
 	}
-	/*void testCatalog_withTracksOfDifferentArtists()
+	void testCatalog_withTracksOfDifferentArtists()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
@@ -180,7 +180,7 @@ public:
 			business.catalog()
 		);
 	}
-	void testAddTrack_toArtistThatDoesNotExist()
+	/*void testAddTrack_toArtistThatDoesNotExist()
 	{
 		SingAlong business;
 		createMasterFile( "aMasterFile.wav", 30 );

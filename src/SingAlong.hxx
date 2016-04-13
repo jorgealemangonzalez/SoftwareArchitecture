@@ -27,6 +27,7 @@ public:
     }
     
     void createArtist(const std::string &artist , bool isGroup){	//Create an artis and changes is status to grouped ( if isGroup is true ) and save it into the catalog
+        if(_catalog.size() > 0)return;
         Artist *a = new Artist();		
         a->name(artist);
         if(isGroup){			
