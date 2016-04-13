@@ -34,12 +34,12 @@ public:
         }
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
-    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){
-        Artist & a = this->findArtist(nameArtist);
+    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){ //Creat a new track and it's added to the catalog of his artist
+        Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name
         unsigned int duration;
         std::ifstream infile;
         std::string _nameFile = "masters/" + nameFile;    
-        infile.open(_nameFile.c_str()); 
+        infile.open(_nameFile.c_str());     //open the file and read the track duration
         infile >> duration;
         infile.close();
         a.newTrack(nameTrack ,duration ,_nameFile);
