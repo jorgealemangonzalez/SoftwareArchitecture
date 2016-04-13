@@ -48,9 +48,9 @@ public:
         a.newTrack(nameTrack ,duration ,_nameFile);
         
     }
-    void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){
-        Artist & a = this->findArtist(nameArtist);
-        a.newAlbum(nameAlbum);
+    void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
+        Artist & a = this->findArtist(nameArtist);   //find the artist
+        a.newAlbum(nameAlbum);  //create the new album
     }
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
 		for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
