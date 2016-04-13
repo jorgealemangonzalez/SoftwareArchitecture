@@ -18,7 +18,7 @@ public:
 		TEST_CASE( testCatalog_withTracksOfDifferentArtists );
 		TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
 		TEST_CASE( testAddTrack_whenMasterDoesNotExist );
-		//TEST_CASE( testCatalog_withUnlistedAlbum );
+		TEST_CASE( testCatalog_withUnlistedAlbum );
 		//TEST_CASE( testCatalog_withListedAlbum );
 		//TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
 		//TEST_CASE( testCatalog_withTwoAlbums );
@@ -208,7 +208,7 @@ public:
 			ASSERT_EQUALS( "The master file does not exist", e.what() );
 		}
 	}
-	/*void testCatalog_withUnlistedAlbum()
+	void testCatalog_withUnlistedAlbum()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );
@@ -220,7 +220,7 @@ public:
 			business.catalog()
 		);
 	}
-	void testCatalog_withListedAlbum()
+	/*void testCatalog_withListedAlbum()
 	{
 		SingAlong business;
 		business.createArtist( "An artist", false );

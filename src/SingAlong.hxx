@@ -42,12 +42,15 @@ public:
         infile.open(_nameFile.c_str());     //open the file and read the track duration
         if(!infile.is_open()){              //if the file it's not open for an error or it doesn't exist, we throw an error and don't create a new track!
             throw masterDoesNotExist();
-            return;
         }
         infile >> duration; //use >> for read the data of the file and store it to "duration"
         infile.close(); //close the opened file
         a.newTrack(nameTrack ,duration ,_nameFile);
         
+    }
+    void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){
+        Artist a = this->findArtist(nameArtist);
+        a.newAlbum(nameAlbum);
     }
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
 		for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
