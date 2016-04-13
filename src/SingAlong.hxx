@@ -63,9 +63,9 @@ public:
         Album & album = artist.findAlbum(nameAlbum);    //when we have the artist, we find if he has an album with that name
         album.unlist();   //when we have the album, we put it as unlisted
     }
-    void includeTrackOnAlbum( const std::string &nameArtist, const std::string &nameTrack , const std::string &nameAlbum ){
-        Artist & artist = this->findArtist(nameArtist);
-        artist.assignTrackToAlbum(nameTrack,nameAlbum);
+    void includeTrackOnAlbum( const std::string &nameArtist, const std::string &nameTrack , const std::string &nameAlbum ){ //include a track to a specific album from an artist
+        Artist & artist = this->findArtist(nameArtist); //finde the artist 
+        artist.assignTrackToAlbum(nameTrack,nameAlbum);     //assign a track to an album, specification in Artist class
     }
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
 		for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
