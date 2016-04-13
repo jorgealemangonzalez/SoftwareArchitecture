@@ -55,7 +55,7 @@ public:
     void listAlbum( const std::string &nameArtist, const std::string &nameAlbum){
         Artist & artist = this->findArtist(nameArtist);
         Album & album = artist.findAlbum(nameAlbum);
-        //lbum.list();
+        album.list();
     }
 
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
