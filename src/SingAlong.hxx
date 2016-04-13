@@ -40,6 +40,10 @@ public:
         std::ifstream infile;
         std::string _nameFile = "masters/" + nameFile;    
         infile.open(_nameFile.c_str());     //open the file and read the track duration
+        if(!infile.is_open()){
+            throw masterDoesNotExist();
+            return;
+        }
         infile >> duration; //use >> for read the data of the file and store it to "duration"
         infile.close(); //close the opened file
         a.newTrack(nameTrack ,duration ,_nameFile);

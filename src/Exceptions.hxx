@@ -31,3 +31,10 @@ class artistNotFoundInCatalogException : public std::exception{
 			return "The artist does not exist";
 		}
 };
+
+class masterDoesNotExist : public std::exception{
+	public:
+		const char * what() const throw(){ //exception if we can't open a master file
+			return "The masterfile does not exist";
+		}
+};
