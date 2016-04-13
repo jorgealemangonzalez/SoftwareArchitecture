@@ -21,7 +21,6 @@ public:
         Artists::iterator it;
         std::string result("");
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
-            //result += (*it)->description();
             result+= (*it)->descriptionCatalog();
         }
         return result;
@@ -36,20 +35,14 @@ public:
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
     void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){
-        //Artist a = this->findArtist(nameArtist);
-        Artist *a = new Artist();
-        for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
-            if(nameArtist == (*it)->name()){
-                a = *it;
-            }      
-        }
+        Artist & a = this->findArtist(nameArtist);
         unsigned int duration;
         std::ifstream infile;
-        std::string _nameFile = "masters/ " + nameFile;    
-        infile.open("masters/aMasterFile.wav"); //pasar la variable para abrir el fichero
+        std::string _nameFile = "masters/" + nameFile;    
+        infile.open(_nameFile.c_str()); 
         infile >> duration;
         infile.close();
-        a->newTrack(nameTrack ,duration ,_nameFile);
+        a.newTrack(nameTrack ,duration ,_nameFile);
         
     }
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
