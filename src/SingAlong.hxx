@@ -40,7 +40,7 @@ public:
         std::ifstream infile;
         std::string _nameFile = "masters/" + nameFile;    
         infile.open(_nameFile.c_str());     //open the file and read the track duration
-        if(!infile.is_open()){
+        if(!infile.is_open()){              //if the file it's not open for an error or it doesn't exist, we throw an error and don't create a new track!
             throw masterDoesNotExist();
             return;
         }
