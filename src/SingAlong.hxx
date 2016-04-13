@@ -35,7 +35,7 @@ public:
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
     void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){ //Creat a new track and it's added to the catalog of his artist
-        Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name
+        Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
         unsigned int duration;
         std::ifstream infile;
         std::string _nameFile = "masters/" + nameFile;    
@@ -49,7 +49,7 @@ public:
 		for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
 			if(name == (*it)->name())return (**it);		//If the name is the same we found the artist
 		}
-		throw artistNotFoundInCatalogException();
+		throw artistNotFoundInCatalogException(); 
     }
 private:
     Artists _catalog;		//List of different artists of the web page
