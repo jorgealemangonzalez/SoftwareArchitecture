@@ -10,11 +10,6 @@ public:
         _listed = false;
         _title = "-- Untitled --";
     }
-    ~Album (){
-      for(Tracks::iterator it=_albumTracks.begin(); it != _albumTracks.end() ; it++){//Iterate the album memory and free
-        delete (*it);
-      }
-    }
     std::string title(const std::string &setTitle = "-- Untitled --"){//Get the title of the album
         if(setTitle != "-- Untitled --")//If the title is not set we set it to the value of the parameter
        	{
@@ -22,7 +17,7 @@ public:
        	}
        	return _title;
     }
-    void list(){ // changes the status of the album to "Listed"
+    void list(){ // change the status of album to listed
    		_listed = true;
     }
     void unlist(){// changes the status of the album to "unListed"
@@ -31,7 +26,7 @@ public:
     bool isListed(){//Return if the album is listed
     	return _listed;
     }
-    void addTrack(Track* newTrack)
+    void addTrack(Track * newTrack)
     {
       try{
         Tracks::iterator it;
@@ -47,17 +42,17 @@ public:
       }
 
     }
-    /*const*/ std::string trackList(){
-      std::string result = "";
-      int cont =1;
-      for(Tracks::iterator it = _albumTracks.begin() ; it != _albumTracks.end() ; it++){
+    const std::string trackList(){//Prints the tracks of the album with their title , number of song and duration
+      int i = 1;
+      std::string _result;
+      for(Tracks::iterator it = _albumTracks.begin(); it != _albumTracks.end() ; it++,++i){
+        
         std::stringstream sDur,sCont;
         sDur << (*it)->duration();
-        sCont << cont ;
-        result += sCont.str() +" - " + (*it)->title() + " [" + sDur.str() + "s" + "]\n"; 
-        cont++;
+        sCont << i;
+        _result += sCont.str() +" - " + (*it)->title() + " [" + sDur.str() + "s" + "]\n"; 
       }
-      return result;
+      return _result;
     }
 private:
 	std::string _title;//Title of the album

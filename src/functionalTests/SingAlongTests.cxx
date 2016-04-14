@@ -1,29 +1,29 @@
 #include "MiniCppUnit.hxx"
 #include "LibFileSystem.hxx"
 #include <fstream>
-
+#include "SingAlong.hxx"
 class SingAlongTests : public TestFixture<SingAlongTests>
 {
 public:
 	TEST_FIXTURE( SingAlongTests )
 	{
-		//TEST_CASE( testCatalog_withNoArtists );
-		//TEST_CASE( testCatalog_withSoloArtist );
-		//TEST_CASE( testCatalog_withGroupArtist );
-		//TEST_CASE( testCatalog_withTwoArtists );
-		//TEST_CASE( testFindArtist_whenNoArtist );
-		//TEST_CASE( testFindArtist_whenArtistExists );
-		//TEST_CASE( testCatalog_withTrack );
-		//TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
-		//TEST_CASE( testCatalog_withTracksOfDifferentArtists );
-		//TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
-		//TEST_CASE( testAddTrack_whenMasterDoesNotExist );
-		//TEST_CASE( testCatalog_withUnlistedAlbum );
-		//TEST_CASE( testCatalog_withListedAlbum );
-		//TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
-		//TEST_CASE( testCatalog_withTwoAlbums );
-		//TEST_CASE( testCatalog_albumWithTracks );
-		//TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
+		TEST_CASE( testCatalog_withNoArtists );
+		TEST_CASE( testCatalog_withSoloArtist );
+		TEST_CASE( testCatalog_withGroupArtist );
+		TEST_CASE( testCatalog_withTwoArtists );
+		TEST_CASE( testFindArtist_whenNoArtist );
+		TEST_CASE( testFindArtist_whenArtistExists );
+		TEST_CASE( testCatalog_withTrack );
+		TEST_CASE( testCatalog_withTwoTracksWithDifferentDuration );
+		TEST_CASE( testCatalog_withTracksOfDifferentArtists );
+		TEST_CASE( testAddTrack_toArtistThatDoesNotExist );
+		TEST_CASE( testAddTrack_whenMasterDoesNotExist );
+		TEST_CASE( testCatalog_withUnlistedAlbum );
+		TEST_CASE( testCatalog_withListedAlbum );
+		TEST_CASE( testCatalog_withAlbumListedAndUnlisted );
+		TEST_CASE( testCatalog_withTwoAlbums );
+		TEST_CASE( testCatalog_albumWithTracks );
+		TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
 	}
 
 	/**
@@ -50,7 +50,7 @@ public:
 		os << duration << std::endl;
 	}
 
-	/*
+	
 	void testCatalog_withNoArtists()
 	{
 		SingAlong business;
@@ -60,6 +60,7 @@ public:
 			business.catalog()
 		);
 	}
+	
 	void testCatalog_withSoloArtist()
 	{
 		SingAlong business;
@@ -70,6 +71,7 @@ public:
 			business.catalog()
 		);
 	}
+	
 	void testCatalog_withGroupArtist()
 	{
 		SingAlong business;
@@ -105,6 +107,7 @@ public:
 			ASSERT_EQUALS( "The artist does not exist", e.what() );
 		}
 	}
+	
 	void testFindArtist_whenArtistExists()
 	{
 		SingAlong business;
@@ -115,6 +118,7 @@ public:
 			artist.name()
 		);
 	}
+	
 	void testCatalog_withTrack()
 	{
 		SingAlong business;
@@ -302,7 +306,7 @@ public:
 			ASSERT_EQUALS( "The album does not exist", e.what() );
 		}
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( SingAlongTests )

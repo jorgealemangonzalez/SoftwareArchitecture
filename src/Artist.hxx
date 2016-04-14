@@ -68,6 +68,7 @@ public:
             std::string result = "";
             for(Albums::iterator it=_albumCatalog.begin(); it != _albumCatalog.end() ; it++){ //Iterate through catalog and concatenate the info of different albums
                 result += "Album: " + (*it)->title() + ((*it)->isListed() ? "":" [unlisted]") + "\n";   //unlisted will be a variable, not now
+                result += (*it)->trackList(); //add the list of tracks in an album
             }
             
             return result;
@@ -107,7 +108,7 @@ public:
     const std::string descriptionCatalog(){ //if a catalog it's empty it throws the error correct
     	return description() + catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }
-    Album & findAlbum(const std::string &nameAlbum){
+    Album & findAlbum(const std::string &nameAlbum){ //always return the reference to an Object with tipe "Album"
         try{
             Albums::iterator it;
             for(it = _albumCatalog.begin(); it != _albumCatalog.end() ; ++it) //we iterate all the vector in search of an album
@@ -122,7 +123,7 @@ public:
             throw e;
         }
     }
-    void assignTrackToAlbum(const std::string &nameTrack, const std::string &nameAlbum)
+    void assignTrackToAlbum(const std::string &nameTrack, const std::string &nameAlbum) //puts a track into an album
     {
         try{
            Albums::iterator it;
@@ -141,6 +142,7 @@ public:
         {
             throw e;
         }
+
     }
     
 private:
