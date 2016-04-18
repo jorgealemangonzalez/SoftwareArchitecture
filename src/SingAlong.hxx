@@ -9,19 +9,8 @@ typedef std::vector<Artist*> Artists ;
 class SingAlong{
 public:
     SingAlong(){
-        //const char * fakeCompressions[] = {
         std::vector< std::string > fakeCompressions;
-        std::string common = "compressed/An artist - A track ";
-        fakeCompressions.push_back(common + "[128].mp3");
-        fakeCompressions.push_back(common + "[128].ogg");
-        fakeCompressions.push_back(common + "[192].mp3");
-        fakeCompressions.push_back(common + "[192].ogg");
-        fakeCompressions.push_back(common + "[96].mp3");
-        fakeCompressions.push_back(common + "[96].ogg");
-
-        for(unsigned int i = 0 ; i < fakeCompressions.size() ; ++i){
-            std::ofstream newfile( fakeCompressions[i].c_str() );
-        }
+       generateCompressions(fakeCompressions);
     }
 
     ~SingAlong(){
@@ -29,6 +18,18 @@ public:
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
             delete(*it);
         } 
+    }
+    void generateCompressions(std::vector<std::string> fakeCompression){
+        std::string common = "compressed/An artist - A track ";
+        fakeCompression.push_back(common + "[128].mp3");
+        fakeCompression.push_back(common + "[128].ogg");
+        fakeCompression.push_back(common + "[192].mp3");
+        fakeCompression.push_back(common + "[192].ogg");
+        fakeCompression.push_back(common + "[96].mp3");
+        fakeCompression.push_back(common + "[96].ogg");
+         for(unsigned int i = 0 ; i < fakeCompression.size() ; ++i){
+            std::ofstream newfile( fakeCompression[i].c_str() );
+        }
     }
     std::string catalog(){          //Returns a list of artist with their description and the description of their tracks and albums
         Artists::iterator it;
