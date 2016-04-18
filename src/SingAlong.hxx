@@ -9,8 +9,21 @@ typedef std::vector<Artist*> Artists ;
 class SingAlong{
 public:
     SingAlong(){
-        
+        //const char * fakeCompressions[] = {
+        std::vector< std::string > fakeCompressions;
+        std::string common = "compressed/An artist - A track ";
+        fakeCompressions.push_back(common + "[128].mp3");
+        fakeCompressions.push_back(common + "[128].ogg");
+        fakeCompressions.push_back(common + "[192].mp3");
+        fakeCompressions.push_back(common + "[192].ogg");
+        fakeCompressions.push_back(common + "[96].mp3");
+        fakeCompressions.push_back(common + "[96].ogg");
+
+        for(unsigned int i = 0 ; i < fakeCompressions.size() ; ++i){
+            std::ofstream newfile( fakeCompressions[i].c_str() );
+        }
     }
+
     ~SingAlong(){
         Artists::iterator it;
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
@@ -36,16 +49,7 @@ public:
     }
     void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){ //Creat a new track and it's added to the catalog of his artist
         Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
-        unsigned int duration;
-        std::ifstream infile;
-        std::string _nameFile = "masters/" + nameFile;    
-        infile.open(_nameFile.c_str());     //open the file and read the track duration
-        if(!infile.is_open()){              //if the file it's not open for an error or it doesn't exist, we throw an error and don't create a new track!
-            throw masterDoesNotExist();
-        }
-        infile >> duration; //use >> for read the data of the file and store it to "duration"
-        infile.close(); //close the opened file
-        a.newTrack(nameTrack ,duration ,_nameFile);
+        a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
         
     }
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
@@ -72,6 +76,21 @@ public:
 			if(name == (*it)->name())return (**it);		//If the name is the same we found the artist
 		}
 		throw artistNotFoundInCatalogException(); 
+    }
+    unsigned int readDuration(const std::string &nameDirectory, const std::string &nameFile){
+        unsigned int duration;
+        std::ifstream infile;
+        std::string name = nameDirectory + nameFile;
+        infile.open(name.c_str());
+        if(!infile.is_open()){
+            throw masterDoesNotExist();
+        }
+        infile >> duration;
+        if(duration == 0){
+            throw trackHasNoLenght();
+        }
+        infile.close();
+        return duration;
     }
 private:
     Artists _catalog;		//List of different artists of the web page

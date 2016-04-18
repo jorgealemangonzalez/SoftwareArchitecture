@@ -38,3 +38,10 @@ class masterDoesNotExist : public std::exception{
 			return "The master file does not exist";
 		}
 };
+
+class trackHasNoLenght : public std::exception{
+	public:
+		const char * what() const throw(){ //exception if we can't open a master file
+			return "The track has no lenght";
+		}
+};
