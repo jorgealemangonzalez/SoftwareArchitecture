@@ -10,6 +10,7 @@ public:
 
 	}
 	void conver(const std::string &file, const std::string &compressedFile){
-		std::ofstream newfile("compressed/Prefix [128].mp3");
+		std::string filecompres = compressedFile + " [128].mp3";	
+		std::ofstream newfile(filecompres.c_str());
 	}
 };
