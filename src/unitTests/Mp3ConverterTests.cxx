@@ -9,6 +9,7 @@ public:
 	TEST_FIXTURE( Mp3ConverterTests )
 	{
 		TEST_CASE( testConvert_generateFile );
+		TEST_CASE( testConvert_generateContent );
 		
 	}
 
@@ -45,6 +46,17 @@ public:
 		ASSERT_EQUALS(
 			"compressed/Prefix [128].mp3\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
+		);
+	}
+
+	void testConvert_generateContent(){
+		Mp3Converter converter;
+		createMasterFile("Master.wav",50);
+		converter.conver("masters/Master.wav","compressed/Prefix");
+
+		ASSERT_EQUALS(
+			"MP3 extracted from ’masters/Master.wav’ at 128 bps and length 50s.\n",
+			LibFileSystem::fileContent( "compressed/Prefix [128].mp3" )
 		);
 	}
 
