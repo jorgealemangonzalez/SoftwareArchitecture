@@ -43,7 +43,7 @@ public:
 		converter.conver("masters/Master.wav","compressed/Prefix");
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [128].mp3",
+			"compressed/Prefix [128].mp3\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
