@@ -13,16 +13,16 @@ public:
 	void conver(const std::string &file, const std::string &compressedFile){
 		switch(bps){
 		    case 96:    
-		    	if(frk_MP3_compression( file.c_str() , (compressedFile  + " [96].mp3").c_str() , bps96) == -1 )throw InexistentMaster();
+		    	if(frk_MP3_compression( file.c_str() , (compressedFile  + " [96].mp3").c_str() , bps96) == -1 )throw InexistentMaster();	//Throw exception if the master file doesn't exists
 		    	break;   //Call to external lib
 		    case 128:   
-		    	if(frk_MP3_compression( file.c_str() , (compressedFile  + " [128].mp3").c_str(), bps128) == -1 )throw InexistentMaster();
+		    	if(frk_MP3_compression( file.c_str() , (compressedFile  + " [128].mp3").c_str(), bps128) == -1 )throw InexistentMaster();	//Throw exception if the master file doesn't exists
 		    	break;   //Call to external lib
 		    case 192:   
-		    	if(frk_MP3_compression( file.c_str() , (compressedFile + " [192].mp3").c_str(), bps192) == -1 )throw InexistentMaster();
+		    	if(frk_MP3_compression( file.c_str() , (compressedFile + " [192].mp3").c_str(), bps192) == -1 )throw InexistentMaster();	//Throw exception if the master file doesn't exists
 		    	break;   //Call to external lib
 		    case 240:   
-		    	if(frk_MP3_compression( file.c_str() , (compressedFile + " [240].mp3").c_str(), bps240) == -1 )throw InexistentMaster();
+		    	if(frk_MP3_compression( file.c_str() , (compressedFile + " [240].mp3").c_str(), bps240) == -1 )throw InexistentMaster();	//Throw exception if the master file doesn't exists
 		    	break;   //Call to external lib
 		}
 	}
