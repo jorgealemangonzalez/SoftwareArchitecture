@@ -54,6 +54,6 @@ class UnsupportedFormat : public std::exception{
 class InexistentMaster : public std::exception{
 	public:
 		const char * what() const throw(){ //exception if the bps is not a valid format
-			return "";
+			return "The master file does not exist";
 		}	
 };
