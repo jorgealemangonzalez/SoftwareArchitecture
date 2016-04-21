@@ -20,7 +20,7 @@ public:
 		}
 	}
 	void bitRate(int bps){	//change the bit per second of the file
-		if(find(bps))
+		if(isvalid(bps))
 	    	this->bps = bps;
 		else
 			throw UnsupportedFormat();
@@ -31,7 +31,7 @@ private:
     int validBps[4];
     
     
-    bool find(int bps){
+    bool isvalid(int bps){					//checks if bps is valid
 		for(int i = 0 ; i < 4 ; ++i)
 			if(validBps[i] == bps)
 				return true;
