@@ -8,7 +8,7 @@ public:
     OggConverter(){}
     ~OggConverter(){}
     virtual void convert(const std::string &file, const std::string &compressedFile){       //Use the OggVorbisEnconder to compress .wav to .ogg
-        std::ostringstream ss;
+        std::ostringstream ss;      //get in a sting the value of the bps
         ss<<bps;
         OGG::compress( file.c_str() , (compressedFile  + " ["+ss.str()+"].ogg").c_str() , bps );     //Call to the library
     }
