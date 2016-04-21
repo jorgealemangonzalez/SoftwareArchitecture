@@ -15,4 +15,7 @@ public:
 		std::string filecompres = compressedFile + " [128].mp3";            //put the bps of the file
 		frk_MP3_compression( file.c_str() , filecompres.c_str(), bps128);   //Call to external lib
 	}
+	void bitRate(int bps){
+	    
+	}
 };

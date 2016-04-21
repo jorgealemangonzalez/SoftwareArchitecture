@@ -10,7 +10,7 @@ public:
 	{
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
-		
+		TEST_CASE( testConvert_withDifferentBitrate );
 	}
 
 	void setUp()
@@ -59,6 +59,16 @@ public:
 			LibFileSystem::fileContent( "compressed/Prefix [128].mp3" )
 		);
 	}
-
+	
+	void testConvert_withDifferentBitrate(){
+		Mp3Converter converter;
+		createMasterFile("Master.wav",50);
+		converter.bitRate(96);
+		converter.conver("masters/Master.wav","compressed/Prefix");
+		ASSERT_EQUALS(
+			"MP3 extracted from 'masters/Master.wav' at 96 bps and length 50s.\n",
+			LibFileSystem::fileContent( "compressed/Prefix [96].mp3" )
+		);
+	}
 };
 REGISTER_FIXTURE( Mp3ConverterTests )
