@@ -4,8 +4,9 @@
 #include <string.h>
 #include "Exceptions.hxx"
 #include "externalLibs/FraunhofferTools.hxx"
+#include "Converter.hxx"
 
-class Mp3Converter
+class Mp3Converter:public Converter
 {
 public:   
 	Mp3Converter():bps(128),validBps{96,128,192,240}{

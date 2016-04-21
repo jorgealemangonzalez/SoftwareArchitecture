@@ -1,6 +1,7 @@
 #include "MiniCppUnit.hxx"
 #include "LibFileSystem.hxx"
 #include "Mp3Converter.hxx"
+#include "Converter.hxx"
 #include <fstream>
 
 class Mp3ConverterTests : public TestFixture<Mp3ConverterTests>
@@ -13,6 +14,7 @@ public:
 		TEST_CASE( testConvert_withDifferentBitrate );
 		TEST_CASE( testConvert_withUnsupportedFormat) ;
 		TEST_CASE( testConvert_withInexistentMaster ) ;
+		TEST_CASE( testConvert_polymorphicCall );
 	}
 
 	void setUp()
@@ -93,6 +95,17 @@ public:
 			e.what()
 		);
 		}
+	}
+	void testConvert_polymorphicCall(){
+		Converter* converter = new Mp3Converter();
+		createMasterFile("Master.wav",50);
+		converter->conver("masters/Master.wav","compressed/Prefix");
+
+		ASSERT_EQUALS(
+			"MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
+			LibFileSystem::fileContent( "compressed/Prefix [128].mp3" )
+		);
+		delete converter ;
 	}
 };
 REGISTER_FIXTURE( Mp3ConverterTests )
