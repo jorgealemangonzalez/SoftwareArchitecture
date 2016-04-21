@@ -10,5 +10,9 @@ public:
     virtual void convert(const std::string &file, const std::string &compressedFile){       //Use the OggVorbisEnconder to compress .wav to .ogg
         OGG::compress( file.c_str() , (compressedFile  + " [128].ogg").c_str() , 128 );     //Call to the library
     }
+    void bitRate(int bps){	//change the bit per second of the file
+	    this->bps = bps;
+		
+	}
 };
 #endif

@@ -9,7 +9,7 @@
 class Mp3Converter:public Converter		//Inherit converter data and methods 
 {
 public:   
-	Mp3Converter():bps(128),validBps{96,128,192,240}{
+	Mp3Converter():validBps{96,128,192,240}{
 	}
 	void convert(const std::string &file, const std::string &compressedFile){
 		switch(bps){
@@ -35,7 +35,6 @@ public:
 		
 	}
 private:
-    int bps;			//bps of the audio file
     int validBps[4];	//the different bps that support the API
     
     
