@@ -6,12 +6,12 @@
 #include "externalLibs/FraunhofferTools.hxx"
 #include "Converter.hxx"
 
-class Mp3Converter:public Converter
+class Mp3Converter:public Converter		//Inherit converter data and methods 
 {
 public:   
 	Mp3Converter():bps(128),validBps{96,128,192,240}{
 	}
-	void conver(const std::string &file, const std::string &compressedFile){
+	void convert(const std::string &file, const std::string &compressedFile){
 		switch(bps){
 		    case 96:    
 		    	if(frk_MP3_compression( file.c_str() , (compressedFile  + " [96].mp3").c_str() , bps96) == -1 )throw InexistentMaster();	//Throw exception if the master file doesn't exists
@@ -35,8 +35,8 @@ public:
 		
 	}
 private:
-    int bps;
-    int validBps[4];
+    int bps;			//bps of the audio file
+    int validBps[4];	//the different bps that support the API
     
     
     bool isvalid(int bps){					//checks if bps is valid

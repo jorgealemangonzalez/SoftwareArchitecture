@@ -45,7 +45,7 @@ public:
 	void testConvert_generateFile(){
 		Mp3Converter converter;
 		createMasterFile("Master.wav",50);
-		converter.conver("masters/Master.wav","compressed/Prefix");
+		converter.convert("masters/Master.wav","compressed/Prefix");
 
 		ASSERT_EQUALS(
 			"compressed/Prefix [128].mp3\n",
@@ -56,7 +56,7 @@ public:
 	void testConvert_generateContent(){
 		Mp3Converter converter;
 		createMasterFile("Master.wav",50);
-		converter.conver("masters/Master.wav","compressed/Prefix");
+		converter.convert("masters/Master.wav","compressed/Prefix");
 
 		ASSERT_EQUALS(
 			"MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
@@ -68,7 +68,7 @@ public:
 		Mp3Converter converter;
 		createMasterFile("Master.wav",50);
 		converter.bitRate(96);
-		converter.conver("masters/Master.wav","compressed/Prefix");
+		converter.convert("masters/Master.wav","compressed/Prefix");
 		ASSERT_EQUALS(
 			"MP3 extracted from 'masters/Master.wav' at 96 bps and length 50s.\n",
 			LibFileSystem::fileContent( "compressed/Prefix [96].mp3" )
@@ -88,7 +88,7 @@ public:
 	void testConvert_withInexistentMaster(){
 		Mp3Converter converter;
 		try{
-			converter.conver("masters/Vacio.wav","compressed/Prefix");
+			converter.convert("masters/Vacio.wav","compressed/Prefix");
 		}catch(std::exception & e ){
 			ASSERT_EQUALS(
 			"The master file does not exist",
@@ -99,7 +99,7 @@ public:
 	void testConvert_polymorphicCall(){
 		Converter* converter = new Mp3Converter();
 		createMasterFile("Master.wav",50);
-		converter->conver("masters/Master.wav","compressed/Prefix");
+		converter->convert("masters/Master.wav","compressed/Prefix");
 
 		ASSERT_EQUALS(
 			"MP3 extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
