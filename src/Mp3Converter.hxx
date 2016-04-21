@@ -20,7 +20,7 @@ public:
 		    case 240:   frk_MP3_compression( file.c_str() , (compressedFile + " [240].mp3").c_str(), bps240);break;   //Call to external lib
 		}
 	}
-	void bitRate(int bps){
+	void bitRate(int bps){	//change the bit per second of the file
 	    this->bps = bps;
 	}
 private:
