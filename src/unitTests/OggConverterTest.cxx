@@ -61,6 +61,7 @@ public:
 			".ogg extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
 			LibFileSystem::fileContent( "compressed/Prefix [128].ogg" )
 		);
+		
 	}
 	/*
 	void testConvert_withDifferentBitrate(){
