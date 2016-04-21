@@ -8,8 +8,7 @@
 class Mp3Converter
 {
 public:   
-	Mp3Converter():bps(128){
-
+	Mp3Converter():bps(128),validBps{96,128,192,240}{
 	}
 	void conver(const std::string &file, const std::string &compressedFile){
 		//std::string filecompres = compressedFile + " ["+ std::to_string(bps) +"].mp3";            //put the bps of the file
@@ -21,8 +20,21 @@ public:
 		}
 	}
 	void bitRate(int bps){	//change the bit per second of the file
-	    this->bps = bps;
+		if(find(bps))
+	    	this->bps = bps;
+		else
+			throw UnsupportedFormat();
+		
 	}
 private:
     int bps;
+    int validBps[4];
+    
+    
+    bool find(int bps){
+		for(int i = 0 ; i < 4 ; ++i)
+			if(validBps[i] == bps)
+				return true;
+		return false;
+	}
 };

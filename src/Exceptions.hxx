@@ -45,3 +45,9 @@ class trackHasNoLenght : public std::exception{
 			return "The track has no lenght";
 		}
 };
+class UnsupportedFormat : public std::exception{
+	public:
+		const char * what() const throw(){ //exception if we can't open a master file
+			return "";
+		}	
+};

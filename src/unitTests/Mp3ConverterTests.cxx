@@ -11,6 +11,7 @@ public:
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withDifferentBitrate );
+		TEST_CASE( testConvert_withUnsupportedFormat) ;
 	}
 
 	void setUp()
@@ -69,6 +70,17 @@ public:
 			"MP3 extracted from 'masters/Master.wav' at 96 bps and length 50s.\n",
 			LibFileSystem::fileContent( "compressed/Prefix [96].mp3" )
 		);
+	}
+	void testConvert_withUnsupportedFormat(){
+		Mp3Converter converter;
+		try{
+			converter.bitRate(1);
+		}catch(std::exception & e ){
+			ASSERT_EQUALS(
+			"Not valid format",
+			e.what()
+		);
+		}
 	}
 };
 REGISTER_FIXTURE( Mp3ConverterTests )
