@@ -51,3 +51,9 @@ class UnsupportedFormat : public std::exception{
 			return "Not valid format";
 		}	
 };
+class InexistentMaster : public std::exception{
+	public:
+		const char * what() const throw(){ //exception if the bps is not a valid format
+			return "";
+		}	
+};

@@ -12,6 +12,7 @@ public:
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withDifferentBitrate );
 		TEST_CASE( testConvert_withUnsupportedFormat) ;
+		TEST_CASE( testConvert_withInexistentMaster ) ;
 	}
 
 	void setUp()
@@ -78,6 +79,17 @@ public:
 		}catch(std::exception & e ){
 			ASSERT_EQUALS(
 			"Not valid format",
+			e.what()
+		);
+		}
+	}
+	void testConvert_withInexistentMaster(){
+		Mp3Converter converter;
+		try{
+			converter.conver("masters/Vacio.wav","compressed/Prefix");
+		}catch(std::exception & e ){
+			ASSERT_EQUALS(
+			"The master file does not exist",
 			e.what()
 		);
 		}
