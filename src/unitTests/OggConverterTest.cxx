@@ -13,7 +13,7 @@ public:
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withDifferentBitrate );
 		TEST_CASE( testConvert_withInexistentMaster ) ;
-		//TEST_CASE( testConvert_polymorphicCall );
+		TEST_CASE( testConvert_polymorphicCall );
 	}
 
 	void setUp()
@@ -86,17 +86,17 @@ public:
 		);
 		}
 	}
-	/*void testConvert_polymorphicCall(){
+	void testConvert_polymorphicCall(){
 		Converter* converter = new OggConverter();
 		createMasterFile("Master.wav",50);
 		converter->convert("masters/Master.wav","compressed/Prefix");
 
 		ASSERT_EQUALS(
-			".ogg extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
+			"OGG extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
 			LibFileSystem::fileContent( "compressed/Prefix [128].ogg" )
 		);
 		delete converter ;
 	}
-	*/
+	
 };
 REGISTER_FIXTURE( OggConverterTests )
