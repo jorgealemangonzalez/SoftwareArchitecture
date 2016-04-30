@@ -72,7 +72,7 @@ public:
 		converter.convert("masters/Master.wav","compressed/Prefix","ogg",128);
 		ASSERT_EQUALS(
 			"OGG extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
-			LibFileSystem::fileContent( "compressed/Prefix [128].mp3" )
+			LibFileSystem::fileContent( "compressed/Prefix [128].ogg" )
 		);
 
 	}
