@@ -6,7 +6,7 @@
 
 namespace OGG
 {
-	class WavNotFound : public std::exception{
+	class WavNotFound : public std::exception{ //public class of the error in not finding the master file
 		public:
 			const char * what() const throw(){
 				return "The master file does not exist";
@@ -22,7 +22,7 @@ namespace OGG
 	{
 		std::ifstream wav;
 		wav.open( inWavFile.c_str() );
-		if ( !wav.is_open() ) throw WavNotFound();
+		if ( !wav.is_open() ) throw WavNotFound(); //if the wav it's not found throw an error
 		int duration;
 		wav >> duration;
 
