@@ -61,7 +61,7 @@ class InexistentMaster : public std::exception{
 		}	
 };
 
-class NoConverterAdded : public std::exception{
+class NoConverterAdded : public std::exception{ //exception if no converter been found 
 	public:
 		const char * what() const throw(){
 			return "No converted added";
