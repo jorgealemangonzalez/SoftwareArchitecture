@@ -87,7 +87,7 @@ public:
 		}
 	}
 	void testConvert_polymorphicCall(){
-		Converter* converter = new OggConverter();
+		Converter* converter = new OggConverter(); //generic converter  128 bps
 		createMasterFile("Master.wav",50);
 		converter->convert("masters/Master.wav","compressed/Prefix");
 
