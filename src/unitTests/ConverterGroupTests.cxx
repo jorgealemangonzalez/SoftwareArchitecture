@@ -14,6 +14,7 @@ public:
 	{
 		TEST_CASE(testConvert_withMp3Converter);
 		TEST_CASE(testConvert_withoutConverter);
+		TEST_CASE(testConvert_withOggConverter);
 	}
 
 	void setUp()
@@ -55,7 +56,6 @@ public:
 	void testConvert_withoutConverter(){
 		ConverterGroup converter ;
 		createMasterFile("Master.wav",50);
-		//converter.addConverter("mp3" , 128);
 		try{
 			converter.convert("masters/Master.wav","compressed/Prefix","mp3",128);
 		}catch(std::exception & e){
@@ -65,6 +65,18 @@ public:
 			);
 		}
 	}
+	void testConvert_withOggConverter(){
+		ConverterGroup converter ;
+		createMasterFile("Master.wav",50);
+		converter.addConverter("ogg" , 128);
+		converter.convert("masters/Master.wav","compressed/Prefix","ogg",128);
+		ASSERT_EQUALS(
+			"OGG extracted from 'masters/Master.wav' at 128 bps and length 50s.\n",
+			LibFileSystem::fileContent( "compressed/Prefix [128].mp3" )
+		);
+
+	}
+
 };
 
 
