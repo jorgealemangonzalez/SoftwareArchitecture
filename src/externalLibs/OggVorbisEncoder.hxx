@@ -7,10 +7,10 @@
 namespace OGG
 {
 	class WavNotFound : public std::exception{
-		/*public:
+		public:
 			const char * what() const throw(){
 				return "The master file does not exist";
-			} 	*/
+			} 	
 	};
 
 	/*
