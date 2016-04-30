@@ -17,7 +17,7 @@ class ConverterGroup{
 	    	}
 	    }
 	    void addConverter(const std::string &format ,int bitRate){	//we look which converter we want, and added to out list of converters
-	    	if(format == "mp3"){
+	    	if(format == "mp3"){ 							//we have to do downcast and upcast
 	    		Converter* c = new Mp3Converter();
 	    		c->bitRate(bitRate);
 	    		converters.push_back(c);
