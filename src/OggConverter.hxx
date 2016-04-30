@@ -2,6 +2,7 @@
 #define OGGCONVERTER_HXX
 #include "Converter.hxx"
 #include "externalLibs/OggVorbisEncoder.hxx"
+
 class OggConverter:public Converter         //inherit the data and methods from the generic converter
 {
 public:

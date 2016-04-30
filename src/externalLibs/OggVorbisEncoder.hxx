@@ -6,7 +6,12 @@
 
 namespace OGG
 {
-	class WavNotFound {}; //< An empty exception class.
+	class WavNotFound : public std::exception{
+		/*public:
+			const char * what() const throw(){
+				return "The master file does not exist";
+			} 	*/
+	};
 
 	/*
 	 * Simulates the compresion of a wav file into a ogg/vorbis file.
