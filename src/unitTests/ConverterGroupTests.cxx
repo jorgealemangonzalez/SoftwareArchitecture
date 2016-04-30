@@ -51,6 +51,19 @@ public:
 		);
 
 	}
+	/*void testConvert_withoutConverter(){
+		ConverterGroup converter ;
+		createMasterFile("Master.wav",50);
+		//converter.addConverter("mp3" , 128);
+		try{
+			converter.convert("masters/Master.wav","compressed/Prefix","mp3",128);
+		}catch(std::exception & e){
+			ASSERT_EQUALS(
+				"No converted added",
+				e.what()
+			);
+		}
+	}*/
 };
 
 
