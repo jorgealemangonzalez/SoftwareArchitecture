@@ -1,3 +1,6 @@
+#ifndef Mp3Converter_hxx
+#define Mp3Converter_hxx
+
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -34,6 +37,14 @@ public:
 			throw UnsupportedFormat();
 		
 	}
+
+	bool typeConverter(){
+		return 1;
+	}
+	int bpsInfo(){
+		return bps;
+	}
+
 private:
     int validBps[4];	//the different bps that support the API
     
@@ -45,3 +56,5 @@ private:
 		return false;
 	}
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef Exception_hxx
+#define Exception_hxx 
+
 class EmptyCatalogException : public std::exception{
 	public:
 		const char * what() const throw(){//Exception of empty catalog
@@ -57,3 +60,5 @@ class InexistentMaster : public std::exception{
 			return "The master file does not exist";
 		}	
 };
+
+#endif

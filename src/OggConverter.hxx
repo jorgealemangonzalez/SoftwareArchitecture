@@ -17,5 +17,13 @@ class OggConverter : public Converter         //inherit from Converter class
     	    this->bps = bps;
     		
     	}
+        bool typeConverter(){
+            return 0;
+        }
+        int bpsInfo(){
+            return bps;
+        }
+
+
 };
 #endif
