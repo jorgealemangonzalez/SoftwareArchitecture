@@ -13,6 +13,7 @@ public:
 	TEST_FIXTURE(ConverterGroupTests)
 	{
 		TEST_CASE(testConvert_withMp3Converter);
+		TEST_CASE(testConvert_withoutConverter);
 	}
 
 	void setUp()
@@ -51,7 +52,7 @@ public:
 		);
 
 	}
-	/*void testConvert_withoutConverter(){
+	void testConvert_withoutConverter(){
 		ConverterGroup converter ;
 		createMasterFile("Master.wav",50);
 		//converter.addConverter("mp3" , 128);
@@ -63,7 +64,7 @@ public:
 				e.what()
 			);
 		}
-	}*/
+	}
 };
 
 

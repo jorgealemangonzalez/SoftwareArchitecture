@@ -61,4 +61,11 @@ class InexistentMaster : public std::exception{
 		}	
 };
 
+class NoConverterAdded : public std::exception{
+	public:
+		const char * what() const throw(){
+			return "No converted addded";
+		}
+};
+
 #endif
