@@ -15,6 +15,7 @@ public:
 		TEST_CASE(testConvert_withMp3Converter);
 		TEST_CASE(testConvert_withoutConverter);
 		TEST_CASE(testConvert_withOggConverter);
+		TEST_CASE(testConvert_withOggConverterAndDifferentBitrate);
 	}
 
 	void setUp()
@@ -76,6 +77,21 @@ public:
 		);
 
 	}
+	void testConvert_withOggConverterAndDifferentBitrate(){
+		ConverterGroup converter;
+		createMasterFile("Master.wav",50);
+		converter.addConverter("ogg",128);
+		converter.addConverter("ogg",192);
+		converter.convert("masters/Master.wav","compressed/Prefix","ogg",128);
+		converter.convert("masters/Master.wav","compressed/Prefix","ogg",192);
+
+		ASSERT_EQUALS(
+			"compressed/Prefix [128].ogg\n"
+			"compressed/Prefix[192].ogg\n",
+			LibFileSystem::listDirectoryInOrder( "compressed" )
+		);
+	}
+
 
 };
 
