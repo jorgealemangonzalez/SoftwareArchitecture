@@ -114,7 +114,7 @@ public:
 			converter.addConverter("wma",128);
 		}catch(std::exception & e){
 			ASSERT_EQUALS(
-				"No converted added",
+				"No converter type accepted",
 				e.what()
 			);
 		}
