@@ -17,8 +17,8 @@ class OggConverter : public Converter         //inherit from Converter class
     	    this->bps = bps;
     		
     	}
-        bool typeConverter(){
-            return 0;
+        std::string typeConverter(){
+            return "ogg";
         }
         int bpsInfo(){
             return bps;

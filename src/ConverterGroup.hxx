@@ -21,6 +21,7 @@ class ConverterGroup{
 	    		Converter* c = new Mp3Converter();
 	    		c->bitRate(bitRate);
 	    		converters.push_back(c);
+	    		//std::cout << converters[1]->typeConverter() << std::endl;
 	    	}else{
 	    		Converter* c = new OggConverter();
 	    		c->bitRate(bitRate);
@@ -30,7 +31,7 @@ class ConverterGroup{
 	    void convert(const std::string &file, const std::string &compressedFile , const std::string &format , int bitRate){ //we convert the specific file
 	    	v::iterator it;	
 	    	for(it = converters.begin() ; it != converters.end() ; ++it){		//we search in our list if we have added the specific converter 
-	    		if(  ( (*it)->typeConverter() == 1 && (*it)->bpsInfo() == bitRate ) || ((*it)->typeConverter() == 0 && (*it)->bpsInfo() == bitRate ) )break;
+	    		if(  ( (*it)->typeConverter() == format && (*it)->bpsInfo() == bitRate ) || ((*it)->typeConverter() == format && (*it)->bpsInfo() == bitRate ) )break;
 	    	}
 	    	if(it == converters.end() )throw NoConverterAdded(); //error if we don't have the converter in our list
 	    	(*it)->convert(file,compressedFile);	//if we have the converter, we convert the file with his proper converter

@@ -38,8 +38,8 @@ public:
 		
 	}
 
-	bool typeConverter(){
-		return 1;
+	std::string typeConverter(){
+		return "mp3";
 	}
 	int bpsInfo(){
 		return bps;
