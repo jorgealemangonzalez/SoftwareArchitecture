@@ -87,7 +87,7 @@ public:
 
 		ASSERT_EQUALS(
 			"compressed/Prefix [128].ogg\n"
-			"compressed/Prefix[192].ogg\n",
+			"compressed/Prefix [192].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
