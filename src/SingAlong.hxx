@@ -16,7 +16,13 @@ public:
             _converters.addConverter(fakeCompressions[i].first, fakeCompressions[i].second);    
         }
     }
-
+    SingAlong(const std::string &string){
+        std::vector< std::pair< std::string, int> > fakeCompressions;
+        defaultListOfConverters(&fakeCompressions);
+        for(unsigned int i = 0 ; i < fakeCompressions.size() ; ++i){
+            _converters.addConverter(fakeCompressions[i].first, fakeCompressions[i].second);    
+        }
+    }
     ~SingAlong(){
         Artists::iterator it;
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
@@ -55,6 +61,9 @@ public:
         _converters.convert(newNameTrack,compressed,format,bps);  
         a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
               
+    }
+    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){
+        
     }
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
         Artist & a = this->findArtist(nameArtist);   //find the artist
