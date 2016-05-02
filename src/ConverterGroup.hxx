@@ -21,11 +21,12 @@ class ConverterGroup{
 	    		Converter* c = new Mp3Converter();
 	    		c->bitRate(bitRate);
 	    		converters.push_back(c);
-	    		//std::cout << converters[1]->typeConverter() << std::endl;
-	    	}else{
+	    	}else if(format == "ogg"){
 	    		Converter* c = new OggConverter();
 	    		c->bitRate(bitRate);
 	    		converters.push_back(c);
+	    	}else{
+	    		throw NotypeConverterSupported();
 	    	}	    	
 	    } 
 	    void convert(const std::string &file, const std::string &compressedFile , const std::string &format , int bitRate){ //we convert the specific file

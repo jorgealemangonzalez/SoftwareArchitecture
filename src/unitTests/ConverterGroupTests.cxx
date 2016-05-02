@@ -17,6 +17,7 @@ public:
 		TEST_CASE(testConvert_withOggConverter);
 		TEST_CASE(testConvert_withOggConverterAndDifferentBitrate);
 		TEST_CASE(testConvert_withMp3AndOggConverters);
+		TEST_CASE(testConvert_withUnknownConverter);
 	}
 
 	void setUp()
@@ -107,7 +108,17 @@ public:
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
-
+	void testConvert_withUnknownConverter(){
+		ConverterGroup converter ;
+		try{
+			converter.addConverter("wma",128);
+		}catch(std::exception & e){
+			ASSERT_EQUALS(
+				"No converted added",
+				e.what()
+			);
+		}
+	}
 
 };
 

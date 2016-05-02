@@ -68,4 +68,11 @@ class NoConverterAdded : public std::exception{ //exception if no converter been
 		}
 };
 
+class NotypeConverterSupported : public std::exception{ 
+	public:
+		const char * what() const throw(){
+			return "No converter type accepted";
+		}
+};
+
 #endif
