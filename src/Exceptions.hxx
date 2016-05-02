@@ -68,7 +68,7 @@ class NotypeConverterSupported : public std::exception{  //exceotion if the form
 			return "No converter type accepted";
 		}
 };
-class UnsupportedFormatConversion : public std::exception{  //exceotion if the format of the converter its no supported
+class UnsupportedFormatConversion : public std::exception{  //exception if the format of the converter is not supported
 	public:
 		const char * what() const throw(){
 			return "Unsupported format";

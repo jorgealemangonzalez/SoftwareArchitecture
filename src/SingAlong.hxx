@@ -25,7 +25,7 @@ public:
             try{
                 _converters.addConverter(type,bps);
             }
-            catch(std::exception & e){
+            catch(std::exception & e){//throws exception if the format is not supported
                 throw UnsupportedFormatConversion();
             }
         }
