@@ -86,7 +86,7 @@ public:
 		converter.convert("masters/Master.wav","compressed/Prefix","ogg",192);
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [128].ogg\n"
+			"compressed/Prefix [128].ogg\n"	//we compare the content of the compressed directory
 			"compressed/Prefix [192].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
