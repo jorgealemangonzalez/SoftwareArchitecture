@@ -12,10 +12,10 @@ class ConverterGroupTests : public TestFixture<ConverterGroupTests>
 public: 
 	TEST_FIXTURE(ConverterGroupTests)
 	{
-		//TEST_CASE(testConvert_withMp3Converter);
-		//TEST_CASE(testConvert_withoutConverter);
-		//TEST_CASE(testConvert_withOggConverter);
-		//TEST_CASE(testConvert_withOggConverterAndDifferentBitrate);
+		TEST_CASE(testConvert_withMp3Converter);
+		TEST_CASE(testConvert_withoutConverter);
+		TEST_CASE(testConvert_withOggConverter);
+		TEST_CASE(testConvert_withOggConverterAndDifferentBitrate);
 		TEST_CASE(testConvert_withMp3AndOggConverters);
 	}
 
@@ -102,8 +102,8 @@ public:
 		converter.convert("masters/Master.wav","compressed/Prefix","mp3",128);
 
 		ASSERT_EQUALS(
-			"compressed/Prefix [128].ogg\n"	
-			"compressed/Prefix [128].mp3\n",
+			"compressed/Prefix [128].mp3\n"	
+			"compressed/Prefix [128].ogg\n",
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
