@@ -10,7 +10,7 @@ public:
 	{
 		TEST_CASE( compressionTestByDefault_withOneMaster );
 		TEST_CASE( compressionTest_configuredWithFile );
-		//TEST_CASE( configurationTest_withUnsupportedFormat );
+		TEST_CASE( configurationTest_withUnsupportedFormat );
 		//TEST_CASE( configurationTest_withUnsupportedBitrateMp3 );
 	}
 
@@ -82,7 +82,6 @@ public:
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
-	/*
 	void configurationTest_withUnsupportedFormat()
 	{
 		std::ofstream configuration( "config/converters.cfg" );
@@ -99,6 +98,7 @@ public:
 			ASSERT_EQUALS( "Unsupported format", e.what() );
 		}
 	}
+	/*
 	void configurationTest_withUnsupportedBitrateMp3()
 	{
 		std::ofstream configuration( "config/converters.cfg" );
