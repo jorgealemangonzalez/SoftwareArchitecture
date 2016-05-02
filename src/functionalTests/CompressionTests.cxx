@@ -9,7 +9,7 @@ public:
 	TEST_FIXTURE( CompressionTests )
 	{
 		TEST_CASE( compressionTestByDefault_withOneMaster );
-		//TEST_CASE( compressionTest_configuredWithFile );
+		TEST_CASE( compressionTest_configuredWithFile );
 		//TEST_CASE( configurationTest_withUnsupportedFormat );
 		//TEST_CASE( configurationTest_withUnsupportedBitrateMp3 );
 	}
@@ -61,7 +61,7 @@ public:
 	// 
 	// The following tests are thus optional, but if implemented, they
 	// are considered favorably by the client (and your teachers :)
-	/*void compressionTest_configuredWithFile()
+	void compressionTest_configuredWithFile()
 	{
 		std::ofstream configuration( "config/converters.cfg" );
 		configuration << "mp3 192" << std::endl;
@@ -82,6 +82,7 @@ public:
 			LibFileSystem::listDirectoryInOrder( "compressed" )
 		);
 	}
+	/*
 	void configurationTest_withUnsupportedFormat()
 	{
 		std::ofstream configuration( "config/converters.cfg" );
