@@ -22,7 +22,12 @@ public:
         std::string type;
         int bps;
         while(conf>>type>>bps){
-            _converters.addConverter(type,bps);
+            try{
+                _converters.addConverter(type,bps);
+            }
+            catch(std::exception & e){
+                throw UnsupportedFormatConversion();
+            }
         }
         conf.close();
     }
