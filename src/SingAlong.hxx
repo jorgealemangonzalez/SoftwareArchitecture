@@ -24,7 +24,7 @@ public:
         while(conf>>type>>bps){
             _converters.addConverter(type,bps);
         }
-        
+        conf.close()
     }
     ~SingAlong(){
         Artists::iterator it;
