@@ -38,10 +38,10 @@ public:
 		
 	}
 
-	std::string typeConverter(){
+	std::string typeConverter(){ //return string of his type
 		return "mp3";
 	}
-	int bpsInfo(){
+	int bpsInfo(){			//return his bps
 		return bps;
 	}
 
