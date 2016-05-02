@@ -25,7 +25,7 @@ class ConverterGroup{
 	    		Converter* c = new OggConverter();
 	    		c->bitRate(bitRate);
 	    		converters.push_back(c);
-	    	}else{
+	    	}else{	//throw an error if the converter format it's no supported
 	    		throw NotypeConverterSupported();
 	    	}	    	
 	    } 
