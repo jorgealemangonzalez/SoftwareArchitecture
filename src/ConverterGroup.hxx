@@ -41,7 +41,6 @@ class ConverterGroup{
 	    	return converters.size();
 	    }
 	
-	private:
 		v converters;
 
 	   	    
