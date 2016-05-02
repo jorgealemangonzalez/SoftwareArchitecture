@@ -37,6 +37,9 @@ class ConverterGroup{
 	    	if(it == converters.end() )throw NoConverterAdded(); //error if we don't have the converter in our list
 	    	(*it)->convert(file,compressedFile);	//if we have the converter, we convert the file with his proper converter
 	    }
+	    int longitud(){
+	    	return converters.size();
+	    }
 	
 	private:
 		v converters;

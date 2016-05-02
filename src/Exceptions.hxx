@@ -54,12 +54,6 @@ class UnsupportedFormat : public std::exception{
 			return "Not valid format";
 		}	
 };
-class InexistentMaster : public std::exception{
-	public:
-		const char * what() const throw(){ //exception if master file desn't exist
-			return "The master file does not exist";
-		}	
-};
 
 class NoConverterAdded : public std::exception{ //exception if no converter been found 
 	public:

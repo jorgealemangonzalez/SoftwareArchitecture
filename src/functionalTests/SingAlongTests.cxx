@@ -125,7 +125,7 @@ public:
 		business.createArtist( "An artist", false );
 
 		createMasterFile( "aMasterFile.wav", 30 );
-		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" ,"mp3",128);
 
 		ASSERT_EQUALS(
 			"An artist [solo]\n"
@@ -140,10 +140,10 @@ public:
 		business.createArtist( "An artist", false );
 
 		createMasterFile( "aMasterFile.wav", 30 );
-		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" ,"mp3",128);
 
 		createMasterFile( "anotherMasterFile.wav", 50 );
-		business.createNewTrack( "An artist", "Another track", "anotherMasterFile.wav" );
+		business.createNewTrack( "An artist", "Another track", "anotherMasterFile.wav" ,"mp3",128);
 
 		ASSERT_EQUALS(
 			"An artist [solo]\n"
@@ -161,12 +161,12 @@ public:
 		business.createArtist( "Another artist", false );
 
 		createMasterFile( "aMasterFile.wav", 30 );
-		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" ,"mp3",128);
 
 		createMasterFile( "anotherMasterFile.wav", 30 );
-		business.createNewTrack( "Another artist", "Another track", "anotherMasterFile.wav" );
+		business.createNewTrack( "Another artist", "Another track", "anotherMasterFile.wav" ,"mp3",128);
 		createMasterFile( "aThirdMasterFile.wav", 50 );
-		business.createNewTrack( "Another artist", "A third track", "aThirdMasterFile.wav" );
+		business.createNewTrack( "Another artist", "A third track", "aThirdMasterFile.wav","mp3",128 );
 
 		ASSERT_EQUALS(
 			"An artist [solo]\n"
@@ -186,7 +186,7 @@ public:
 		createMasterFile( "aMasterFile.wav", 30 );
 		try
 		{
-			business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+			business.createNewTrack( "An artist", "A track", "aMasterFile.wav" ,"mp3",128);
 			FAIL( "An exception should be caught!" );
 		}
 		catch( std::exception & e )
@@ -200,7 +200,7 @@ public:
 		business.createArtist( "An artist", false );
 		try
 		{
-			business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+			business.createNewTrack( "An artist", "A track", "aMasterFile.wav" ,"mp3",128);
 			FAIL( "An exception should be caught!" );
 		}
 		catch( std::exception & e )
@@ -268,10 +268,10 @@ public:
 		business.createNewAlbum( "An artist", "An album" );
 
 		createMasterFile( "aMasterFile.wav", 30 );
-		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" ,"mp3",128);
 
 		createMasterFile( "anotherMasterFile.wav", 50 );
-		business.createNewTrack( "An artist", "Another track", "anotherMasterFile.wav" );
+		business.createNewTrack( "An artist", "Another track", "anotherMasterFile.wav" ,"mp3",128);
 
 		business.includeTrackOnAlbum( "An artist", "A track", "An album" );
 		business.includeTrackOnAlbum( "An artist", "Another track", "An album" );
@@ -294,7 +294,7 @@ public:
 		business.createArtist( "An artist", false );
 
 		createMasterFile( "aMasterFile.wav", 30 );
-		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" ,"mp3",128);
 
 		try
 		{

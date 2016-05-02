@@ -1,4 +1,5 @@
 #include "Artist.hxx"
+#include "ConverterGroup.hxx"
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -9,8 +10,11 @@ typedef std::vector<Artist*> Artists ;
 class SingAlong{
 public:
     SingAlong(){
-        std::vector< std::string > fakeCompressions;
-       generateCompressions(fakeCompressions);
+        std::vector< std::pair< std::string, int> > fakeCompressions;
+        defaultListOfConverters(&fakeCompressions);
+        for(unsigned int i = 0 ; i < fakeCompressions.size() ; ++i){
+            _converters.addConverter(fakeCompressions[i].first, fakeCompressions[i].second);    
+        }
     }
 
     ~SingAlong(){
@@ -19,17 +23,13 @@ public:
             delete(*it);
         } 
     }
-    void generateCompressions(std::vector<std::string> fakeCompression){
-        std::string common = "compressed/An artist - A track ";
-        fakeCompression.push_back(common + "[128].mp3");
-        fakeCompression.push_back(common + "[128].ogg");
-        fakeCompression.push_back(common + "[192].mp3");
-        fakeCompression.push_back(common + "[192].ogg");
-        fakeCompression.push_back(common + "[96].mp3");
-        fakeCompression.push_back(common + "[96].ogg");
-         for(unsigned int i = 0 ; i < fakeCompression.size() ; ++i){
-            std::ofstream newfile( fakeCompression[i].c_str() );
-        }
+    void defaultListOfConverters(std::vector< std::pair< std::string, int> >  *fakeCompression){
+        fakeCompression->push_back(std::make_pair("mp3",128));
+        fakeCompression->push_back(std::make_pair("mp3",192));
+        fakeCompression->push_back(std::make_pair("mp3",96));
+        fakeCompression->push_back(std::make_pair("ogg",128));
+        fakeCompression->push_back(std::make_pair("ogg",192));
+        fakeCompression->push_back(std::make_pair("ogg",96));
     }
     std::string catalog(){          //Returns a list of artist with their description and the description of their tracks and albums
         Artists::iterator it;
@@ -48,10 +48,13 @@ public:
         }
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
-    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){ //Creat a new track and it's added to the catalog of his artist
+    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile, const std::string &format , int bps){ //Creat a new track and it's added to the catalog of his artist
         Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
+        std::string newNameTrack = "masters/"+nameFile; 
+        std::string compressed = "compressed/"+ a.name() + " - " +nameTrack; 
+        _converters.convert(newNameTrack,compressed,format,bps);  
         a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
-        
+              
     }
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
         Artist & a = this->findArtist(nameArtist);   //find the artist
@@ -95,5 +98,6 @@ public:
     }
 private:
     Artists _catalog;		//List of different artists of the web page
+    ConverterGroup _converters;
 
 };
