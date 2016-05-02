@@ -17,11 +17,14 @@ public:
         }
     }
     SingAlong(const std::string &string){
-        std::vector< std::pair< std::string, int> > fakeCompressions;
-        defaultListOfConverters(&fakeCompressions);
-        for(unsigned int i = 0 ; i < fakeCompressions.size() ; ++i){
-            _converters.addConverter(fakeCompressions[i].first, fakeCompressions[i].second);    
+        
+        std::ifstream conf(string.c_str());
+        std::string type;
+        int bps;
+        while(conf>>type>>bps){
+            _converters.addConverter(type,bps);
         }
+        
     }
     ~SingAlong(){
         Artists::iterator it;
@@ -63,7 +66,13 @@ public:
               
     }
     void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){
-        
+        Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
+        std::string newNameTrack = "masters/"+nameFile; 
+        std::string compressed = "compressed/"+ a.name() + " - " +nameTrack; 
+        for(unsigned int i = 0 ; i < _converters.converters.size() ; ++i){
+             _converters.convert(newNameTrack,compressed,_converters.converters[i]->typeConverter(),_converters.converters[i]->bpsInfo());  
+            a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
+        }
     }
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
         Artist & a = this->findArtist(nameArtist);   //find the artist
