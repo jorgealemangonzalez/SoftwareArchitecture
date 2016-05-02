@@ -57,23 +57,21 @@ public:
         }
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
-    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile, const std::string &format , int bps){ //Creat a new track and it's added to the catalog of his artist
+    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile, const std::string &format = "" , int bps = -1){ //Creat a new track and it's added to the catalog of his artist
         Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
         std::string newNameTrack = "masters/"+nameFile; 
         std::string compressed = "compressed/"+ a.name() + " - " +nameTrack; 
-        _converters.convert(newNameTrack,compressed,format,bps);  
-        a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
-              
-    }
-    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile){
-        Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
-        std::string newNameTrack = "masters/"+nameFile; 
-        std::string compressed = "compressed/"+ a.name() + " - " +nameTrack; 
-        for(unsigned int i = 0 ; i < _converters.converters.size() ; ++i){
+        if(format == "" && bps == -1){  //Creates a file with all formats
+            for(unsigned int i = 0 ; i < _converters.converters.size() ; ++i){
              _converters.convert(newNameTrack,compressed,_converters.converters[i]->typeConverter(),_converters.converters[i]->bpsInfo());  
             a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
         }
+        }else{
+            _converters.convert(newNameTrack,compressed,format,bps);  
+            a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
+        }     
     }
+    
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
         Artist & a = this->findArtist(nameArtist);   //find the artist
         a.newAlbum(nameAlbum);  //create the new album
