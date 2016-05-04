@@ -74,7 +74,7 @@ class UnsupportedFormatConversion : public std::exception{  //exception if the f
 			return "Unsupported format";
 		}
 };
-class StyleDoesntExists : public std::exception{  //exception if the format of the converter is not supported
+class StyleDoesntExists : public std::exception{  //exception if the style doesn't exists in the system
 	public:
 		const char * what() const throw(){
 			return "The style does not exist";
