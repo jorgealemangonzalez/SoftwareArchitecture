@@ -1,7 +1,7 @@
 #include "MiniCppUnit.hxx"
 #include "LibFileSystem.hxx"
 #include "MailStub.hxx"
-
+#include "SingAlong.hxx"
 #include <fstream>
 
 class SubscriptionTests : public TestFixture<SubscriptionTests>
@@ -9,7 +9,7 @@ class SubscriptionTests : public TestFixture<SubscriptionTests>
 public:
 	TEST_FIXTURE( SubscriptionTests )
 	{
-		//TEST_CASE( testStyleList_withOneStyle );
+		TEST_CASE( testStyleList_withOneStyle );
 		//TEST_CASE( testStyleList_withTwoStyles );
 		//TEST_CASE( testAssociateStyleWithTrack_whenStyleDoesNotExist );
 		//TEST_CASE( testCatalog_trackWithTwoStyles );
@@ -48,13 +48,14 @@ public:
 		std::ofstream os( completeName.c_str() );
 		os << duration << std::endl;
 	}
-	/*
+	
 	void testStyleList_withOneStyle()
 	{
 		SingAlong business;
 		business.createNewStyle( "rumba" );
 		ASSERT_EQUALS("rumba\n", business.styleList() );
 	}
+	/*
 	void testStyleList_withTwoStyles()
 	{
 		SingAlong business;

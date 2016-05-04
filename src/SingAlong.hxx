@@ -117,6 +117,12 @@ public:
         infile.close();
         return duration;
     }
+    void createNewStyle(const std::string &styleName){
+
+    }
+    const std::string styleList(){
+        return "";
+    }
 private:
     Artists _catalog;		//List of different artists of the web page
     ConverterGroup _converters;
