@@ -9,7 +9,7 @@ public:
 		return _name;
 	}
 	void setName(const std::string &name){
-		
+		_name = name;
 	}
 private:
 	std::string _name;	//Name of the style
