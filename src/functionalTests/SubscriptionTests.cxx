@@ -10,7 +10,7 @@ public:
 	TEST_FIXTURE( SubscriptionTests )
 	{
 		TEST_CASE( testStyleList_withOneStyle );
-		//TEST_CASE( testStyleList_withTwoStyles );
+		TEST_CASE( testStyleList_withTwoStyles );
 		//TEST_CASE( testAssociateStyleWithTrack_whenStyleDoesNotExist );
 		//TEST_CASE( testCatalog_trackWithTwoStyles );
 		//TEST_CASE( testUserList_withOneUser );
@@ -55,7 +55,7 @@ public:
 		business.createNewStyle( "rumba" );
 		ASSERT_EQUALS("rumba\n", business.styleList() );
 	}
-	/*
+	
 	void testStyleList_withTwoStyles()
 	{
 		SingAlong business;
@@ -67,6 +67,7 @@ public:
 			business.styleList()
 		);
 	}
+	/*
 	void testAssociateStyleWithTrack_whenStyleDoesNotExist()
 	{
 		SingAlong business;
