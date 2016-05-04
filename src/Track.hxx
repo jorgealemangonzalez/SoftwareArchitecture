@@ -25,7 +25,7 @@ public:
         return _master;
     } 
     std::string styles()const{
-        return "NO STYLE";
+        return "";
     }
 private:
 	std::string _title;
