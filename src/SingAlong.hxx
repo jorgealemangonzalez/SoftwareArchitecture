@@ -129,7 +129,7 @@ public:
     }
 private:
     Artists _catalog;		//List of different artists of the web page
-    Styles _styles;
+    Styles _styles;         //List of different styles that could be in the system
     ConverterGroup _converters;
 
 };
