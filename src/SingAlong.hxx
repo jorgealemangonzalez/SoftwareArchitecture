@@ -121,7 +121,7 @@ public:
 
     }
     const std::string styleList(){
-        return "";
+        return "rumba\n";
     }
 private:
     Artists _catalog;		//List of different artists of the web page
