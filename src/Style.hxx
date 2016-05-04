@@ -2,11 +2,11 @@
 
 class Style{
 public:
-	Style(const std::string name){
+	Style(const std::string name):_name(name){
 
 	}
 	const std::string getName(){
-		return "";
+		return _name;
 	}
 private:
 	std::string _name;
