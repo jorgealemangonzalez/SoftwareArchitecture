@@ -117,10 +117,10 @@ public:
         infile.close();
         return duration;
     }
-    void createNewStyle(const std::string &styleName){
+    void createNewStyle(const std::string &styleName){  //Creates a new style in the system
 
     }
-    const std::string styleList(){
+    const std::string styleList(){                      //Returns a list of the different styles in the system
         return "rumba\n";
     }
 private:
