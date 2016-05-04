@@ -4,9 +4,10 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include "Style.hxx"
 
 typedef std::vector<Artist*> Artists ;
-typedef std::vector<std::string> Styles;
+typedef std::vector<Style*> Styles;
 class SingAlong{
 public:
     SingAlong(){
@@ -36,6 +37,10 @@ public:
         for(it = _catalog.begin();it != _catalog.end() ; ++it){
             delete(*it);
         } 
+        Styles::iterator it2;
+        for(it2 = _styles.begin();it2 != _styles.end() ; ++it2){
+            delete(*it2);
+        }
     }
     void defaultListOfConverters(std::vector< std::pair< std::string, int> >  *fakeCompression){
         fakeCompression->push_back(std::make_pair("mp3",128));
@@ -118,12 +123,12 @@ public:
         return duration;
     }
     void createNewStyle(const std::string &styleName){  //Creates a new style in the system
-        _styles.push_back(styleName);
+        _styles.push_back(new Style(styleName));
     }
     const std::string styleList(){                      //Returns a list of the different styles in the system
         std::string ret = "";
         for(unsigned int i = 0 ; i < _styles.size() ; ++i){
-            ret += _styles[i] + "\n";
+            ret += _styles[i]->getName() + "\n";
         }
         return ret;
     }
