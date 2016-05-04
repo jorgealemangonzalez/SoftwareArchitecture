@@ -6,7 +6,7 @@
 #include <string>
 
 typedef std::vector<Artist*> Artists ;
-
+typedef std::vector<std::string> Styles;
 class SingAlong{
 public:
     SingAlong(){
@@ -118,13 +118,18 @@ public:
         return duration;
     }
     void createNewStyle(const std::string &styleName){  //Creates a new style in the system
-
+        _styles.push_back(styleName);
     }
     const std::string styleList(){                      //Returns a list of the different styles in the system
-        return "rumba\n";
+        std::string ret = "";
+        for(unsigned int i = 0 ; i < _styles.size() ; ++i){
+            ret += _styles[i] + "\n";
+        }
+        return ret;
     }
 private:
     Artists _catalog;		//List of different artists of the web page
+    Styles _styles;
     ConverterGroup _converters;
 
 };
