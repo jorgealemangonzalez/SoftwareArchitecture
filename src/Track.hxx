@@ -1,3 +1,4 @@
+#include "Style.hxx"
 class Track
 {
 public:   
@@ -26,6 +27,9 @@ public:
     } 
     std::string styles()const{  //returns the list of styles of the track
         return "";
+    }
+    void addStyle(Style & style) {
+
     }
 private:
 	std::string _title;

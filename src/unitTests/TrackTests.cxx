@@ -12,7 +12,7 @@ public:
 		TEST_CASE( testMaster_byDefault );
 		TEST_CASE( testMaster_afterModifying );
 		TEST_CASE( testStyle_byDefault );
-		//TEST_CASE( testStyle_withOneStyle );
+		TEST_CASE( testStyle_withOneStyle );
 		//TEST_CASE( testStyle_withMultipleStyles );
 	}
 	
@@ -54,13 +54,13 @@ public:
 		Track track;
 		ASSERT_EQUALS( "" , track.styles());
 	}
-	/*
 	void testStyle_withOneStyle(){
 		Track track;
 		Style s("rock");
 		track.addStyle(s);
 		ASSERT_EQUALS("\t\trock\n",track.styles());
 	}
+	/*
 	void testStyle_withMultipleStyles(){
 		Track track;
 		Style s1("rock"),s2("blues"),s3("ska");

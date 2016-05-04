@@ -1,5 +1,9 @@
+
 #include<string>
 
+
+#ifndef HXX_STYLE
+#define HXX_STYLE
 class Style{
 public:
 	Style(const std::string &name):_name(name){
@@ -14,3 +18,4 @@ public:
 private:
 	std::string _name;	//Name of the style
 };
+#endif
