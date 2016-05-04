@@ -128,7 +128,7 @@ public:
         return ret;
     }
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){
-        
+        throw StyleDoesntExists();
     }
 private:
     Artists _catalog;		//List of different artists of the web page
