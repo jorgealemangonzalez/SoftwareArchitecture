@@ -28,11 +28,11 @@ public:
     std::string styles()const{  //returns the list of styles of the track
         return (s.getName() == "" ? "" : "\t\t"+s.getName()+"\n");
     }
-    void addStyle(Style & style) {
+    void addStyle(Style & style) {  //adds a style to the Track
         s = style;
     }
 private:
-    Style s;
+    Style s;                //Styles of the track
 	std::string _title;
     unsigned int _duration;
     std::string _master;
