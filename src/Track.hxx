@@ -24,7 +24,7 @@ public:
         }
         return _master;
     } 
-    std::string styles()const{
+    std::string styles()const{  //returns the list of styles of the track
         return "";
     }
 private:
