@@ -1,12 +1,14 @@
 #include "Style.hxx"
+#include <vector>
+typedef std::vector<Style*> Styles;
 class Track
 {
 public:   
-    Track():s(""){
+    Track(){
         _title = "-- Untitled --";
         _duration = (unsigned)0; //inicializamos los valors predefinidos
         _master = "";
-    }  
+    }
     std::string title(const std::string& setTitle = ""){ //return untitle title
         if(setTitle != ""){
         	_title = setTitle;
@@ -26,13 +28,17 @@ public:
         return _master;
     } 
     std::string styles()const{  //returns the list of styles of the track
-        return (s.getName() == "" ? "" : "\t\t"+s.getName()+"\n");
+        std::string ret = "";
+        for(unsigned int i = 0 ; i < _styles.size() ; ++i){
+            ret += "\t\t"+_styles[i]->getName()+"\n";
+        }
+        return ret;
     }
     void addStyle(Style & style) {  //adds a style to the Track
-        s = style;
+        _styles.push_back(&style);
     }
 private:
-    Style s;                //Styles of the track
+    Styles _styles;                //Styles of the track
 	std::string _title;
     unsigned int _duration;
     std::string _master;

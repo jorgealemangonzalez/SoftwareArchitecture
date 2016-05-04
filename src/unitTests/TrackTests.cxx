@@ -13,7 +13,7 @@ public:
 		TEST_CASE( testMaster_afterModifying );
 		TEST_CASE( testStyle_byDefault );
 		TEST_CASE( testStyle_withOneStyle );
-		//TEST_CASE( testStyle_withMultipleStyles );
+		TEST_CASE( testStyle_withMultipleStyles );
 	}
 	
 	void testTitle_byDefault()
@@ -60,7 +60,7 @@ public:
 		track.addStyle(s);
 		ASSERT_EQUALS("\t\trock\n",track.styles());
 	}
-	/*
+	
 	void testStyle_withMultipleStyles(){
 		Track track;
 		Style s1("rock"),s2("blues"),s3("ska");
@@ -69,7 +69,8 @@ public:
 		track.addStyle(s3);
 		ASSERT_EQUALS("\t\trock\n" "\t\tblues\n" "\t\tska\n"
 			,track.styles());
-	}*/
+
+	}
 };
 
 REGISTER_FIXTURE( TrackTests )
