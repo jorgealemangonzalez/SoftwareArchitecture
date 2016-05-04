@@ -2,7 +2,7 @@
 class Track
 {
 public:   
-    Track(){
+    Track():s(""){
         _title = "-- Untitled --";
         _duration = (unsigned)0; //inicializamos los valors predefinidos
         _master = "";
@@ -26,12 +26,13 @@ public:
         return _master;
     } 
     std::string styles()const{  //returns the list of styles of the track
-        return "";
+        return (s.getName() == "" ? "" : "\t\t"+s.getName()+"\n");
     }
     void addStyle(Style & style) {
-
+        s = style;
     }
 private:
+    Style s;
 	std::string _title;
     unsigned int _duration;
     std::string _master;
