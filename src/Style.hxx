@@ -8,7 +8,7 @@ public:
 	const std::string getName(){		//returns the name of the style
 		return _name;
 	}
-	void setName(const std::string &name){
+	void setName(const std::string &name){	//changes the name of the style
 		_name = name;
 	}
 private:
