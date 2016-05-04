@@ -24,6 +24,9 @@ public:
         }
         return _master;
     } 
+    std::string styles()const{
+        return "NO STYLE";
+    }
 private:
 	std::string _title;
     unsigned int _duration;
