@@ -5,7 +5,7 @@ public:
 	Style(const std::string &name):_name(name){
 
 	}
-	const std::string getName(){		//returns the name of the style
+	std::string getName(){		//returns the name of the style
 		return _name;
 	}
 	void setName(const std::string &name){	//changes the name of the style
