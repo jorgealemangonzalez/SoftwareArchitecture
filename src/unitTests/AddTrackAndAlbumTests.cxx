@@ -208,8 +208,8 @@ public:
 			"\tTrack 1 [120s]\n"
 			"\t\tmasters/File1.wav\n"
 			"\t\tStyles: rock\n"
-			"\tTrack 2 [90s]\n"
-			"\t\tmasters/File2.wav",
+			"\n\tTrack 2 [90s]\n"
+			"\t\tmasters/File2.wav\n",
 			artist.descriptionCatalog()
 		);
 	}
