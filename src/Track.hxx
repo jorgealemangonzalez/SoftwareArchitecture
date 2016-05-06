@@ -25,7 +25,7 @@ public:
     std::string master(const std::string &setMaster = ""){ //devolveremos valor por defecto a no ser que ya haya sido modificado
         if(setMaster != ""){
             _master = setMaster;
-        }
+        }   
         return _master;
     } 
     std::string styles()const{  //returns the list of styles of the track
@@ -39,7 +39,7 @@ public:
         _noStyles = true;
         _styles.push_back(&style);
     }
-    bool noStyles(){
+    bool noStyles(){ //to see if a track has any style
         return _noStyles;
     }
 private:
