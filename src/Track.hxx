@@ -8,6 +8,7 @@ public:
         _title = "-- Untitled --";
         _duration = (unsigned)0; //inicializamos los valors predefinidos
         _master = "";
+        _noStyles = false;
     }
     std::string title(const std::string& setTitle = ""){ //return untitle title
         if(setTitle != ""){
@@ -30,15 +31,20 @@ public:
     std::string styles()const{  //returns the list of styles of the track
         std::string ret = "";
         for(unsigned int i = 0 ; i < _styles.size() ; ++i){
-            ret += "\t\t"+_styles[i]->getName()+"\n";
+            ret += ""+_styles[i]->getName()+"\n";
         }
         return ret;
     }
     void addStyle(Style & style) {  //adds a style to the Track
+        _noStyles = true;
         _styles.push_back(&style);
+    }
+    bool noStyles(){
+        return _noStyles;
     }
 private:
     Styles _styles;                //Styles of the track
+    bool _noStyles;
 	std::string _title;
     unsigned int _duration;
     std::string _master;

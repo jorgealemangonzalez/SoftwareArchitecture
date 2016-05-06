@@ -20,6 +20,7 @@ public:
 		TEST_CASE( testTrackList_withNoTracks );
 		TEST_CASE( testTrackList_withOneTrack );
 		TEST_CASE( testTrackList_withTwoTracks );
+		TEST_CASE( testTrackList_withTwoTracksAndStyle);
 	}
 	
 	void testCatalogTracks_withNoTracks()
@@ -193,6 +194,23 @@ public:
 			"1 - Track 1 [120s]\n"
 			"2 - Track 2 [90s]\n",
 			album.trackList()
+		);
+	}
+	void testTrackList_withTwoTracksAndStyle(){
+		Artist artist;
+		artist.name( "An artist" );
+		artist.newTrack( "Track 1", 120u, "masters/File1.wav" );
+		artist.newTrack( "Track 2", 90u, "masters/File2.wav" );
+		Style style("rock");
+		artist.assignStyleToTrack("Track 1",style);	
+		ASSERT_EQUALS(
+			"An artist [solo]\n"
+			"\tTrack 1 [120s]\n"
+			"\t\tmasters/File1.wav\n"
+			"\t\tStyles: rock\n"
+			"\tTrack 2 [90s]\n"
+			"\t\tmasters/File2.wav",
+			artist.descriptionCatalog()
 		);
 	}
 	

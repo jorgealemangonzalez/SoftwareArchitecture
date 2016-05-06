@@ -2,6 +2,7 @@
 #include<vector>
 //#include "Track.hxx"
 #include "Album.hxx"
+#include "Style.hxx"
 //#include "Exceptions.hxx"
 
 typedef std::vector<Track*> Tracks;
@@ -49,7 +50,7 @@ public:
     		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){ //Iterate through catalog and concatenate the info of different tracks
     			std::stringstream sDur;
     			sDur << (*it)->duration();
-    			result += "\t"+(*it)->title()+" ["+sDur.str()+"s]\n\t\t"+(*it)->master()+"\n";
+    			result += "\t"+(*it)->title()+" ["+sDur.str()+"s]\n\t\t"+(*it)->master()+ ((*it)->noStyles() ? " \n\t\tStyles: "+ (*it)->styles() : "" ) +"\n";
     		}
     		
     		return result;
@@ -105,6 +106,11 @@ public:
     		throw e;
     	}
     }
+    void assignStyleToTrack(const std::string &nameTrack, Style &nameSytyle){
+        this->findTrack(nameTrack).addStyle(nameSytyle);
+
+    }
+
     const std::string descriptionCatalog(){ //if a catalog it's empty it throws the error correct
     	return description() + catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }

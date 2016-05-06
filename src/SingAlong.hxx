@@ -125,7 +125,7 @@ public:
     void createNewStyle(const std::string &styleName){  //Creates a new style in the system
         _styles.push_back(new Style(styleName));
     }
-    const std::string styleList(){                      //Returns a list of the different styles in the system
+    std::string styleList(){                      //Returns a list of the different styles in the system
         std::string ret = "";
         for(unsigned int i = 0 ; i < _styles.size() ; ++i){
             ret += _styles[i]->getName() + "\n";
