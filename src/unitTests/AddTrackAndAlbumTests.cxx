@@ -207,7 +207,7 @@ public:
 			"An artist [solo]\n"
 			"\tTrack 1 [120s]\n"
 			"\t\tmasters/File1.wav\n"
-			"\t\tStyles: rock\n"
+			"\t\trock\n"
 			"\n\tTrack 2 [90s]\n"
 			"\t\tmasters/File2.wav\n",
 			artist.descriptionCatalog()

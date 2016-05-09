@@ -80,4 +80,10 @@ class StyleDoesntExists : public std::exception{  //exception if the style doesn
 			return "The style does not exist";
 		}
 };
+class StyleAlreadyExist : public std::exception{  //exception if the style doesn't exists in the system
+	public:
+		const char * what() const throw(){
+			return "The style already exist";
+		}
+};
 #endif

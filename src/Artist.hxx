@@ -50,7 +50,7 @@ public:
     		for(Tracks::iterator it=_catalog.begin(); it != _catalog.end() ; it++){ //Iterate through catalog and concatenate the info of different tracks
     			std::stringstream sDur;
     			sDur << (*it)->duration();
-    			result += "\t"+(*it)->title()+" ["+sDur.str()+"s]\n\t\t"+(*it)->master()+ ((*it)->noStyles() ? "\n\t\tStyles: "+ (*it)->styles() : "" ) +"\n";
+    			result += "\t"+(*it)->title()+" ["+sDur.str()+"s]\n\t\t"+(*it)->master()+ ((*it)->noStyles() ? "\n\t\t"+ (*it)->styles() : "" ) +"\n";
     		}
     		
     		return result;
@@ -106,7 +106,7 @@ public:
     		throw e;
     	}
     }
-    void assignStyleToTrack(const std::string &nameTrack, Style &nameSytyle){
+    void assignStyleToTrack(const std::string &nameTrack, Style &nameSytyle){ //assign a style to a track
         this->findTrack(nameTrack).addStyle(nameSytyle);
 
     }

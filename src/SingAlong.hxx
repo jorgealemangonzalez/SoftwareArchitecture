@@ -107,6 +107,12 @@ public:
 		}
 		throw artistNotFoundInCatalogException(); 
     }
+    Style& findStyle(const std::string &nameStyle){
+        for(Styles::iterator it=_styles.begin() ; it != _styles.end() ; ++it){
+            if(nameStyle == (*it)->getName())return(**it);
+        }
+        throw StyleDoesntExists();
+    }
     unsigned int readDuration(const std::string &nameDirectory, const std::string &nameFile){
         unsigned int duration;
         std::ifstream infile;
@@ -123,6 +129,9 @@ public:
         return duration;
     }
     void createNewStyle(const std::string &styleName){  //Creates a new style in the system
+        for(Styles::iterator it= _styles.begin() ; it != _styles.end() ; ++it){
+            if( styleName == (*it)->getName() )throw StyleAlreadyExist();
+        }
         _styles.push_back(new Style(styleName));
     }
     std::string styleList(){                      //Returns a list of the different styles in the system
@@ -133,7 +142,7 @@ public:
         return ret;
     }
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){
-        throw StyleDoesntExists();  //Throw exception if the style doesn't exists
+        this->findArtist(artist).assignStyleToTrack(track,findStyle(style));
     }
 private:
     Artists _catalog;		//List of different artists of the web page

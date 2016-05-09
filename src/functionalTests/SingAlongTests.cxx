@@ -24,6 +24,7 @@ public:
 		TEST_CASE( testCatalog_withTwoAlbums );
 		TEST_CASE( testCatalog_albumWithTracks );
 		TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
+		TEST_CASE( testFindStyleOfATrack);
 	}
 
 	/**
@@ -305,6 +306,21 @@ public:
 		{
 			ASSERT_EQUALS( "The album does not exist", e.what() );
 		}
+	}
+	void testFindStyleOfATrack(){
+		SingAlong business;
+		business.createArtist("An artist",false);
+		createMasterFile( "aMasterFile.wav", 30 );
+		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+		business.createNewStyle( "A style" );
+		business.associateStyleWithTrack( "A style", "An artist", "A track" );
+		Style & style = business.findStyle("A style");
+
+		ASSERT_EQUALS(
+			"A style",
+			style.getName()
+		);
+
 	}
 	
 };
