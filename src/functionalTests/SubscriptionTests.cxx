@@ -18,7 +18,7 @@ public:
 		TEST_CASE( testListSubscribedToStyle_withOneUser );
 		TEST_CASE( testListSubscribedToStyle_withTwoUsers );
 		TEST_CASE( testListSubscribedToStyle_whenUserDoesNotExist );
-		//TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
+		TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
 		// Notification Tests: 
 		//TEST_CASE( testAddStyleToTrack_notifyUserSubscribedToStyle );
 		//TEST_CASE( testAddStyleToTrack_notifyTwoUsersSubscribedToStyle );	
@@ -159,7 +159,7 @@ public:
 			ASSERT_EQUALS( "The user does not exist", e.what() );
 		}
 	}
-	/*void testListSubscribedToStyle_whenStyleDoesNotExist()
+	void testListSubscribedToStyle_whenStyleDoesNotExist()
 	{
 		SingAlong business;
 		business.createNewUser( "A user", "a@mail.org" );
@@ -174,7 +174,7 @@ public:
 		}
 
 	}
-	void testAddStyleToTrack_notifyUserSubscribedToStyle()
+	/*void testAddStyleToTrack_notifyUserSubscribedToStyle()
 	{
 		SingAlong business;
 		business.createNewUser( "A user", "a@mail.org" );
