@@ -80,7 +80,19 @@ class StyleDoesntExists : public std::exception{  //exception if the style doesn
 			return "The style does not exist";
 		}
 };
-class StyleAlreadyExist : public std::exception{  //exception if the style doesn't exists in the system
+class StyleAlreadyExist : public std::exception{  //exception if the style exists in the system
+	public:
+		const char * what() const throw(){
+			return "The style already exist";
+		}
+};
+class UserAlreadyExists : public std::exception{  //exception if the user exist in the system
+	public:
+		const char * what() const throw(){
+			return "The user already exists";
+		}
+};
+class EmailAlreadyExists : public std::exception{  //exception if the email exist in the system
 	public:
 		const char * what() const throw(){
 			return "The style already exist";

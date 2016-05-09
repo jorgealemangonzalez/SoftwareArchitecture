@@ -1,4 +1,5 @@
 #include "Artist.hxx"
+#include "User.hxx"
 #include "ConverterGroup.hxx"
 #include <vector>
 #include <fstream>
@@ -8,6 +9,7 @@
 
 typedef std::vector<Artist*> Artists ;
 typedef std::vector<Style*> Styles;
+typedef std::vector<User*> Users;
 class SingAlong{
 public:
     SingAlong(){
@@ -41,6 +43,10 @@ public:
         for(it2 = _styles.begin();it2 != _styles.end() ; ++it2){
             delete(*it2);
         }
+        Users::iterator it3;
+        for(it3 = _users.begin() ; it3 != _users.end() ; it3++){
+            delete(*it3);
+        }
     }
     void defaultListOfConverters(std::vector< std::pair< std::string, int> >  *fakeCompression){
         fakeCompression->push_back(std::make_pair("mp3",128));
@@ -58,7 +64,14 @@ public:
         }
         return result;
     }
-    
+    void createNewUser(const std::string &nameUser, const std::string &email){
+        for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
+            if((*it)->getName() == nameUser)throw UserAlreadyExists();
+            if((*it)->getEmail() == email)throw EmailAlreadyExists();
+        }
+        _users.push_back(new User(nameUser,email));
+    }
+
     void createArtist(const std::string &artist , bool isGroup){	//Create an artis and changes is status to grouped ( if isGroup is true ) and save it into the catalog
         Artist *a = new Artist();		
         a->name(artist);
@@ -140,12 +153,20 @@ public:
         }
         return ret;
     }
+    std::string userList(){
+        std::string ret = "";
+        for(unsigned int i = 0; i < _users.size() ; ++i){
+            ret += _users[i]->getName() + "<"+ _users[i]->getEmail() + ">\n";
+        }
+        return ret;
+    }
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){ //we put an specific style to a track
         this->findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists
     }
 private:
     Artists _catalog;		//List of different artists of the web page
     Styles _styles;         //List of different styles that could be in the system
-    ConverterGroup _converters;
+    ConverterGroup _converters; //List of different converters
+    Users _users;           //List of different users that have our webpage
 
 };
