@@ -119,6 +119,12 @@ public:
 		}
 		throw artistNotFoundInCatalogException(); 
     }
+    User& findUser (const std::string &userName){
+        for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
+            if(userName == (*it)->getName())return(**it);
+        }
+        throw UserDontExist();
+    }
     Style& findStyle(const std::string &nameStyle){ //find if the style exists
         for(Styles::iterator it=_styles.begin() ; it != _styles.end() ; ++it){
             if(nameStyle == (*it)->getName())return(**it);
@@ -162,6 +168,12 @@ public:
     }
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){ //we put an specific style to a track
         this->findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists
+    }
+    void subscribeUserToStyle(const std::string &nameUser, const std::string &nameStyle ){
+        this->findStyle(nameStyle).subscribeUser(findUser(nameUser));
+    }
+    std::string listSubscribedToStyle(const std::string &nameStyle){
+        return this->findStyle(nameStyle).usersSubscribed();
     }
 private:
     Artists _catalog;		//List of different artists of the web page

@@ -92,6 +92,12 @@ class UserAlreadyExists : public std::exception{  //exception if the user exist 
 			return "The user already exists";
 		}
 };
+class UserDontExist : public std::exception{  //exception if the user does not exist in the system
+	public:
+		const char * what() const throw(){
+			return "The user does not exists";
+		}
+};
 class EmailAlreadyExists : public std::exception{  //exception if the email exist in the system
 	public:
 		const char * what() const throw(){
