@@ -58,16 +58,16 @@ public:
 		Track track;
 		Style s("rock");
 		track.addStyle(s);
-		ASSERT_EQUALS("rock\n",track.styles());
+		ASSERT_EQUALS("\n\t\trock",track.styles());
 	}
 	
 	void testStyle_withMultipleStyles(){
-		Track track;
+		Track track;	
 		Style s1("rock"),s2("blues"),s3("ska");
 		track.addStyle(s1);
 		track.addStyle(s2);
 		track.addStyle(s3);
-		ASSERT_EQUALS("rock\n" "blues\n" "ska\n"
+		ASSERT_EQUALS("\n\t\trock\n" "\t\tblues\n" "\t\tska"
 			,track.styles());
 
 	}

@@ -30,8 +30,11 @@ public:
     } 
     std::string styles()const{  //returns the list of styles of the track
         std::string ret = "";
+        if(!_noStyles)return ret;
         for(unsigned int i = 0 ; i < _styles.size() ; ++i){
-            ret += ""+_styles[i]->getName()+"\n";
+            if(i==0)ret+="\n";
+            ret += "\t\t"+_styles[i]->getName();
+            if(i < _styles.size() - 1 )ret+="\n";
         }
         return ret;
     }
