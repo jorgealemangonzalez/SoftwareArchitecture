@@ -25,6 +25,7 @@ public:
 		TEST_CASE( testCatalog_albumWithTracks );
 		TEST_CASE( testIncludeTrackOnAlbum_whenAlbumDoesNotExist );
 		TEST_CASE( testFindStyleOfATrack);
+		TEST_CASE( testFindStyleofATrack_whenDontExist);
 	}
 
 	/**
@@ -320,7 +321,21 @@ public:
 			"A style",
 			style.getName()
 		);
-
+	}
+	void testFindStyleofATrack_whenDontExist(){
+		SingAlong business;
+		business.createArtist("An artist",false);
+		createMasterFile( "aMasterFile.wav", 30 );
+		business.createNewTrack( "An artist", "A track", "aMasterFile.wav" );
+		try
+		{
+			business.findStyle( "A style" );
+			FAIL( "An exception should be caught!" );
+		}
+		catch( std::exception & e )
+		{
+			ASSERT_EQUALS( "The style does not exist", e.what() );
+		}
 	}
 	
 };
