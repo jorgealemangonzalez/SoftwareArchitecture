@@ -1,7 +1,6 @@
 
 #include<string>
 
-
 #ifndef HXX_STYLE
 #define HXX_STYLE
 class Style{
