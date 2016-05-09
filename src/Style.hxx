@@ -17,13 +17,13 @@ public:
 	void setName(const std::string &name){	//changes the name of the style
 		_name = name;
 	}
-	void subscribeUser(User &user){
+	void subscribeUser(User &user){ //add the reference of a user to out vector
 		_users.push_back(&user);
 	}
 	std::string usersSubscribed(){
 		std::string ret = "";
-		for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
-			ret += (*it)->getName() + "\n";
+		for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){ //return all the names of our users
+			ret += (*it)->getName() + "\n";									//that are subscribed to this style.
 		}
 		return ret;
 	}

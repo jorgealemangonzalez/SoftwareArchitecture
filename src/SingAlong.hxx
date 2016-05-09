@@ -170,9 +170,9 @@ public:
         this->findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists
     }
     void subscribeUserToStyle(const std::string &nameUser, const std::string &nameStyle ){
-        this->findStyle(nameStyle).subscribeUser(findUser(nameUser));
+        this->findStyle(nameStyle).subscribeUser(findUser(nameUser)); //subscribe an user to an specific style
     }
-    std::string listSubscribedToStyle(const std::string &nameStyle){
+    std::string listSubscribedToStyle(const std::string &nameStyle){ //return the string of all users subscribed in this style
         return this->findStyle(nameStyle).usersSubscribed();
     }
 private:
