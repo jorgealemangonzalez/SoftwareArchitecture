@@ -66,8 +66,8 @@ public:
     }
     void createNewUser(const std::string &nameUser, const std::string &email){ //we create a new user to the system
         for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
-            //if((*it)->getName() == nameUser)throw UserAlreadyExists();
-            //if((*it)->getEmail() == email)throw EmailAlreadyExists();
+            if((*it)->getName() == nameUser)throw UserAlreadyExists(); //extra exception in our system
+            if((*it)->getEmail() == email)throw EmailAlreadyExists();
         }
         _users.push_back(new User(nameUser,email)); //we push the user in the vector
     }
@@ -167,7 +167,9 @@ public:
         return ret;
     }
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){ //we put an specific style to a track
-        this->findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists
+        this->findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists 
+        std::string subject = "new track " + track + " by " + artist;
+        this->findStyle(style).notifyUsers(subject);
     }
     void subscribeUserToStyle(const std::string &nameUser, const std::string &nameStyle ){
         this->findStyle(nameStyle).subscribeUser(findUser(nameUser)); //subscribe an user to an specific style

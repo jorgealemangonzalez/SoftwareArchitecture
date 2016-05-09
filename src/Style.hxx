@@ -27,6 +27,14 @@ public:
 		}
 		return ret;
 	}
+	void notifyUsers(const std::string &subject){			//notify all users with the specific subject
+		for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
+			(*it)->notify(subject);
+		}
+	}
+
+
+
 private:
 	std::string _name;	//Name of the style
 	Users _users;

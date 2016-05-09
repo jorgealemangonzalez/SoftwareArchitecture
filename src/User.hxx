@@ -1,6 +1,7 @@
 
 #ifndef USER_HXX
 #define USER_HXX
+#include "MailStub.hxx"
 class User{
 public:
 	User(const std::string &name, const std::string &email):_name(name), _email(email){
@@ -18,6 +19,11 @@ public:
 	void setEmail(const std::string &email){ //changes the email
 		_email = email;
 	}
+	void notify(const std::string &subject){ //use the MailStub library to "simulate" a message with this specific arguments
+		std::string to = this->getName() + " <"+ this->getEmail() + ">";
+		MailStub::theInstance().sendMail(to,subject);
+	}
+
 private:
 	std::string _name;	//Name of the user
 	std::string _email; //email of the user

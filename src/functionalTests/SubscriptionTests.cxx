@@ -20,7 +20,7 @@ public:
 		TEST_CASE( testListSubscribedToStyle_whenUserDoesNotExist );
 		TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
 		// Notification Tests: 
-		//TEST_CASE( testAddStyleToTrack_notifyUserSubscribedToStyle );
+		TEST_CASE( testAddStyleToTrack_notifyUserSubscribedToStyle );
 		//TEST_CASE( testAddStyleToTrack_notifyTwoUsersSubscribedToStyle );	
 	}
 
@@ -174,7 +174,7 @@ public:
 		}
 
 	}
-	/*void testAddStyleToTrack_notifyUserSubscribedToStyle()
+	void testAddStyleToTrack_notifyUserSubscribedToStyle()
 	{
 		SingAlong business;
 		business.createNewUser( "A user", "a@mail.org" );
@@ -194,7 +194,7 @@ public:
 		);
 	}
 	
-	void testAddStyleToTrack_notifyTwoUsersSubscribedToStyle()
+	/*void testAddStyleToTrack_notifyTwoUsersSubscribedToStyle()
 	{
 		SingAlong business;
 		business.createNewUser( "First user", "a@mail.org" );
