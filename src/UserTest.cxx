@@ -10,7 +10,7 @@ public:
 	
 	void testName_byInitialize(){
 		User user("Jorge","jorge@gmail.com");
-		ASSERT_EQUALS("Jorgee",user.getName());
+		ASSERT_EQUALS("Jorge",user.getName());
 	}
 };
 
