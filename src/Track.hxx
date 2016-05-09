@@ -31,8 +31,8 @@ public:
     std::string styles()const{  //returns the list of styles of the track
         std::string ret = "";
         if(!_noStyles)return ret;
-        for(unsigned int i = 0 ; i < _styles.size() ; ++i){
-            if(i==0)ret+="\n";
+        for(unsigned int i = 0 ; i < _styles.size() ; ++i){ //for matching our test, we have to be acurate with "\n" at the end
+            if(i==0)ret+="\n";                              //and at the begining of an specific test
             ret += "\t\t"+_styles[i]->getName();
             if(i < _styles.size() - 1 )ret+="\n";
         }
