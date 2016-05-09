@@ -156,7 +156,7 @@ public:
     std::string userList(){
         std::string ret = "";
         for(unsigned int i = 0; i < _users.size() ; ++i){
-            ret += _users[i]->getName() + "<"+ _users[i]->getEmail() + ">\n";
+            ret += _users[i]->getName() + " <"+ _users[i]->getEmail() + ">\n";
         }
         return ret;
     }
