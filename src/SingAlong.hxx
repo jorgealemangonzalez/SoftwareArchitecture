@@ -107,11 +107,11 @@ public:
 		}
 		throw artistNotFoundInCatalogException(); 
     }
-    Style& findStyle(const std::string &nameStyle){
+    Style& findStyle(const std::string &nameStyle){ //find if the style exists
         for(Styles::iterator it=_styles.begin() ; it != _styles.end() ; ++it){
             if(nameStyle == (*it)->getName())return(**it);
         }
-        throw StyleDoesntExists();
+        throw StyleDoesntExists(); //throw an error if the style does not exists
     }
     unsigned int readDuration(const std::string &nameDirectory, const std::string &nameFile){
         unsigned int duration;
@@ -129,10 +129,10 @@ public:
         return duration;
     }
     void createNewStyle(const std::string &styleName){  //Creates a new style in the system
-        for(Styles::iterator it= _styles.begin() ; it != _styles.end() ; ++it){
+        for(Styles::iterator it= _styles.begin() ; it != _styles.end() ; ++it){ //look if the style already exist
             if( styleName == (*it)->getName() )throw StyleAlreadyExist();
         }
-        _styles.push_back(new Style(styleName));
+        _styles.push_back(new Style(styleName)); //if we don't have the style, we add it
     }
     std::string styleList(){                      //Returns a list of the different styles in the system
         std::string ret = "";
@@ -141,8 +141,8 @@ public:
         }
         return ret;
     }
-    void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){
-        this->findArtist(artist).assignStyleToTrack(track,findStyle(style));
+    void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){ //we put an specific style to a track
+        this->findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists
     }
 private:
     Artists _catalog;		//List of different artists of the web page
