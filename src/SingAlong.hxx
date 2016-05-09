@@ -64,12 +64,12 @@ public:
         }
         return result;
     }
-    void createNewUser(const std::string &nameUser, const std::string &email){
+    void createNewUser(const std::string &nameUser, const std::string &email){ //we create a new user to the system
         for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
-            if((*it)->getName() == nameUser)throw UserAlreadyExists();
-            if((*it)->getEmail() == email)throw EmailAlreadyExists();
+            //if((*it)->getName() == nameUser)throw UserAlreadyExists();
+            //if((*it)->getEmail() == email)throw EmailAlreadyExists();
         }
-        _users.push_back(new User(nameUser,email));
+        _users.push_back(new User(nameUser,email)); //we push the user in the vector
     }
 
     void createArtist(const std::string &artist , bool isGroup){	//Create an artis and changes is status to grouped ( if isGroup is true ) and save it into the catalog
@@ -154,7 +154,7 @@ public:
         return ret;
     }
     std::string userList(){
-        std::string ret = "";
+        std::string ret = "";   //we return a string with all the information of all the users
         for(unsigned int i = 0; i < _users.size() ; ++i){
             ret += _users[i]->getName() + " <"+ _users[i]->getEmail() + ">\n";
         }
