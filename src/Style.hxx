@@ -23,7 +23,7 @@ public:
 	std::string usersSubscribed(){
 		std::string ret = "";
 		for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
-			ret += (*it)->getName() + " \n";
+			ret += (*it)->getName() + "\n";
 		}
 		return ret;
 	}
