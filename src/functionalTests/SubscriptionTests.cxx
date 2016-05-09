@@ -16,7 +16,7 @@ public:
 		TEST_CASE( testUserList_withOneUser );
 		TEST_CASE( testUserList_withTwoUsers );
 		TEST_CASE( testListSubscribedToStyle_withOneUser );
-		//TEST_CASE( testListSubscribedToStyle_withTwoUsers );
+		TEST_CASE( testListSubscribedToStyle_withTwoUsers );
 		//TEST_CASE( testListSubscribedToStyle_whenUserDoesNotExist );
 		//TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
 		// Notification Tests: 
@@ -132,7 +132,7 @@ public:
 			business.listSubscribedToStyle( "A style" )
 		);				
 	}
-	/*void testListSubscribedToStyle_withTwoUsers()
+	void testListSubscribedToStyle_withTwoUsers()
 	{
 		SingAlong business;
 		business.createNewUser( "A user", "a@mail.org" );
@@ -146,7 +146,7 @@ public:
 			business.listSubscribedToStyle( "A style" )
 		);
 	}
-	void testListSubscribedToStyle_whenUserDoesNotExist()
+	/*void testListSubscribedToStyle_whenUserDoesNotExist()
 	{
 		SingAlong business;
 		try
