@@ -11,10 +11,22 @@ Seminario 2:
 - Lo demás está correcto.
 
 Seminario 3:
+- El contenido del mail es incorrecto
+- La relación con users debería ser de herencia y no de composición.
+- Faltaría extender el servício de envíos y ventas de canciones.
+- Prácticamente no se han puesto requerimientos textuales de dominio.
 
 Seminario 4:
+- En los diagramas de actividad habéis hecho árboles cuando en verdad se necesitarian bucles, ya que en ciertos puntos hemos de validar cosas que pueden fallar y volver atrás.
+- "Properties of song", "Name of song", "comments",... no son nodos válidos para un diagrama de actividad.
+- "Add song to consumer album" no es un nodo válido para un diagrama de estados.
+- Las flechas del diagrama de estados deberían ser acciones.
 
 Seminario 5:
+- A user le falta algun método como login.
+- Album y track podrían tener más métodos.
+- Mirando vuestro diagrama, SingAlong solo debería tener una composición con la clase User, desde ahí ya puede alcanzar el subsitema de tracks y albums.
+- No tenéis bien refenciado el html del seminario 5.
 
 Seminario 6:
 
