@@ -21,7 +21,7 @@ public:
 		TEST_CASE( testListSubscribedToStyle_whenStyleDoesNotExist );
 		// Notification Tests: 
 		TEST_CASE( testAddStyleToTrack_notifyUserSubscribedToStyle );
-		//TEST_CASE( testAddStyleToTrack_notifyTwoUsersSubscribedToStyle );	
+		TEST_CASE( testAddStyleToTrack_notifyTwoUsersSubscribedToStyle );	
 	}
 
 	/**
@@ -193,8 +193,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	
-	/*void testAddStyleToTrack_notifyTwoUsersSubscribedToStyle()
+	void testAddStyleToTrack_notifyTwoUsersSubscribedToStyle()
 	{
 		SingAlong business;
 		business.createNewUser( "First user", "a@mail.org" );
@@ -219,7 +218,7 @@ public:
 		);
 		// note: messages returned in alphabetical order
 	}
-	*/
+	
 
 };
 

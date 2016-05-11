@@ -104,4 +104,10 @@ class EmailAlreadyExists : public std::exception{  //exception if the email exis
 			return "The style already exist";
 		}
 };
+class DontHaveUsers : public std::exception{  //exception if the style hasn't any user subscribed
+	public:
+		const char * what() const throw(){
+			return "This style doesn't have users subscribed";
+		}
+};
 #endif

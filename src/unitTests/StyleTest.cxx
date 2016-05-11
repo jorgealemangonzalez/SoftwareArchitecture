@@ -1,5 +1,6 @@
 #include "MiniCppUnit.hxx"
 #include "Style.hxx"
+#include "User.hxx"
 class StyleTest : public TestFixture<StyleTest>
 {
 public:
@@ -7,7 +8,6 @@ public:
 	{
 		TEST_CASE( testName_byInitialize );
 		TEST_CASE( testName_afterModifying );
-
 	}
 	
 	void testName_byInitialize()
@@ -22,7 +22,7 @@ public:
 		style.setName("blues");
 		ASSERT_EQUALS( "blues", style.getName() );
 	}
-	
+
 };
 
 REGISTER_FIXTURE( StyleTest )
