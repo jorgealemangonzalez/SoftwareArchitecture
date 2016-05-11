@@ -81,7 +81,7 @@ public:
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
     void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile, const std::string &format = "", int bps=-1){ //Creat a new track and it's added to the catalog of his artist
-        Artist & a = this->findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
+        Artist & a = findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
         std::string newNameTrack = "masters/"+nameFile; 
         std::string compressed = "compressed/"+ a.name() + " - " +nameTrack; 
         a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
@@ -95,22 +95,22 @@ public:
     }
     
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
-        Artist & a = this->findArtist(nameArtist);   //find the artist
+        Artist & a = findArtist(nameArtist);   //find the artist
         a.newAlbum(nameAlbum);  //create the new album
     }
     void listAlbum( const std::string &nameArtist, const std::string &nameAlbum){//We list a given album from an artist
-        Artist & artist = this->findArtist(nameArtist); //first we find the artist 
+        Artist & artist = findArtist(nameArtist); //first we find the artist 
         Album & album = artist.findAlbum(nameAlbum);    //when we have the artist, we find if he has an album with that name
         album.list();   //when we have the album, we put it as listed
     }
 
     void unlistAlbum( const std::string &nameArtist, const std::string &nameAlbum){//We unlist a given album from an artist
-        Artist & artist = this->findArtist(nameArtist); //first we find the artist 
+        Artist & artist = findArtist(nameArtist); //first we find the artist 
         Album & album = artist.findAlbum(nameAlbum);    //when we have the artist, we find if he has an album with that name
         album.unlist();   //when we have the album, we put it as unlisted
     }
     void includeTrackOnAlbum( const std::string &nameArtist, const std::string &nameTrack , const std::string &nameAlbum ){ //include a track to a specific album from an artist
-        Artist & artist = this->findArtist(nameArtist); //finde the artist 
+        Artist & artist = findArtist(nameArtist); //finde the artist 
         artist.assignTrackToAlbum(nameTrack,nameAlbum);     //assign a track to an album, specification in Artist class
     }
     Artist& findArtist(const std::string &name ){		//Search for an artist inside the catalog	
@@ -167,15 +167,15 @@ public:
         return ret;
     }
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){ //we put an specific style to a track
-        this->findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists 
-        std::string subject = "new track " + track + " by " + artist;
-        this->findStyle(style).notifyUsers(subject);
+        findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists 
+        std::string subject = "new track " + track + " by " + artist; //the subject of our message that will notify our users
+        findStyle(style).notifyUsers(subject);
     }
     void subscribeUserToStyle(const std::string &nameUser, const std::string &nameStyle ){
-        this->findStyle(nameStyle).subscribeUser(findUser(nameUser)); //subscribe an user to an specific style
+        findStyle(nameStyle).subscribeUser(findUser(nameUser)); //subscribe an user to an specific style
     }
     std::string listSubscribedToStyle(const std::string &nameStyle){ //return the string of all users subscribed in this style
-        return this->findStyle(nameStyle).usersSubscribed();
+        return findStyle(nameStyle).usersSubscribed();
     }
 private:
     Artists _catalog;		//List of different artists of the web page

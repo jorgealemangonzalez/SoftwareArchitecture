@@ -20,7 +20,7 @@ public:
 		_email = email;
 	}
 	void notify(const std::string &subject){ //use the MailStub library to "simulate" a message with this specific arguments
-		std::string to = this->getName() + " <"+ this->getEmail() + ">";
+		std::string to = getName() + " <"+ getEmail() + ">";
 		MailStub::theInstance().sendMail(to,subject);
 	}
 

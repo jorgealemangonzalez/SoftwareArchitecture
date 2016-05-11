@@ -107,7 +107,7 @@ public:
     	}
     }
     void assignStyleToTrack(const std::string &nameTrack, Style &nameSytyle){ //assign a style to a track
-        this->findTrack(nameTrack).addStyle(nameSytyle);
+        findTrack(nameTrack).addStyle(nameSytyle);
 
     }
 
