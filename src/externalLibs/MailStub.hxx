@@ -109,4 +109,37 @@ public:
 
 };
 
+// --------------------------------------------------------------------------------
+
+class WhatsappStub : public MessageLog
+{
+
+	//! private constructor, implementing the Singleton pattern
+	WhatsappStub() {} 
+	WhatsappStub( const WhatsappStub&) {} 
+
+public:
+
+	static WhatsappStub& theInstance()
+	{
+		static WhatsappStub _theInstance;
+		return _theInstance;
+	}
+
+	void sendWhatsapp( const std::string& phone, const std::string& text )
+	{
+		std::string message( "Whatsapp to ");
+		message += phone + ": " + text;
+		addMessage( message );
+	}
+
+	//! return the concatenation of all messages sent,
+	//! in alphabetical order
+	std::string sentMessages()
+	{
+		return log();
+	}
+
+};
+
 #endif
