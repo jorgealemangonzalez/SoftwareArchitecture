@@ -19,7 +19,9 @@ public:
     
         return _description;
     }
-
+    const std::string resume(){
+        return "";
+    }
 private:
     std::string _name ;     //name of the portal
     std::string _description;   //description of the portal

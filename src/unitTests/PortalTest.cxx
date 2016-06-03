@@ -9,7 +9,7 @@ public:
 		TEST_CASE( portalTest_default );
 		TEST_CASE( portalTest_changedName );
 		TEST_CASE( portalTest_changedDescription );
-		//TEST_CASE( portalTest_resumeOfPortal);
+		TEST_CASE( portalTest_resumeOfPortal);
 	}
 	
 	void portalTest_default()
@@ -38,7 +38,7 @@ public:
 			p.description()
 		);
 	}
-	/*
+	
 	void portalTest_resumeOfPortal(){
 		Portal p;
 		p.name("Portal de pepito");
@@ -49,7 +49,7 @@ public:
 			p.resume()
 		);
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( PortalTest )
