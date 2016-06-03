@@ -20,7 +20,7 @@ public:
         return _description;
     }
     const std::string resume(){
-        return "";
+        return _name+"\n"+"\t" +_description +"\n";
     }
 private:
     std::string _name ;     //name of the portal
