@@ -196,7 +196,7 @@ public:
         p->description(description);
         _portals.push_back(p);
     }
-    const std::string listPortals(){
+    const std::string listPortals(){    //returns a beautifull list of all portals
         std::string fullResume = "";
         for(Portals::iterator it = _portals.begin() ; it != _portals.end() ; ++it){
             fullResume += (*it)->resume();
@@ -209,5 +209,5 @@ private:
     Styles _styles;         //List of different styles that could be in the system
     ConverterGroup _converters; //List of different converters
     Users _users;           //List of different users that have our webpage
-    Portals _portals;
+    Portals _portals;       //List of different portals that were made
 };
