@@ -7,11 +7,11 @@ public:
     Portal(){}
     
     const std::string name(){
-        return "";
+        return "NONE";
     }
     
     const std::string description(){
-        return "";
+        return "NODESCRIPTION";
     }
 };
 
