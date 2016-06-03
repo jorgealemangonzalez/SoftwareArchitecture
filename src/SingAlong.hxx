@@ -142,7 +142,7 @@ public:
         for(Portals::iterator it=_portals.begin() ; it != _portals.end() ; ++it){
             if(namePortal == (*it)->name())return(**it);
         }
-        return *_portals[0];
+        throw PortalNotFound();
     }
     unsigned int readDuration(const std::string &nameDirectory, const std::string &nameFile){
         unsigned int duration;

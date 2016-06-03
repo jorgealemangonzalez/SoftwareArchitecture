@@ -110,4 +110,10 @@ class DontHaveUsers : public std::exception{  //exception if the style hasn't an
 			return "This style doesn't have users subscribed";
 		}
 };
+class PortalNotFound : public std::exception{  //exception if the style hasn't any user subscribed
+	public:
+		const char * what() const throw(){
+			return "The portal does not exist";
+		}
+};
 #endif
