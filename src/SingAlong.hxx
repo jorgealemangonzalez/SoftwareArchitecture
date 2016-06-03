@@ -203,7 +203,9 @@ public:
         }
         return fullResume;
     }
-    
+    const std::string rssByPortal(const std::string portal){
+        return "";
+    }
 private:
     Artists _catalog;		//List of different artists of the web page
     Styles _styles;         //List of different styles that could be in the system
