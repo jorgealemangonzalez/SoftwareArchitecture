@@ -13,7 +13,7 @@ public:
         return _name;
     }
     
-    const std::string description(){    //returns the description of the portal
+    const std::string description(const std::string &description = "NODESCRIPTION"){    //returns the description of the portal
         return "NODESCRIPTION";
     }
 

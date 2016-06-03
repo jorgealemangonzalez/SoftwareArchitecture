@@ -8,7 +8,7 @@ public:
 	{
 		TEST_CASE( portalTest_default );
 		TEST_CASE( portalTest_changedName );
-		//TEST_CASE( portalTest_changedDescription );
+		TEST_CASE( portalTest_changedDescription );
 		//TEST_CASE( portalTest_resumeOfPortal);
 	}
 	
@@ -29,7 +29,7 @@ public:
 			p.name()
 		);
 	}
-	/*
+	
 	void portalTest_changedDescription(){
 		Portal p;
 		p.description("Nueva descripcion");
@@ -38,7 +38,7 @@ public:
 			p.description()
 		);
 	}
-	
+	/*
 	void portalTest_resumeOfPortal(){
 		Portal p;
 		p.name("Portal de pepito");
