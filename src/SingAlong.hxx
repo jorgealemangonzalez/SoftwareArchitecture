@@ -208,7 +208,7 @@ public:
         }
         return fullResume;
     }
-    const std::string rssByPortal(const std::string &portal){
+    const std::string rssByPortal(const std::string &portal){       //Returns xml page of the portal
         std::string result = "<?xml version='1.0' encoding='ISO-8859-15'?>\n<!DOCTYPE rss PUBLIC '-//Netscape Communications//DTD RSS 0.91//EN'\n'http://my.netscape.com/publish/formats/rss-0.91.dtd'>\n<rss version='0.91'>\n<channel>\n";
         Portal p = findPortal(portal);
         result += "<title>SingAlong: "+portal+"</title>\n";
