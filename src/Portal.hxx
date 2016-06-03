@@ -22,7 +22,7 @@ public:
 
 private:
     std::string _name ;     //name of the portal
-    std::string _description;
+    std::string _description;   //description of the portal
 };
 
 #endif
