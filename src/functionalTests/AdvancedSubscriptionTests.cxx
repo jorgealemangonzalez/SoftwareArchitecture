@@ -1,6 +1,7 @@
 #include "MiniCppUnit.hxx"
 #include "LibFileSystem.hxx"
 #include "MailStub.hxx"
+#include "SingAlong.hxx"
 #include <fstream>
 
 class AdvancedSubscriptionTests : public TestFixture<AdvancedSubscriptionTests>
@@ -8,7 +9,7 @@ class AdvancedSubscriptionTests : public TestFixture<AdvancedSubscriptionTests>
 public:
 	TEST_FIXTURE( AdvancedSubscriptionTests )
 	{
-		//TEST_CASE( testCreateNewTrack_notifyUserSubscribedToArtist );
+		TEST_CASE( testCreateNewTrack_notifyUserSubscribedToArtist );
 		//TEST_CASE( testCreateNewTrack_notifyTwoUsersSubscribedToArtist );
 		//TEST_CASE( testListThematicPortals );
 		//TEST_CASE( testRssByPortal_withoutNotificacion );
@@ -46,7 +47,7 @@ public:
 		os << duration << std::endl;
 	}
 
-	/*
+	
 	void testCreateNewTrack_notifyUserSubscribedToArtist()
 	{
 		SingAlong business;
@@ -63,7 +64,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	
+	/*
 	void testCreateNewTrack_notifyTwoUsersSubscribedToArtist()
 	{
 		SingAlong business;

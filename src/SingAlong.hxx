@@ -177,6 +177,11 @@ public:
     std::string listSubscribedToStyle(const std::string &nameStyle){ //return the string of all users subscribed in this style
         return findStyle(nameStyle).usersSubscribed();
     }
+    
+    void subscribeUserToArtist(const std::string &user ,const std::string &artist){
+        
+    }
+    
 private:
     Artists _catalog;		//List of different artists of the web page
     Styles _styles;         //List of different styles that could be in the system
