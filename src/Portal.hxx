@@ -6,7 +6,7 @@ class Portal{                           //Portal for group of fans
 public:
     Portal(){}
     
-    const std::string name(){           //returns the name of the portal
+    const std::string name(const std::string &name = "NONE"){           //returns the name of the portal
         return "NONE";
     }
     
