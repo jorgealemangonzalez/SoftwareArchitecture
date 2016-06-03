@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testListThematicPortals );
 		TEST_CASE( testRssByPortal_withoutNotificacion );
 		TEST_CASE( testRssByPortal_whenNoPortalExists );
-		//TEST_CASE( testRssByPortal_withNotifiedTrack );
+		TEST_CASE( testRssByPortal_withNotifiedTrack );
 		//TEST_CASE( testRssByPortal_subscribedToArtistAndStyle );
 	}
 
@@ -142,7 +142,7 @@ public:
 			ASSERT_EQUALS( "The portal does not exist", e.what() );
 		}
 	}
-	/*
+	
 	void testRssByPortal_withNotifiedTrack()
 	{
 		SingAlong business;
@@ -172,6 +172,7 @@ public:
 			business.rssByPortal( "Headbangers" )
 		);
 	}	
+	/*
 	void testRssByPortal_subscribedToArtistAndStyle()
 	{
 		SingAlong business;

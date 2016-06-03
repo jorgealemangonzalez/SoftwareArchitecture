@@ -218,6 +218,9 @@ public:
         result += "</channel>\n</rss>\n";
         return result ;
     }
+    void subscribePortalToArtist(const std::string &portal , const std::string &artist){
+        
+    }
 private:
     Artists _catalog;		//List of different artists of the web page
     Styles _styles;         //List of different styles that could be in the system
