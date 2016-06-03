@@ -4,11 +4,12 @@
 #include "Album.hxx"
 #include "Style.hxx"
 //#include "Exceptions.hxx"
-
+#include "Subject.hxx"
+#include "Observer.hxx"
 typedef std::vector<Track*> Tracks;
 typedef std::vector<Album*> Albums;
 
-class Artist{
+class Artist: public Subject{
 public:
 	Artist(){
 		_name = "-- No name --";//Set the default name 
@@ -86,6 +87,8 @@ public:
     	t->duration(duration);
     	t->master(fileName);
     	_catalog.push_back(t);
+    	_lastTrack = t;
+    	Subject::notify();
     }
     void newAlbum(const std::string &albumName){
         Album *a = new Album();
@@ -151,9 +154,14 @@ public:
 
     }
     
+    std::pair<std::string,std::string> getState(){
+        return make_pair(this->_name , this->_lastTrack->title());     //artist name , name of last track
+    }
+    
 private:
 	std::string _name;// The name of the artist
 	bool _grouped;// If the account is of an artist or of a group
 	Tracks _catalog;//Catalog of all the tracks of the artist
     Albums _albumCatalog; //Catalog of all the albums of the artist
+    Track *_lastTrack;
 };

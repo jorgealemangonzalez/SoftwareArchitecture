@@ -179,7 +179,8 @@ public:
     }
     
     void subscribeUserToArtist(const std::string &user ,const std::string &artist){
-        
+        User & u = findUser(user);
+        findArtist(artist).attach((Observer*)&u);
     }
     
 private:

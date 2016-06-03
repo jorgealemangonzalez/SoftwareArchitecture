@@ -2,7 +2,12 @@
 #ifndef USER_HXX
 #define USER_HXX
 #include "MailStub.hxx"
-class User{
+#include "Observer.hxx"
+#include "Subject.hxx"
+
+#include<utility>
+
+class User: public Observer{
 public:
 	User(const std::string &name, const std::string &email):_name(name), _email(email){
 
@@ -24,6 +29,13 @@ public:
 		MailStub::theInstance().sendMail(to,subject);
 	}
 
+	void update(Subject* subject){
+		std::pair<std::string,std::string> info;
+		
+		info = subject->getState();
+		MailStub::theInstance().sendMail(_name + " <"+ _email+">","new track " + info.second + " by " + info.first );
+	}
+	
 private:
 	std::string _name;	//Name of the user
 	std::string _email; //email of the user
