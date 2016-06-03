@@ -10,7 +10,7 @@ public:
 	TEST_FIXTURE( AdvancedSubscriptionTests )
 	{
 		TEST_CASE( testCreateNewTrack_notifyUserSubscribedToArtist );
-		//TEST_CASE( testCreateNewTrack_notifyTwoUsersSubscribedToArtist );
+		TEST_CASE( testCreateNewTrack_notifyTwoUsersSubscribedToArtist );
 		//TEST_CASE( testListThematicPortals );
 		//TEST_CASE( testRssByPortal_withoutNotificacion );
 		//TEST_CASE( testRssByPortal_whenNoPortalExists );
@@ -64,7 +64,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	/*
+	
 	void testCreateNewTrack_notifyTwoUsersSubscribedToArtist()
 	{
 		SingAlong business;
@@ -92,7 +92,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	
+	/*
 	void testListThematicPortals()
 	{
 		SingAlong business;
