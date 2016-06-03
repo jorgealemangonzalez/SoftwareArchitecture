@@ -6,10 +6,12 @@
 #include <iostream>
 #include <string>
 #include "Style.hxx"
+#include "Portal.hxx"
 
 typedef std::vector<Artist*> Artists ;
 typedef std::vector<Style*> Styles;
 typedef std::vector<User*> Users;
+typedef std::vector<Portal*> Portals;
 class SingAlong{
 public:
     SingAlong(){
@@ -46,6 +48,11 @@ public:
         Users::iterator it3;
         for(it3 = _users.begin() ; it3 != _users.end() ; it3++){
             delete(*it3);
+        }
+        
+        Portals::iterator it4;
+        for(it4 = _portals.begin() ; it4 != _portals.end() ; it4++){
+            delete(*it4);
         }
     }
     void defaultListOfConverters(std::vector< std::pair< std::string, int> >  *fakeCompression){
@@ -184,10 +191,17 @@ public:
     }
     
     void createNewPortal(const std::string &name , const std::string &description){
-        
+        Portal * p = new Portal();
+        p->name(name);
+        p->description(description);
+        _portals.push_back(p);
     }
     const std::string listPortals(){
-        return "";
+        std::string fullResume = "";
+        for(Portals::iterator it = _portals.begin() ; it != _portals.end() ; ++it){
+            fullResume += (*it)->resume();
+        }
+        return fullResume;
     }
     
 private:
@@ -195,5 +209,5 @@ private:
     Styles _styles;         //List of different styles that could be in the system
     ConverterGroup _converters; //List of different converters
     Users _users;           //List of different users that have our webpage
-
+    Portals _portals;
 };
