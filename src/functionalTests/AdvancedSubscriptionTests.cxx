@@ -11,7 +11,7 @@ public:
 	{
 		TEST_CASE( testCreateNewTrack_notifyUserSubscribedToArtist );
 		TEST_CASE( testCreateNewTrack_notifyTwoUsersSubscribedToArtist );
-		//TEST_CASE( testListThematicPortals );
+		TEST_CASE( testListThematicPortals );
 		//TEST_CASE( testRssByPortal_withoutNotificacion );
 		//TEST_CASE( testRssByPortal_whenNoPortalExists );
 		//TEST_CASE( testRssByPortal_withNotifiedTrack );
@@ -92,7 +92,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	/*
+	
 	void testListThematicPortals()
 	{
 		SingAlong business;
@@ -106,7 +106,7 @@ public:
 			business.listPortals()
 		);
 	}
-
+	/*
 	void testRssByPortal_withoutNotificacion()
 	{
 		SingAlong business;
