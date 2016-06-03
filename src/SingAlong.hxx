@@ -138,6 +138,11 @@ public:
         }
         throw StyleDoesntExists(); //throw an error if the style does not exists
     }
+    Portal& findPortal(const std::string &namePortal){ //find if the portal exists
+        for(Portals::iterator it=_portals.begin() ; it != _portals.end() ; ++it){
+            if(namePortal == (*it)->name())return(**it);
+        }
+    }
     unsigned int readDuration(const std::string &nameDirectory, const std::string &nameFile){
         unsigned int duration;
         std::ifstream infile;
@@ -203,8 +208,14 @@ public:
         }
         return fullResume;
     }
-    const std::string rssByPortal(const std::string portal){
-        return "";
+    const std::string rssByPortal(const std::string &portal){
+        std::string result = "<?xml version='1.0' encoding='ISO-8859-15'?>\n<!DOCTYPE rss PUBLIC '-//Netscape Communications//DTD RSS 0.91//EN'\n'http://my.netscape.com/publish/formats/rss-0.91.dtd'>\n<rss version='0.91'>\n<channel>\n";
+        Portal p = findPortal(portal);
+        result += "<title>SingAlong: "+portal+"</title>\n";
+        result += "<link>http://www.singalong.com/"+ portal+ "</link>\n";
+        result += "<description>"+ p.description() +"</description>\n";
+        result += "</channel>\n</rss>\n";
+        return result ;
     }
 private:
     Artists _catalog;		//List of different artists of the web page
