@@ -4,12 +4,12 @@
 #include "Subject.hxx"
 class Subject;
 
-class Observer{
+class Observer{                                     //Observer of the pattern Observer
 public:
     Observer(){}
     virtual ~Observer(){};
     
-    virtual void update(Subject* subject) = 0;
+    virtual void update(Subject* subject) = 0;      //This will be specfied in each observer
     
 };
 

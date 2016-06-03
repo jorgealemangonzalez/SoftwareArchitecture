@@ -8,16 +8,16 @@
 
 class Observer;
 
-class Subject{
+class Subject{                                                  //Subject class of the Observer pattern
     public:
     Subject();
     virtual ~Subject(){};
     
-    void attach(Observer *o);
+    void attach(Observer *o);                                   //subscrive a observer to that subject
     
-    void notify();
+    void notify();                                              //notify all observers
     
-    virtual std::pair<std::string,std::string> getState()= 0;
+    virtual std::pair<std::string,std::string> getState()= 0;   //this will be specified in each specific subject
 
     private:
     std::vector<Observer*> _observers;

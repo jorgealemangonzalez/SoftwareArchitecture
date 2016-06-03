@@ -87,8 +87,8 @@ public:
     	t->duration(duration);
     	t->master(fileName);
     	_catalog.push_back(t);
-    	_lastTrack = t;
-    	Subject::notify();
+    	_lastTrack = t;                     //set the last track
+    	Subject::notify();                  //notify the subscriptors
     }
     void newAlbum(const std::string &albumName){
         Album *a = new Album();
@@ -154,7 +154,7 @@ public:
 
     }
     
-    std::pair<std::string,std::string> getState(){
+    std::pair<std::string,std::string> getState(){                      //returns the name of the artist and the name of the track to the observer
         return make_pair(this->_name , this->_lastTrack->title());     //artist name , name of last track
     }
     
@@ -163,5 +163,5 @@ private:
 	bool _grouped;// If the account is of an artist or of a group
 	Tracks _catalog;//Catalog of all the tracks of the artist
     Albums _albumCatalog; //Catalog of all the albums of the artist
-    Track *_lastTrack;
-};
+    Track *_lastTrack;      //last track added
+};  

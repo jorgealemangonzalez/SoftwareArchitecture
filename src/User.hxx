@@ -29,7 +29,7 @@ public:
 		MailStub::theInstance().sendMail(to,subject);
 	}
 
-	void update(Subject* subject){
+	void update(Subject* subject){					//When the state of the subject change we take the information of the new track and send a mail
 		std::pair<std::string,std::string> info;
 		
 		info = subject->getState();
