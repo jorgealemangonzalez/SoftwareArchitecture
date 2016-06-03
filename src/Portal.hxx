@@ -4,7 +4,7 @@
 #include<string>
 class Portal{                           //Portal for group of fans
 public:
-    Portal():_name("NONE"){}
+    Portal():_name("NONE"){}            //default name
     
     const std::string name(const std::string &name = "NONE"){           //returns the name of the portal
         if(name != "NONE"){
@@ -18,7 +18,7 @@ public:
     }
 
 private:
-    std::string _name ;
+    std::string _name ;     //name of the portal
 };
 
 #endif
