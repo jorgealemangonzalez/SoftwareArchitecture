@@ -1,7 +1,7 @@
 #include "Subject.hxx"
 #include "Observer.hxx"
-#include<utility>
-#include<string>
+#include <utility>
+#include <string>
 
 Subject::Subject(){}
 

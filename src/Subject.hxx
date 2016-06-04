@@ -1,10 +1,10 @@
 #ifndef SUBJECT_HXX
 #define SUBJECT_HXX
 
-#include<vector>
+#include <vector>
 #include "Observer.hxx"
-#include<utility>
-#include<string>
+#include <utility>
+#include <string>
 
 class Observer;
 

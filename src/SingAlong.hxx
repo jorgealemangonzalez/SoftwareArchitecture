@@ -215,11 +215,12 @@ public:
         result += "<title>SingAlong: "+portal+"</title>\n";
         result += "<link>http://www.singalong.com/"+ portal+ "</link>\n";
         result += "<description>"+ p.description() +"</description>\n";
-        result += "</channel>\n</rss>\n";
+        result += p.htmlResum() + "</channel>\n</rss>\n";
         return result ;
     }
     void subscribePortalToArtist(const std::string &portal , const std::string &artist){
-        
+        Portal & p = findPortal(portal);
+        findArtist(artist).attach((Observer*)&p);
     }
 private:
     Artists _catalog;		//List of different artists of the web page

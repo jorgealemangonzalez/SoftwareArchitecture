@@ -1,11 +1,10 @@
-
 #ifndef USER_HXX
 #define USER_HXX
 #include "MailStub.hxx"
 #include "Observer.hxx"
 #include "Subject.hxx"
 
-#include<utility>
+#include <utility>
 
 class User: public Observer{
 public:
