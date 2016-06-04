@@ -40,13 +40,13 @@ public:
 		}
 	}
 
-	void notifyUsers(const std::string &artist, const std::string &track){			
+	void notifyUsers(const std::string &artist, const std::string &track){	//store the information of the track		
 		_trackInfo.first=artist;
 		_trackInfo.second=track;
-		Subject::notify();
+		Subject::notify();				//and notify that we have to upgrade
 	}
 
-	std::pair<std::string,std::string> getState(){
+	std::pair<std::string,std::string> getState(){ //return the state 
 		return make_pair(_trackInfo.first , _trackInfo.second);
 	}
 

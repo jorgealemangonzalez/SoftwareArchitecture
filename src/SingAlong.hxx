@@ -182,8 +182,8 @@ public:
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){ //we put an specific style to a track
         findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists 
         std::string subject = "new track " + track + " by " + artist; //the subject of our message that will notify our users
-        findStyle(style).notifyUsers(subject);
-        findStyle(style).notifyUsers(artist,track);
+        findStyle(style).notifyUsers(subject); //in older tests
+        findStyle(style).notifyUsers(artist,track);     //notify that a track has style and need to upgrade
     }
     void subscribeUserToStyle(const std::string &nameUser, const std::string &nameStyle ){
         findStyle(nameStyle).subscribeUser(findUser(nameUser)); //subscribe an user to an specific style
@@ -197,7 +197,7 @@ public:
         findArtist(artist).attach((Observer*)&u);
     }
     
-    void createNewPortal(const std::string &name , const std::string &description){
+    void createNewPortal(const std::string &name , const std::string &description){ //create a new portal
         Portal * p = new Portal();
         p->name(name);
         p->description(description);
@@ -219,11 +219,11 @@ public:
         result += p.htmlResum() + "</channel>\n</rss>\n";
         return result ;
     }
-    void subscribePortalToArtist(const std::string &portal , const std::string &artist){ //attach an observer of portal type to the specific artist
+    void subscribePortalToArtist(const std::string &portal , const std::string &artist){ //attach an observer of portal type to the observers
         Portal & p = findPortal(portal);
         findArtist(artist).attach((Observer*)&p);
     }
-    void subscribePortalToStyle(const std::string &portal, const std::string &style){
+    void subscribePortalToStyle(const std::string &portal, const std::string &style){ //attach an observer of portal  to the observers
         Portal & p = findPortal(portal);
         findStyle(style).attach((Observer*)&p);
     }
