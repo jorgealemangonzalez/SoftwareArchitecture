@@ -15,7 +15,7 @@ public:
 		TEST_CASE( testRssByPortal_withoutNotificacion );
 		TEST_CASE( testRssByPortal_whenNoPortalExists );
 		TEST_CASE( testRssByPortal_withNotifiedTrack );
-		//TEST_CASE( testRssByPortal_subscribedToArtistAndStyle );
+		TEST_CASE( testRssByPortal_subscribedToArtistAndStyle );
 	}
 
 	/**
@@ -172,7 +172,7 @@ public:
 			business.rssByPortal( "Headbangers" )
 		);
 	}	
-	/*
+	
 	void testRssByPortal_subscribedToArtistAndStyle()
 	{
 		SingAlong business;
@@ -213,7 +213,7 @@ public:
 			business.rssByPortal( "Headbangers" )
 		);
 	}
-	*/
+	
 };
 
 REGISTER_FIXTURE( AdvancedSubscriptionTests )

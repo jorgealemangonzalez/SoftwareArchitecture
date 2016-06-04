@@ -222,6 +222,9 @@ public:
         Portal & p = findPortal(portal);
         findArtist(artist).attach((Observer*)&p);
     }
+    void subscribePortalToStyle(const std::string &portal, const std::string &style){
+        
+    }
 private:
     Artists _catalog;		//List of different artists of the web page
     Styles _styles;         //List of different styles that could be in the system
