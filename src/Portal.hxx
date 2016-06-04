@@ -27,7 +27,7 @@ public:
     const std::string resume(){                         //Returns a beautyfull description of the portal
         return _name+"\n"+"\t" +_description +"\n";
     }
-    const std::string htmlResum(){
+    const std::string htmlResum(){  //return all the songs that our portal are interested
         std::string res ="";
         for(unsigned int i = 0 ; i < _Tracks.size(); ++i){
             res += "<item>\n<title>New track: '"+_Tracks[i].second+"' by '" + _Tracks[i].first + "'</title>\n";
@@ -35,7 +35,7 @@ public:
         }
         return res;
     }
-    void update(Subject* subject){
+    void update(Subject* subject){  //when new song it's created, we store the name of the artist and the name of the song
         std::pair<std::string,std::string> info;
         
         info = subject->getState();

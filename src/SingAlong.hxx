@@ -218,7 +218,7 @@ public:
         result += p.htmlResum() + "</channel>\n</rss>\n";
         return result ;
     }
-    void subscribePortalToArtist(const std::string &portal , const std::string &artist){
+    void subscribePortalToArtist(const std::string &portal , const std::string &artist){ //attach an observer of portal type to the specific artist
         Portal & p = findPortal(portal);
         findArtist(artist).attach((Observer*)&p);
     }
