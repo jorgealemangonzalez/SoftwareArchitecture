@@ -1,12 +1,19 @@
 
 #include <string>
+#include <vector>
+
 #include "User.hxx"
 #include "Exceptions.hxx"
-#include <vector>
+#include "MailStub.hxx"
+#include "Subject.hxx"
+
 #ifndef HXX_STYLE
 #define HXX_STYLE
+
 typedef std::vector<User*> Users;
-class Style{
+
+class Style: public Subject{
+
 public:
 	Style(const std::string &name):_name(name){
 
@@ -33,10 +40,20 @@ public:
 		}
 	}
 
+	void notifyUsers(const std::string &artist, const std::string &track){			
+		_trackInfo.first=artist;
+		_trackInfo.second=track;
+		Subject::notify();
+	}
 
+	std::pair<std::string,std::string> getState(){
+		return make_pair(_trackInfo.first , _trackInfo.second);
+	}
 
 private:
+	std::pair<std::string,std::string> _trackInfo;
 	std::string _name;	//Name of the style
 	Users _users;
+
 };
 #endif

@@ -183,6 +183,7 @@ public:
         findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists 
         std::string subject = "new track " + track + " by " + artist; //the subject of our message that will notify our users
         findStyle(style).notifyUsers(subject);
+        findStyle(style).notifyUsers(artist,track);
     }
     void subscribeUserToStyle(const std::string &nameUser, const std::string &nameStyle ){
         findStyle(nameStyle).subscribeUser(findUser(nameUser)); //subscribe an user to an specific style
@@ -223,7 +224,8 @@ public:
         findArtist(artist).attach((Observer*)&p);
     }
     void subscribePortalToStyle(const std::string &portal, const std::string &style){
-        
+        Portal & p = findPortal(portal);
+        findStyle(style).attach((Observer*)&p);
     }
 private:
     Artists _catalog;		//List of different artists of the web page
