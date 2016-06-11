@@ -17,11 +17,13 @@ class User: public Observer{
 public:
 	User(const std::string &name, const std::string &email):_name(name), _email(email){
 		_creator = (Creator*)new CreatorEmail(); 
+		_strategy = NULL;
 	}
 	~User(){
-		if(_creator != NULL)delete(_creator);
 		if(_strategy != NULL)
 			delete(_strategy);
+		delete(_creator);
+
 	}
 	std::string getName()const{		//returns the name of the user
 		return _name;
@@ -37,8 +39,10 @@ public:
 	}
 	void addNumber(const std::string &strategy, const std::string &number){
 		if(strategy == "Whatsapp"){
+			delete(_creator);
 			_creator = (Creator*)new CreatorWhatsapp();
 		}else if(strategy == "SMS"){
+			delete(_creator);	
 			_creator = (Creator*)new CreatorSMS();
 		}
 		_phone= number;
@@ -63,7 +67,7 @@ public:
 private:
 	Creator *_creator;
 	std::string _info;
-	Strategy *_strategy;
+	Strategy *_strategy = NULL;
 	std::string _phone;
 	std::string _name;	//Name of the user
 	std::string _email; //email of the user
