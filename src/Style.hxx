@@ -10,7 +10,6 @@
 #ifndef HXX_STYLE
 #define HXX_STYLE
 
-typedef std::vector<User*> Users;
 
 class Style: public Subject{
 
@@ -25,20 +24,20 @@ public:
 		_name = name;
 	}
 	void subscribeUser(User &user){ //add the reference of a user to out vector
-		_users.push_back(&user);
+		Subject::attach((Observer*)&user);
 	}
 	std::string usersSubscribed(){
 		std::string ret = "";
-		for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){ //return all the names of our users
-			ret += (*it)->getName() + "\n";									//that are subscribed to this style.
+		for(std::vector<Observer*>::iterator it = _observers.begin() ; it != _observers.end() ; ++it){ //return all the names of our users
+			ret += ((User*)(*it))->getName() + "\n";									//that are subscribed to this style.
 		}
 		return ret;
 	}
-	void notifyUsers(const std::string &subject){			//notify all users with the specific subject
+	/*void notifyUsers(const std::string &subject){			//notify all users with the specific subject
 		for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
-			(*it)->notify(subject);
+			(*it)->notify(subject,"a");
 		}
-	}
+	}*/
 
 	void notifyUsers(const std::string &artist, const std::string &track){	//store the information of the track		
 		_trackInfo.first=artist;
@@ -53,7 +52,6 @@ public:
 private:
 	std::pair<std::string,std::string> _trackInfo;
 	std::string _name;	//Name of the style
-	Users _users;
 
 };
 #endif

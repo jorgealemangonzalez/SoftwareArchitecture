@@ -19,7 +19,7 @@ class Subject{                                                  //Subject class 
     
     virtual std::pair<std::string,std::string> getState()= 0;   //this will be specified in each specific subject
 
-    private:
+    protected:
     std::vector<Observer*> _observers;
 };
 

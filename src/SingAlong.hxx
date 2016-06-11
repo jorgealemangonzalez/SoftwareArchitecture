@@ -182,7 +182,7 @@ public:
     void associateStyleWithTrack(const std::string &style,const std::string &artist,const std::string &track){ //we put an specific style to a track
         findArtist(artist).assignStyleToTrack(track,findStyle(style));    //in every moment, we look if the artist, the track and the style exists 
         std::string subject = "new track " + track + " by " + artist; //the subject of our message that will notify our users
-        findStyle(style).notifyUsers(subject); //in older tests
+        //findStyle(style).notifyUsers(subject); //in older tests
         findStyle(style).notifyUsers(artist,track);     //notify that a track has style and need to upgrade
     }
     void subscribeUserToStyle(const std::string &nameUser, const std::string &nameStyle ){
@@ -227,6 +227,13 @@ public:
         Portal & p = findPortal(portal);
         findStyle(style).attach((Observer*)&p);
     }
+    void userPrefersSms(const std::string &username, const std::string &number){
+        findUser(username).addNumber("SMS",number);
+    }
+    void userPrefersWhatsapp(const std::string &username, const std::string &number){
+        findUser(username).addNumber("Whatsapp",number);
+    }
+
 private:
     Artists _catalog;		//List of different artists of the web page
     Styles _styles;         //List of different styles that could be in the system
