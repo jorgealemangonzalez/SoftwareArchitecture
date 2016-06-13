@@ -8,7 +8,7 @@
 
 class Creator{                                                  
     public:
-    Creator(){}
+    Creator(){}	//abstract class, all types of creators inherate to this
     virtual ~Creator(){};
                                 
     virtual Strategy *  FactoryMethod() = 0;

@@ -9,7 +9,7 @@ class SendBySMS : public Strategy{
     public:
     SendBySMS(){}                              
 
-    void Notificate(const std::string &name, const std::string &mail,const std::string &info,const std::string &phone){
+    void Notificate(const std::string &name, const std::string &mail,const std::string &info,const std::string &phone){ //notificate with SMS type
     	std::string text = "[SingAlong] " + info;
     	SmsStub::theInstance().sendSms(phone,text);
     }

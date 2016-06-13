@@ -23,7 +23,7 @@ public:
 	void setName(const std::string &name){	//changes the name of the style
 		_name = name;
 	}
-	void subscribeUser(User &user){ //add the reference of a user to out vector
+	void subscribeUser(User &user){ //add an observer of type user
 		Subject::attach((Observer*)&user);
 	}
 	std::string usersSubscribed(){
@@ -33,11 +33,7 @@ public:
 		}
 		return ret;
 	}
-	/*void notifyUsers(const std::string &subject){			//notify all users with the specific subject
-		for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
-			(*it)->notify(subject,"a");
-		}
-	}*/
+
 
 	void notifyUsers(const std::string &artist, const std::string &track){	//store the information of the track		
 		_trackInfo.first=artist;

@@ -9,7 +9,7 @@ class CreatorSMS : public Creator{
     public:
     CreatorSMS(){}                              
 
-    Strategy * FactoryMethod(){
+    Strategy * FactoryMethod(){	 //return the Strategy method
     	
     	return new SendBySMS();
     }

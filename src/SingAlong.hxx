@@ -192,7 +192,7 @@ public:
         return findStyle(nameStyle).usersSubscribed();
     }
     
-    void subscribeUserToArtist(const std::string &user ,const std::string &artist){
+    void subscribeUserToArtist(const std::string &user ,const std::string &artist){ //user is subscribed to an artist
         User & u = findUser(user);
         findArtist(artist).attach((Observer*)&u);
     }
@@ -227,10 +227,10 @@ public:
         Portal & p = findPortal(portal);
         findStyle(style).attach((Observer*)&p);
     }
-    void userPrefersSms(const std::string &username, const std::string &number){
+    void userPrefersSms(const std::string &username, const std::string &number){ //user wants SMS notifications
         findUser(username).addNumber("SMS",number);
     }
-    void userPrefersWhatsapp(const std::string &username, const std::string &number){
+    void userPrefersWhatsapp(const std::string &username, const std::string &number){ //user wants whatsapp notifications
         findUser(username).addNumber("Whatsapp",number);
     }
 

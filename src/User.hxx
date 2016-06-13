@@ -16,8 +16,8 @@
 class User: public Observer{
 public:
 	User(const std::string &name, const std::string &email):_name(name), _email(email){
-		_creator = (Creator*)new CreatorEmail(); 
-		_strategy = NULL;
+		_creator = (Creator*)new CreatorEmail(); //default creator
+		_strategy = NULL; //by default
 	}
 	~User(){
 		if(_strategy != NULL)
@@ -37,10 +37,10 @@ public:
 	void setEmail(const std::string &email){ //changes the email
 		_email = email;
 	}
-	void addNumber(const std::string &strategy, const std::string &number){
+	void addNumber(const std::string &strategy, const std::string &number){ //if a user wants to receive notifications in the cellphone
 		if(strategy == "Whatsapp"){
 			delete(_creator);
-			_creator = (Creator*)new CreatorWhatsapp();
+			_creator = (Creator*)new CreatorWhatsapp();			//change the creator depending what the user wants
 		}else if(strategy == "SMS"){
 			delete(_creator);	
 			_creator = (Creator*)new CreatorSMS();
@@ -48,26 +48,21 @@ public:
 		_phone= number;
 	}
 
-	/*void notify(const std::string &subject,const std::string &a){ //use the MailStub library to "simulate" a message with this specific arguments
-		std::string to = getName() + " <"+ getEmail() + ">";
-		std::cout << "AAAAAAAAA-" <<_whichstrategy.first << std::endl;
-		MailStub::theInstance().sendMail(to,subject);
-	}*/
 
-	void update(Subject* subject){					//When the state of the subject change we take the information of the new track and send a mail
+	void update(Subject* subject){					//When the state of the subject change we take the information of the new track and notify the users
 		std::pair<std::string,std::string> info;
 		
 		info = subject->getState();
 		std::string _info = "new track " + info.second + " by " + info.first ;
 
-		_strategy = _creator->FactoryMethod();
-		_strategy->Notificate(_name,_email, _info,_phone);
+		_strategy = _creator->FactoryMethod(); 		 //get the strategy of how to notificate this user
+		_strategy->Notificate(_name,_email, _info,_phone); //notificate the user depending of the method he wants
 	}
 	
 private:
 	Creator *_creator;
 	std::string _info;
-	Strategy *_strategy = NULL;
+	Strategy *_strategy;
 	std::string _phone;
 	std::string _name;	//Name of the user
 	std::string _email; //email of the user

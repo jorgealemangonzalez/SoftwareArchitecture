@@ -11,7 +11,7 @@ class CreatorEmail : public Creator{
     public:
     CreatorEmail(){}                              
 
-    Strategy * FactoryMethod(){
+    Strategy * FactoryMethod(){ //return strategy 
     	return new SendByEmail();
     }
     void CreateStrategy(){

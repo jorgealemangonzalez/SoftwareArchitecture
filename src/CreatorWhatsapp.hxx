@@ -11,7 +11,7 @@ class CreatorWhatsapp : public Creator{
     CreatorWhatsapp(){}
 
 
-    Strategy *  FactoryMethod(){
+    Strategy *  FactoryMethod(){ //return the strategy he wants
     	return new SendByWhatsapp();
     }
     void CreateStrategy(){
