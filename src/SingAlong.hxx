@@ -7,12 +7,16 @@
 #include <string>
 #include "Style.hxx"
 #include "Portal.hxx"
+#include <QObject>
+#include "gui/Model.hxx"
 
 typedef std::vector<Artist*> Artists ;
 typedef std::vector<Style*> Styles;
 typedef std::vector<User*> Users;
 typedef std::vector<Portal*> Portals;
-class SingAlong{
+
+class SingAlong : public Model{
+
 public:
     SingAlong(){
         std::vector< std::pair< std::string, int> > fakeCompressions;

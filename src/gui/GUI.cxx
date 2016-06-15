@@ -4,7 +4,7 @@
 #include "View.hxx"
 #include "Controller.hxx"
 
-//#include "SingAlong.hxx"
+#include "SingAlong.hxx"
 
 int main( int argc, char *argv[] ) {
 	QApplication app( argc, argv );
