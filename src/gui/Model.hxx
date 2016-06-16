@@ -1,4 +1,3 @@
-
 #ifndef Model_hxx
 #define Model_hxx
 
@@ -18,11 +17,11 @@ public:
 	virtual ~Model() {}
 	virtual std::string catalog() const = 0;
 	virtual void createArtist( const std::string & name, bool group ) = 0;
-	virtual void createNewTrack( const std::string & artistName, const std::string & title, const std::string & master , const std::string &format = "", int bps=-1) = 0;
-	virtual void createNewAlbum( const std::string &nameArtist, const std::string &nameAlbum ) = 0;
-	virtual void listAlbum( const std::string &nameArtist, const std::string &nameAlbum) = 0;
-	virtual void unlistAlbum( const std::string &nameArtist, const std::string &nameAlbum ) = 0;
-	virtual void includeTrackOnAlbum( const std::string &nameArtist, const std::string &nameTrack , const std::string &nameAlbum ) = 0;
+	virtual void createNewTrack( const std::string & artistName, const std::string & title, const std::string & master ) = 0;
+	virtual void createNewAlbum( const std::string & artistName, const std::string & albumName ) = 0;
+	virtual void listAlbum( const std::string & artistName, const std::string & albumName ) = 0;
+	virtual void unlistAlbum( const std::string & artistName, const std::string & albumName ) = 0;
+	virtual void includeTrackOnAlbum( const std::string & artistName, const std::string & trackName, const std::string & albumName ) = 0;
 
 public slots:
 

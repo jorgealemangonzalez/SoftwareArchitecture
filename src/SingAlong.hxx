@@ -90,9 +90,23 @@ public:
         if(group){			
         	a->createGroup();
         }
+        for(Artists::iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){
+            if(name == (*it)->name())return;     //If the name is the same we found the artist
+        }
     	_catalog.push_back(a);			//Put the artist in the catalog
+        std::cout << "new artist + size "<< _catalog.size() << std::endl;
     }
-    void createNewTrack(const std::string & artistName, const std::string & title, const std::string & master, const std::string &format = "", int bps=-1){ //Creat a new track and it's added to the catalog of his artist
+    void createNewTrack(const std::string & artistName, const std::string & title, const std::string & master){
+         Artist & a = findArtist(artistName); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
+        std::string newNameTrack = "masters/"+master; 
+        std::string compressed = "compressed/"+ a.name() + " - " +title; 
+        a.newTrack(title ,readDuration("masters/",master) , "masters/"+master);
+        for(unsigned int i = 0 ; i < _converters.converters.size() ; ++i){
+            _converters.convert(newNameTrack,compressed,_converters.converters[i]->typeConverter(),_converters.converters[i]->bpsInfo());  
+        }
+    }
+
+    void createNewTrack(const std::string & artistName, const std::string & title, const std::string & master, const std::string &format , int bps){ //Creat a new track and it's added to the catalog of his artist
         Artist & a = findArtist(artistName); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
         std::string newNameTrack = "masters/"+master; 
         std::string compressed = "compressed/"+ a.name() + " - " +title; 
@@ -109,6 +123,7 @@ public:
     void createNewAlbum(const std::string &nameArtist, const std::string &nameAlbum){ //Creat an album and add to his artist
         Artist & a = findArtist(nameArtist);   //find the artist
         a.newAlbum(nameAlbum);  //create the new album
+        std::cout << "cree el album" << std::endl;
     }
     void listAlbum( const std::string &nameArtist, const std::string &nameAlbum){//We list a given album from an artist
         Artist & artist = findArtist(nameArtist); //first we find the artist 

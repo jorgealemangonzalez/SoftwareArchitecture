@@ -1,4 +1,3 @@
-
 #include <QApplication>
 #include "Model.hxx"
 #include "View.hxx"
@@ -37,4 +36,3 @@ int main( int argc, char *argv[] ) {
 	view.show();
 	return app.exec();
 }
-

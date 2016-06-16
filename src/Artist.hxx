@@ -88,12 +88,15 @@ public:
     	t->master(fileName);
     	_catalog.push_back(t);
     	_lastTrack = t;                     //set the last track
+        std::cout << "new track + size "  <<_catalog.size() << std::endl;
     	Subject::notify();                  //notify the subscriptors
     }
     void newAlbum(const std::string &albumName){
+        std::cout << "entre a crear album " << std::endl;
         Album *a = new Album();
         a->title(albumName);
         _albumCatalog.push_back(a);
+        std::cout << "new album + size "  <<_albumCatalog.size() << std::endl;
     }
     Track & findTrack(const std::string &nameTrack){  //Search a track by title , it returns a reference to this track
     	try{
@@ -115,7 +118,7 @@ public:
     }
 
     const std::string descriptionCatalog(){ //if a catalog it's empty it throws the error correct
-    	return description() + catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
+    	return description(); //+ catalogTracks() + catalogAlbum(); // The description of the catalog is the result of the convination of the artist description and catalogTracks
     }
     Album & findAlbum(const std::string &nameAlbum){ //always return the reference to an Object with tipe "Album"
         try{
