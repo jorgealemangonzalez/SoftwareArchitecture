@@ -67,14 +67,15 @@ public:
         fakeCompression->push_back(std::make_pair("ogg",192));
         fakeCompression->push_back(std::make_pair("ogg",96));
     }
-    std::string catalog(){          //Returns a list of artist with their description and the description of their tracks and albums
-        Artists::iterator it;
-        std::string result("");
-        for(it = _catalog.begin();it != _catalog.end() ; ++it){ 
-            result+= (*it)->descriptionCatalog();
+    std::string catalog() const {          //Returns a list of artist with their description and the description of their tracks and albums
+        std::string result = ("");
+        for( Artists::const_iterator it = _catalog.begin() ; it != _catalog.end() ; ++it){ 
+            result += (*it)->descriptionCatalog();
         }
         return result;
+        //return "aaa";
     }
+
     void createNewUser(const std::string &nameUser, const std::string &email){ //we create a new user to the system
         for(Users::iterator it = _users.begin() ; it != _users.end() ; ++it){
             if((*it)->getName() == nameUser)throw UserAlreadyExists(); //extra exception in our system
@@ -83,19 +84,19 @@ public:
         _users.push_back(new User(nameUser,email)); //we push the user in the vector
     }
 
-    void createArtist(const std::string &artist , bool isGroup){	//Create an artis and changes is status to grouped ( if isGroup is true ) and save it into the catalog
+    void createArtist(const std::string & name , bool group){	//Create an artis and changes is status to grouped ( if isGroup is true ) and save it into the catalog
         Artist *a = new Artist();		
-        a->name(artist);
-        if(isGroup){			
+        a->name(name);
+        if(group){			
         	a->createGroup();
         }
     	_catalog.push_back(a);			//Put the artist in the catalog
     }
-    void createNewTrack(const std::string &nameArtist, const std::string &nameTrack, const std::string &nameFile, const std::string &format = "", int bps=-1){ //Creat a new track and it's added to the catalog of his artist
-        Artist & a = findArtist(nameArtist); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
-        std::string newNameTrack = "masters/"+nameFile; 
-        std::string compressed = "compressed/"+ a.name() + " - " +nameTrack; 
-        a.newTrack(nameTrack ,readDuration("masters/",nameFile) , "masters/"+nameFile);
+    void createNewTrack(const std::string & artistName, const std::string & title, const std::string & master, const std::string &format = "", int bps=-1){ //Creat a new track and it's added to the catalog of his artist
+        Artist & a = findArtist(artistName); //find the artist in the catalog with this name, if the artist doesn't exist, throws an error of the function "findArtist"
+        std::string newNameTrack = "masters/"+master; 
+        std::string compressed = "compressed/"+ a.name() + " - " +title; 
+        a.newTrack(title ,readDuration("masters/",master) , "masters/"+master);
         if(format == "" && bps == -1){  //Creates a file with all formats
             for(unsigned int i = 0 ; i < _converters.converters.size() ; ++i){
              _converters.convert(newNameTrack,compressed,_converters.converters[i]->typeConverter(),_converters.converters[i]->bpsInfo());  
