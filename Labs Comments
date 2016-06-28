@@ -8,11 +8,26 @@ Práctica 3:
 - Los commits no tienen el título del test asociado que deberían (en este caso AddTrackAndAlbumTests).
 
 Práctica 4:
+- No se han añadido tests unitarios.
 
 Práctica 5:
+- Se ha subido algun archivo temporal al repositorio.
+- Faltan bastantes commits RED-GREEN-REFACTOR.
+- Se ha implementado la parte opcional.
 
 Práctica 6:
+- Se ha subido algun archivo temporal al repositorio.
+- UserTest lo debéis mover a los tests unitarios.
+- Por lo demás perfecta.
 
 Práctica 7:
+- Se ha subido al repositorio algún archivo compilado.
+- La función rssByPortal del Singalong tiene más lógica de la necesaria. El Façade solo se encarga de conectar cosas, la lógica debería ir en la clase por debajo.
+- Hay que corregir los warnings del compilador.
+- Por lo demás perfecto.
 
 Práctica 8:
+- Se ha colado algun archivo compilado en el repositorio.
+- Tal vez falte algo más de refactoring.
+- No se han pulido todos los warnings del compilador.
+- Por lo demás perfecto.
