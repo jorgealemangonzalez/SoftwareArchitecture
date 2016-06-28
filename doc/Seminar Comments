@@ -29,11 +29,25 @@ Seminario 5:
 - No tenéis bien refenciado el html del seminario 5.
 
 Seminario 6:
+- Vuestra clase AudioAdapter podría ser un grupo de converters, que gestiona la memoria de cada converter y que tienen una relación de 1 a múltiples. A su vez debe estar gestionado en memoria por Facade.
 
 Seminario 7:
+- Consumer no debe conectar con style, ya que es un observer y ya se conecta por subject.
+- Utilizad la flecha adecuada para mencionar que Track tiene referencias de Style.
 
 Seminario 8:
+- User debe gestionar la memoria de Strategy.
+- Faltan métodos en User para actualizar el tipo de strategia.
+- Los métodos del creator Factory y CreateStrategy son lo mismo (factory methods).
+- Las flechas de uso de los creators podrían confundir con herencias.
+- Faltan atributos y el tipo que devuelven los métodos de ambos patrones.
+- Falta actualizar con algún métodos el Facade.
 
 Seminario 9:
+- Ejercicio perfecto
 
 Seminario 10:
+- Podríais haber utilizado el modelo para gestionar la memoria de la vista y los controladores.
+- No tenéis tipos de controladores.
+- Faltan funciones genéricas para la vista.
+- Faltan funciones en general, y no tenéis ninguna explicación o relación sobre el signal-slot entre vista y controlador.
